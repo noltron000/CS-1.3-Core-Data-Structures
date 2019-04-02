@@ -6,25 +6,25 @@
 
 #### [Comparison Sorting] Algorithm Complexity
 
-| Algorithm		| Best Time		| Average Time	 | Worst Time	   | Space	| Features				   |
+| Algorithm        | Best Time        | Average Time     | Worst Time       | Space    | Features                   |
 | ---------------- | ---------------- | ---------------- | ---------------- | -------- | -------------------------- |
-| [Bubble sort]	| Ω(n)			 | Θ(n<sup>2</sup>) | O(n<sup>2</sup>) | O(1)	 | stable, in-place, adaptive |
-| [Selection sort] | Ω(n<sup>2</sup>) | Θ(n<sup>2</sup>) | O(n<sup>2</sup>) | O(1)	 | stable, in-place		   |
-| [Insertion sort] | Ω(n)			 | Θ(n<sup>2</sup>) | O(n<sup>2</sup>) | O(1)	 | stable, in-place, adaptive |
-| [Tree sort]	  | Ω(n⋅log n)	   | Θ(n⋅log n)	   | O(n<sup>2</sup>) | O(n)	 |							|
-| [Quick sort]	 | Ω(n⋅log n)	   | Θ(n⋅log n)	   | O(n<sup>2</sup>) | O(log n) | in-place				   |
-| [Merge sort]	 | Ω(n⋅log n)	   | Θ(n⋅log n)	   | O(n⋅log n)	   | O(n)	 | stable					 |
-| [Heap sort]	  | Ω(n⋅log n)	   | Θ(n⋅log n)	   | O(n⋅log n)	   | O(1)	 | in-place				   |
-| [Intro sort]	 | Ω(n⋅log n)	   | Θ(n⋅log n)	   | O(n⋅log n)	   | O(log n) | in-place, hybrid		   |
-| [Tim sort]	   | Ω(n)			 | Θ(n⋅log n)	   | O(n⋅log n)	   | O(n)	 | stable, adaptive, hybrid   |
+| [Bubble sort]    | Ω(n)             | Θ(n<sup>2</sup>) | O(n<sup>2</sup>) | O(1)     | stable, in-place, adaptive |
+| [Selection sort] | Ω(n<sup>2</sup>) | Θ(n<sup>2</sup>) | O(n<sup>2</sup>) | O(1)     | stable, in-place           |
+| [Insertion sort] | Ω(n)             | Θ(n<sup>2</sup>) | O(n<sup>2</sup>) | O(1)     | stable, in-place, adaptive |
+| [Tree sort]      | Ω(n×log n)       | Θ(n×log n)       | O(n<sup>2</sup>) | O(n)     |                            |
+| [Quick sort]     | Ω(n×log n)       | Θ(n×log n)       | O(n<sup>2</sup>) | O(log n) | in-place                   |
+| [Merge sort]     | Ω(n×log n)       | Θ(n×log n)       | O(n×log n)       | O(n)     | stable                     |
+| [Heap sort]      | Ω(n×log n)       | Θ(n×log n)       | O(n×log n)       | O(1)     | in-place                   |
+| [Intro sort]     | Ω(n×log n)       | Θ(n×log n)       | O(n×log n)       | O(log n) | in-place, hybrid           |
+| [Tim sort]       | Ω(n)             | Θ(n×log n)       | O(n×log n)       | O(n)     | stable, adaptive, hybrid   |
 
 #### [Integer Sorting] Algorithm Complexity
 
-| Algorithm	   | Best Time | Average Time | Worst Time	   | Space  |
+| Algorithm       | Best Time | Average Time | Worst Time       | Space  |
 | --------------- | --------- | ------------ | ---------------- | ------ |
-| [Counting sort] | Ω(n+k)	| Θ(n+k)	   | O(n+k)		   | O(k)   |
-| [Bucket sort]   | Ω(n+k)	| Θ(n+k)	   | O(n<sup>2</sup>) | O(n)   |
-| [Radix sort]	| Ω(n⋅k)	| Θ(n⋅k)	   | O(n⋅k)		   | O(n+k) |
+| [Counting sort] | Ω(n+k)    | Θ(n+k)       | O(n+k)           | O(k)   |
+| [Bucket sort]   | Ω(n+k)    | Θ(n+k)       | O(n<sup>2</sup>) | O(n)   |
+| [Radix sort]    | Ω(n×k)    | Θ(n×k)       | O(n×k)           | O(n+k) |
 
 ### Resources
 - Read BetterExplained's [sorting algorithms article] that discusses similarities, differences, and patterns
