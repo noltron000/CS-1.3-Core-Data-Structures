@@ -15,11 +15,11 @@
 
 ### Challenges
 - Add new features to improve `HashTable` class using [hash table starter code]:
-    - Add `size` property that tracks the number of hash table entries in constant time
-    - Implement `load_factor` - return the [load factor], the ratio of number of entries to buckets
-    - Implement `_resize` - perform [dynamic resizing] when `load_factor` exceeds `0.75` after an insertion (`set` is called with a new `key`) and rehash all key-value entries
-    - Run `python hashtable.py` to test `HashTable` class instance methods on a small example
-    - Run `pytest hashtable_test.py` to run the [hash table unit tests] and fix any failures
+	- Add `size` property that tracks the number of hash table entries in constant time
+	- Implement `load_factor` - return the [load factor], the ratio of number of entries to buckets
+	- Implement `_resize` - perform [dynamic resizing] when `load_factor` exceeds `0.75` after an insertion (`set` is called with a new `key`) and rehash all key-value entries
+	- Run `python hashtable.py` to test `HashTable` class instance methods on a small example
+	- Run `pytest hashtable_test.py` to run the [hash table unit tests] and fix any failures
 - Annotate methods with complexity analysis of running time and space (memory)
 
 ### Stretch Challenges

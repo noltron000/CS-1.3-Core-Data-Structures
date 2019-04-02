@@ -19,26 +19,26 @@
 
 ### Challenges
 - Implement merge sort algorithm and merge helper function using [sorting starter code]:
-    - Implement `merge(items1, items2)` that merges lists `items1` and `items2`, each assumed to already be in sorted order, and return a new list containing all items in sorted order
-    - Implement `split_sort_merge(items)` that uses any *other* sorting algorithm to sort sublists (*non-recursively*)
-        - Use the [divide-and-conquer] problem-solving strategy:
-            1. Divide: split problem (input list) into subproblems (two sublists each of half size)
-            2. Conquer: solve subproblems independently (sort sublists with any sorting algorithm)
-            3. Combine: combine subproblem solutions together (merge sorted sublists into one list)
-    - Implement `merge_sort(items)` that *recursively calls itself* to sort sublists during the conquer step
-        - Remember to add a base case to avoid infinite recursion loops (*hint:* very small lists are always sorted)
+	- Implement `merge(items1, items2)` that merges lists `items1` and `items2`, each assumed to already be in sorted order, and return a new list containing all items in sorted order
+	- Implement `split_sort_merge(items)` that uses any *other* sorting algorithm to sort sublists (*non-recursively*)
+		- Use the [divide-and-conquer] problem-solving strategy:
+			1. Divide: split problem (input list) into subproblems (two sublists each of half size)
+			2. Conquer: solve subproblems independently (sort sublists with any sorting algorithm)
+			3. Combine: combine subproblem solutions together (merge sorted sublists into one list)
+	- Implement `merge_sort(items)` that *recursively calls itself* to sort sublists during the conquer step
+		- Remember to add a base case to avoid infinite recursion loops (*hint:* very small lists are always sorted)
 - Run `python sorting.py` to test sorting algorithms on random samples of integers, for example:
-    ```
-    $ python sorting.py merge_sort 10 20
-    Initial items: [3, 15, 4, 7, 20, 6, 18, 11, 9, 7]
-    Sorting items with merge_sort(items)
-    Sorted items:  [3, 4, 6, 7, 7, 9, 11, 15, 18, 20]
-    ```
-    - Experiment with different *list sizes* to find when iterative sorting algorithms are slow and merge sort is fast
+	```
+	$ python sorting.py merge_sort 10 20
+	Initial items: [3, 15, 4, 7, 20, 6, 18, 11, 9, 7]
+	Sorting items with merge_sort(items)
+	Sorted items:  [3, 4, 6, 7, 7, 9, 11, 15, 18, 20]
+	```
+	- Experiment with different *list sizes* to find when iterative sorting algorithms are slow and merge sort is fast
 - Annotate functions with complexity analysis of running time (operations) and space (memory usage)
 - Expand the [sorting unit tests] to ensure your integer sorting algorithms are robust
-    - Write tests in a way that lets you add new sorting functions without needing to write more tests
-    - Include a variety of test cases that cover several integer distributions, orderings, and edge cases
+	- Write tests in a way that lets you add new sorting functions without needing to write more tests
+	- Include a variety of test cases that cover several integer distributions, orderings, and edge cases
 - Run `pytest sorting_test.py` to run the [sorting unit tests] and fix any failures
 
 ### Stretch Challenges

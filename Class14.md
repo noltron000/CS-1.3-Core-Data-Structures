@@ -3,8 +3,8 @@
 ### Topics
 - [Tree sort] using [search tree] data structure
 - [Quick sort] and partition algorithm
-    - How to [choose a pivot]: first, last, middle, median-of-three, and random
-    - Partitioning schemes: [Lomuto], [Hoare], and [three-way]
+	- How to [choose a pivot]: first, last, middle, median-of-three, and random
+	- Partitioning schemes: [Lomuto], [Hoare], and [three-way]
 - [In-place] algorithms
 - [Recursive] algorithm analysis with tree diagrams, [recurrence relations], and [master theorem]
 
@@ -26,25 +26,25 @@
 
 ### Challenges
 - Implement quick sort algorithm and partition helper function using [sorting starter code]:
-    - Implement `partition(items, low, high)` that chooses a pivot and returns index `p` after [in-place] partitioning `items` in range `[low...high]` by moving items less than pivot into range `[low...p-1]`, items greater than pivot into range `[p+1...high]`, and pivot into index `p`
-        - [Choose a pivot] in any way: first, last, middle, median-of-three, or random
-        - Use any partitioning scheme: [Lomuto], [Hoare], or [three-way]
-    - Implement `quick_sort(items, low, high)` that sorts `items` [in-place] by using `partition` algorithm on `items` in range `[low...high]` and *recursively calls itself* on sublist ranges
-        - Use the [divide-and-conquer] problem-solving strategy:
-            1. Divide: split problem into subproblems (partition input list into sublist ranges)
-            2. Conquer: solve subproblems independently (sort sublist ranges recursively with quick sort)
-            3. Combine: combine subproblem solutions together (if partition is [in-place], list is already sorted, but if not then concatenate sorted sublists)
-        - Remember to add a base case to avoid infinite recursion loops (*hint:* very small list ranges are always sorted)
+	- Implement `partition(items, low, high)` that chooses a pivot and returns index `p` after [in-place] partitioning `items` in range `[low...high]` by moving items less than pivot into range `[low...p-1]`, items greater than pivot into range `[p+1...high]`, and pivot into index `p`
+		- [Choose a pivot] in any way: first, last, middle, median-of-three, or random
+		- Use any partitioning scheme: [Lomuto], [Hoare], or [three-way]
+	- Implement `quick_sort(items, low, high)` that sorts `items` [in-place] by using `partition` algorithm on `items` in range `[low...high]` and *recursively calls itself* on sublist ranges
+		- Use the [divide-and-conquer] problem-solving strategy:
+			1. Divide: split problem into subproblems (partition input list into sublist ranges)
+			2. Conquer: solve subproblems independently (sort sublist ranges recursively with quick sort)
+			3. Combine: combine subproblem solutions together (if partition is [in-place], list is already sorted, but if not then concatenate sorted sublists)
+		- Remember to add a base case to avoid infinite recursion loops (*hint:* very small list ranges are always sorted)
 - Annotate functions with complexity analysis of running time (operations) and space (memory usage)
 - Run `python sorting.py` to test quick sort algorithm on random samples of integers, for example:
-    ```
-    $ python sorting.py quick_sort 10 20
-    Initial items: [3, 15, 4, 7, 20, 6, 18, 11, 9, 7]
-    Sorting items with quick_sort(items)
-    Sorted items:  [3, 4, 6, 7, 7, 9, 11, 15, 18, 20]
-    ```
-    - Experiment with different list sizes to find when iterative sorting algorithms are slow and quick sort is fast
-    - Compare the runtime of quick sort to merge sort on large list sizes with a variety of integer distributions
+	```
+	$ python sorting.py quick_sort 10 20
+	Initial items: [3, 15, 4, 7, 20, 6, 18, 11, 9, 7]
+	Sorting items with quick_sort(items)
+	Sorted items:  [3, 4, 6, 7, 7, 9, 11, 15, 18, 20]
+	```
+	- Experiment with different list sizes to find when iterative sorting algorithms are slow and quick sort is fast
+	- Compare the runtime of quick sort to merge sort on large list sizes with a variety of integer distributions
 - Run `pytest sorting_test.py` to run the [sorting unit tests] and fix any failures
 
 ### Stretch Challenges

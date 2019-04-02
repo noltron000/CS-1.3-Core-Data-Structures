@@ -15,34 +15,34 @@
 
 ### Challenges
 - Implement `LinkedStack` class (stack with linked list) and `ArrayStack` class (stack with dynamic array) using [stack starter code]:
-    - Implement `is_empty` - check if the stack is empty
-    - Implement `length` - return the number of items in the stack
-    - Implement `push(item)` - insert `item` on the top of the stack
-    - Implement `peek` - return the item on the top of the stack
-    - Implement `pop` - remove and return the item on the top of the stack
-    - Run `pytest stack_test.py` to run the [stack unit tests] and fix any failures
+	- Implement `is_empty` - check if the stack is empty
+	- Implement `length` - return the number of items in the stack
+	- Implement `push(item)` - insert `item` on the top of the stack
+	- Implement `peek` - return the item on the top of the stack
+	- Implement `pop` - remove and return the item on the top of the stack
+	- Run `pytest stack_test.py` to run the [stack unit tests] and fix any failures
 - Annotate `push` and `pop` methods with running time complexity analysis
 - Implement `LinkedQueue` class (queue with linked list) and `ArrayQueue` class (queue with dynamic array) using [queue starter code]:
-    - Implement `is_empty` - check if the queue is empty
-    - Implement `length` - return the number of items in the queue
-    - Implement `enqueue(item)` - insert `item` at the back of the queue
-    - Implement `front` - return the item at the front of the queue
-    - Implement `dequeue` - remove and return the item at the front of the queue
-    - Run `pytest queue_test.py` to run the [queue unit tests] and fix any failures
+	- Implement `is_empty` - check if the queue is empty
+	- Implement `length` - return the number of items in the queue
+	- Implement `enqueue(item)` - insert `item` at the back of the queue
+	- Implement `front` - return the item at the front of the queue
+	- Implement `dequeue` - remove and return the item at the front of the queue
+	- Run `pytest queue_test.py` to run the [queue unit tests] and fix any failures
 - Annotate `enqueue` and `dequeue` methods with running time complexity analysis
 
 ### Stretch Challenges
 - Implement `Deque` class (double-ended queue) with doubly linked list or dynamic array (your choice):
-    - Implement `is_empty` - check if the deque is empty
-    - Implement `length` - return the number of items in the deque
-    - Implement `push_front(item)` - insert `item` at the front of the deque
-    - Implement `push_back(item)` - insert `item` at the back of the deque
-    - Implement `front` - return the item at the front of the deque
-    - Implement `back` - return the item at the back of the deque
-    - Implement `pop_front` - remove and return the item at the front of the deque
-    - Implement `pop_back` - remove and return the item at the back of the deque
+	- Implement `is_empty` - check if the deque is empty
+	- Implement `length` - return the number of items in the deque
+	- Implement `push_front(item)` - insert `item` at the front of the deque
+	- Implement `push_back(item)` - insert `item` at the back of the deque
+	- Implement `front` - return the item at the front of the deque
+	- Implement `back` - return the item at the back of the deque
+	- Implement `pop_front` - remove and return the item at the front of the deque
+	- Implement `pop_back` - remove and return the item at the back of the deque
 - Write unit tests for to ensure the `Deque` class is robust
-    - Include test cases for each class instance method
+	- Include test cases for each class instance method
 - Annotate `push_front`, `push_back`, `pop_front`, and `pop_back` methods with running time complexity analysis
 
 

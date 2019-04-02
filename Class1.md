@@ -18,12 +18,12 @@
 ### Challenges
 - Practice binary and hexadecimal conversions on [number bases worksheet]
 - Implement base conversion functions for unsigned numbers using [starter code]:
-    - Implement `decode` - decode digits in any base to a number
-    - Implement `encode` - encode a number to digits in any base
-    - Implement `convert` - convert digits in any base to digits in any base
-    - Run `python bases.py number base1 base2` to test `convert` on `number`
-        - Example: `python bases.py 42 10 2` should give the result `101010`
-    - Run `pytest bases_test.py` to run the [unit tests] and fix any failures
+	- Implement `decode` - decode digits in any base to a number
+	- Implement `encode` - encode a number to digits in any base
+	- Implement `convert` - convert digits in any base to digits in any base
+	- Run `python bases.py number base1 base2` to test `convert` on `number`
+		- Example: `python bases.py 42 10 2` should give the result `101010`
+	- Run `pytest bases_test.py` to run the [unit tests] and fix any failures
 - Write additional unit tests to ensure your conversion algorithms are robust
 
 ### Stretch Challenges

@@ -13,25 +13,25 @@
 
 ### Challenges
 - Implement integer sorting algorithms using [sorting starter code]:
-    - `counting_sort(numbers)` - sort `numbers` (integers) by counting occurrences of each number, then looping over counts and copying that many numbers into output list.
-    - `bucket_sort(numbers, num_buckets)` - sort `numbers` by distributing into buckets representing subranges, sorting each bucket, and combining contents of all buckets in sorted order
+	- `counting_sort(numbers)` - sort `numbers` (integers) by counting occurrences of each number, then looping over counts and copying that many numbers into output list.
+	- `bucket_sort(numbers, num_buckets)` - sort `numbers` by distributing into buckets representing subranges, sorting each bucket, and combining contents of all buckets in sorted order
 - Annotate functions with complexity analysis of running time (operations) and space (memory usage)
 - Run `python sorting.py` to test sorting algorithms on a small random sample:
-    ```
-    $ python sorting.py counting_sort 15 5
-    Initial items: [2, 3, 1, 5, 5, 2, 5, 5, 1, 4, 1, 5, 2, 3, 1]
-    Sorting items with counting_sort(items)
-    Sorted items:  [1, 1, 1, 1, 2, 2, 2, 3, 3, 4, 5, 5, 5, 5, 5]
+	```
+	$ python sorting.py counting_sort 15 5
+	Initial items: [2, 3, 1, 5, 5, 2, 5, 5, 1, 4, 1, 5, 2, 3, 1]
+	Sorting items with counting_sort(items)
+	Sorted items:  [1, 1, 1, 1, 2, 2, 2, 3, 3, 4, 5, 5, 5, 5, 5]
 
-    $ python sorting.py counting_sort 20 10
-    Initial items: [1, 6, 2, 2, 5, 8, 9, 7, 8, 9, 10, 10, 8, 10, 3, 3, 8, 2, 5, 7]
-    Sorting items with counting_sort(items)
-    Sorted items:  [1, 2, 2, 2, 3, 3, 5, 5, 6, 7, 7, 8, 8, 8, 8, 9, 9, 10, 10, 10]
-    ```
-    - Experiment with different list sizes, orderings, integer ranges, and distributions to find when integer sorting algorithms are faster than other sorting algorithms
+	$ python sorting.py counting_sort 20 10
+	Initial items: [1, 6, 2, 2, 5, 8, 9, 7, 8, 9, 10, 10, 8, 10, 3, 3, 8, 2, 5, 7]
+	Sorting items with counting_sort(items)
+	Sorted items:  [1, 2, 2, 2, 3, 3, 5, 5, 6, 7, 7, 8, 8, 8, 8, 9, 9, 10, 10, 10]
+	```
+	- Experiment with different list sizes, orderings, integer ranges, and distributions to find when integer sorting algorithms are faster than other sorting algorithms
 - Expand the [sorting unit tests] to ensure your integer sorting algorithms are robust
-    - Write tests in a way that lets you add new sorting functions without needing to write more tests
-    - Include a variety of test cases that cover several integer distributions, orderings, and edge cases
+	- Write tests in a way that lets you add new sorting functions without needing to write more tests
+	- Include a variety of test cases that cover several integer distributions, orderings, and edge cases
 - Run `pytest sorting_test.py::IntegerSortTest` to run *only* the integer [sorting unit tests] and fix any failures
 
 ### Stretch Challenges

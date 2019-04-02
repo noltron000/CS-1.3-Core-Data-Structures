@@ -15,18 +15,18 @@
 
 ### Challenges
 - Add new features to `LinkedList` class using [linked list starter code]:
-    - Add `size` property that tracks list length in constant running time
-    - Implement `get_at_index(index)` - returns the item at `index` in the list
-    - Implement `insert_at_index(index, item)` - inserts `item` at `index` (all items after `index` are moved down)
-    - Implement `replace(old_item, new_item)` - replaces `old_item` in the list with `new_item` using the same node
-    - Run `python linkedlist.py` to test `LinkedList` class instance methods on a small example
-    - Run `pytest linkedlist_test.py` to run the [linked list unit tests] and fix any failures
+	- Add `size` property that tracks list length in constant running time
+	- Implement `get_at_index(index)` - returns the item at `index` in the list
+	- Implement `insert_at_index(index, item)` - inserts `item` at `index` (all items after `index` are moved down)
+	- Implement `replace(old_item, new_item)` - replaces `old_item` in the list with `new_item` using the same node
+	- Run `python linkedlist.py` to test `LinkedList` class instance methods on a small example
+	- Run `pytest linkedlist_test.py` to run the [linked list unit tests] and fix any failures
 - Annotate methods with complexity analysis of running time and space (memory)
 
 ### Stretch Challenges
 - Implement `DoublyLinkedList` class with `BinaryNode` objects, which have both `next` and `previous` properties
 - Write unit tests for to ensure the `DoublyLinkedList` class is robust
-    - Include test cases for each class instance method and property
+	- Include test cases for each class instance method and property
 - Annotate methods with complexity analysis of running time and space (memory)
 
 

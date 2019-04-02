@@ -16,14 +16,14 @@
 
 ### Challenges
 - Implement iterative [factorial] function using [recursion starter code]:
-    - Implement `factorial(n)` - the product of all integers 1 through `n`
-    - Run `python recursion.py number` to test `factorial` on a number
-        - Example: `python recursion.py 8` gives the result `factorial(8) => 40320`
-    - Run `pytest recursion_test.py` to run the [recursion unit tests] and fix any failures
+	- Implement `factorial(n)` - the product of all integers 1 through `n`
+	- Run `python recursion.py number` to test `factorial` on a number
+		- Example: `python recursion.py 8` gives the result `factorial(8) => 40320`
+	- Run `pytest recursion_test.py` to run the [recursion unit tests] and fix any failures
 - Implement recursive linear and binary search algorithms using [search starter code]:
-    - Implement `linear_search(array, item)` - the first index of `item` in `array`
-    - Implement `binary_search(array, item)` - the index of `item` in sorted `array`
-    - Run `pytest search_test.py` to run the [search unit tests] and fix any failures
+	- Implement `linear_search(array, item)` - the first index of `item` in `array`
+	- Implement `binary_search(array, item)` - the index of `item` in sorted `array`
+	- Run `pytest search_test.py` to run the [search unit tests] and fix any failures
 - Annotate functions with complexity analysis of running time and space (memory)
 
 ### Stretch Challenges
