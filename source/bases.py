@@ -9,6 +9,9 @@ import string
 # string.ascii_uppercase is 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
 # string.ascii_letters is ascii_lowercase + ascii_uppercase
 # string.printable is digits + ascii_letters + punctuation + whitespace
+
+# a GRAPHEME is the smallest meaningful contrastive unit in a writing system
+# it represents a number whose maximum is determined by whatever base system being used - 1
 GRAPHEMES = string.digits + string.ascii_uppercase
 
 def decode(digits, base):
@@ -17,7 +20,7 @@ def decode(digits, base):
 	base: int -- base of given number
 	return: int -- integer representation of number (in base 10)"""
 	# Handle up to base 36 [0-9A-Z]
-	assert 2 <= base <= 36, 'base is out of range: {}'.format(base)
+	assert 2 <= base <= 36, f'base is out of range: {base}'
 	# TODO: Encode number in any base
 
 def encode(number, base):
@@ -27,40 +30,45 @@ def encode(number, base):
 	return: str -- string representation of number (in given base)"""
 	# Handle up to base 36 [0-9A-Z]
 	print(f'\n---encode function--- num:{number} base:{base}')
-	assert 2 <= base <= 36, 'base is out of range: {}'.format(base)
+	assert 2 <= base <= 36, f'base is out of range: {base}'
 	# Handle unsigned numbers only for now
-	assert number >= 0, 'number is negative: {}'.format(number)
+	assert number >= 0, f'number is negative: {number}'
 	# TODO: Encode number in any base
 
-	# 36 -> 100
 	# Find out first n where (base**degree > number)
 	# n+1 turns out to be number of digits needed
 	degree = 0
 	while base**degree <= number:
-		print(f'@ degree {degree}: {base**degree} is less than or equal to {number}')
+		print(f'@degree {degree}: {base**degree} is less than or equal to {number}')
 		degree += 1
-	print(f'@ degree {degree}: {base**degree} is more than {number}')
+	print(f'@degree {degree}: {base**degree} is more than {number}')
 	print(f'There are {degree} base-{base} digits the answer\n')
 
-	result = ''
+	# i: degree iterator
+	i = degree - 1
+	# remain: number iterator
 	remain = number
-	# degree iterator
-	iter_deg = degree
+	# result: return keeper
+	result = ''
 
-	while iter_deg > 0 and remain > 0:
-		# dimension is the base-10 number equivalent for the specific nth place
-		# essentially if we had a base 16 number, each digit is a dimension, expressed in base-10
-		# hex: A  F  4  9
-		# dim: 11 15 04 09
-		dimension = math.floor(remain/base**(iter_deg-1))
-		# graphemes are available characters - output finds correct character mapping to base-10 number
-		output = GRAPHEMES[dimension]
-		result += output
-		remain -= dimension*(base**(iter_deg-1))
-		iter_deg -= 1
-	print(result)
+	while i >= 0 and remain >= 0:
+		# value is a number < base, representing a digit's value in base-10
+		# hex: | A  | F  | 4  | 9  |
+		# val: | 11 | 15 | 04 | 09 |
+		value = math.floor(remain/base**(i))
+		### print(f'@degree {i} value: {value*base**i}')
+		# here we use value as an index to our GRAPHEMES constant to get our digit
+		result += GRAPHEMES[value]
+		### print(f'{result}')
+		# next we reduce our remaining number by our value times its base to the ith power
+		remain -= value*base**i
+		# prepare i for next iteration
+		i -= 1
 
+	# make sure function didn't explode before returning
+	assert remain == 0, f'function didn\'t return 0; returned {remain}'
 
+	return result
 
 def convert(digits, baseX, baseY):
 	"""Convert given digits in baseX to digits in baseY.
