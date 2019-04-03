@@ -10,7 +10,8 @@ import string
 
 GRAPHEMES = string.digits + string.ascii_letters
 # google says: "a GRAPHEME is the smallest meaningful contrastive unit in a writing system"
-# here, it represents a digit in a base system larger than 10
+# consider changing variable name to LEXICON
+# here, it represents an alphanumeric digit in a base system larger than 10
 # for example, a base-N system uses a digit of GRAPHEMES[N], although GRAPHEMES[N+1] would be invalid
 # EX=9; print(f'{GRAPHEMES}\n' + ' '*EX + f'{GRAPHEMES[EX]}') # ← uncomment this line for an example
 
@@ -28,12 +29,13 @@ def decode(digits, base):
 	# handle up to base 36 [0-9A-Z]
 	digits = "".join(reversed(digits))
 	# digits need to be reversed to properly loop through
+	# numbers read right to left; strings and arrays read left to right
 	result = 0
 	# result stores updated return value
 	degree = len(digits) - 1
 	# degree is our iterator; it determines the power of our base in the loop
 
-	while degree >= 0 :
+	while degree >= 0:
 		mult = base**degree
 		# mult converts whatever 1, 10, 100, ..., 10^degree is in base-b to base-10
 		# for example, in base-10, 10 is 10^1, 100 is 10^2, and 1000 is 10^3
@@ -64,6 +66,7 @@ def encode(number, base):
 	- number: int → integer representation of number (in base 10)
 	- return: str → string representation of number (in given base)
 	'''
+
 	assert 2 <= base <= 36, f'base is out of range: {base}'
 	# handle up to base 36 [0-9A-Z]
 	assert number >= 0, f'number is negative: {number}'
@@ -116,10 +119,10 @@ def encode(number, base):
 def convert(digits, baseX, baseY):
 	'''
 	Convert given digits in baseX to digits in baseY
-	-    baseX: int -- base of given number
-	-    baseY: int -- base to convert to
-	-   digits: str -- string representation of number (in baseX)
-	-   return: str -- string representation of number (in baseY)
+	-  baseX: int -- base of given number
+	-  baseY: int -- base to convert to
+	- digits: str -- string representation of number (in baseX)
+	- return: str -- string representation of number (in baseY)
 	'''
 
 	assert 2 <= baseX <= 36, f'baseX is out of range: {baseX}'
@@ -150,5 +153,8 @@ def main():
 		print(f'{digits} in base {baseX} is {result} in base {baseY}')
 	else:
 		print(f'Usage: \n$ {sys.argv[0]} digits baseX baseY\nConverts digits from baseX to baseY')
+
+
+
 if __name__ == '__main__':
 	main()
