@@ -1,12 +1,5 @@
 #!python
 
-import string
-# Hint: Use these string constants to ignore capitalization and/or punctuation
-# string.ascii_lowercase is 'abcdefghijklmnopqrstuvwxyz'
-# string.ascii_uppercase is 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
-# string.ascii_letters is ascii_lowercase + ascii_uppercase
-
-
 def is_palindrome(text):
 	"""A string of characters is a palindrome if it reads the same forwards and
 	backwards, ignoring punctuation, whitespace, and letter casing."""
@@ -23,56 +16,62 @@ def is_palindrome_iterative(text):
 	if its not, then its not a palindrome
 	'''
 
-	length    = len(text) # used in several places
-	iterator  = 0 # use an iterator for the while loop
-	fudge_lft = 0 # these two values are declared just in case
-	fudge_rgt = 0 # a non-alphanumeric character is skipped
+	length = len(text) # used in several places
+	lft = 0
+	rgt = length - 1
+	# we go through the string at both ends,
+	# checking if its mirrored along the way
 
-	# lft and rgt are used to track indices
-	# they need to be defined before the loop so we can check initially
-	lft =            fudge_lft + iterator
-	rgt =  length  - fudge_rgt - iterator - 1
-
-	# loop through only half the text
-	# if the string has an odd number of characters...
-	# ...we don't need to compare the center value with itself
-	while lft < length//2 and rgt >= length//2:
-
-		lft =            fudge_lft + iterator
-		rgt =  length  - fudge_rgt - iterator - 1
-
+	while lft < rgt:
 		# nesting these while loops still avoids O(n^2)
 		# each time one of these while loops are hit...
 		# ...the parent while loop is hit one less time
 		while (not text[lft].isalpha()) and lft < rgt:
-			# left index isn't alphabetical, so its skipped
-			fudge_lft += 1
-			lft = iterator + fudge_lft
+			lft += 1
 		while (not text[rgt].isalpha()) and lft < rgt:
-			# right index isn't alphabetical, so its skipped
-			fudge_rgt += 1
-			rgt =  length  - fudge_rgt - iterator - 1
+			rgt -= 1
 
-		# finally, check if the letters are symmetrical
+		# check if the letters are symmetrical
 		if text[lft].lower() != text[rgt].lower():
-			# this is not a palindrome
 			return False
 		else:
-			# continue on loop
-			iterator += 1
-
+			# continue loop
+			lft += 1
+			rgt -= 1
 	else:
-		# this is a palindrome
+		# if loop ends, this is a palindrome
 		return True
 
 
-def is_palindrome_recursive(text, left=None, right=None):
-	# TODO: implement the is_palindrome function recursively here
-	pass
+def is_palindrome_recursive(text, lft=None, rgt=None):
+	'''
+	docstring
+	'''
+	length = len(text) # used in several places
+	lft = 0
+	rgt = length - 1
+	# we go through the string at both ends,
+	# checking if its mirrored along the way
 
-	# once implemented, change is_palindrome to call is_palindrome_recursive
-	# to verify that your iterative implementation passes all tests
+	while lft < rgt:
+		# nesting these while loops still avoids O(n^2)
+		# each time one of these while loops are hit...
+		# ...the parent while loop is hit one less time
+		while (not text[lft].isalpha()) and lft < rgt:
+			lft += 1
+		while (not text[rgt].isalpha()) and lft < rgt:
+			rgt -= 1
 
+		# check if the letters are symmetrical
+		if text[lft].lower() != text[rgt].lower():
+			return False
+		else:
+			# continue loop
+			lft += 1
+			rgt -= 1
+	else:
+		# if loop ends, this is a palindrome
+		return True
 
 def main():
 	import sys
