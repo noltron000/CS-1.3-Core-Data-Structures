@@ -19,12 +19,12 @@ def linear_search_iterative(array, item):
 def linear_search_recursive(array, item, index=0):
 	# try breaks nicely on errors
 	try:
-		# check if found
-		if item == array[index]:
-			return index # found
-		# else redo function with index+1
-		else:
-			return linear_search_recursive(array, item, index+1)
+	# check if found
+	if item == array[index]:
+		return index # found
+	# else redo function with index+1
+	else:
+		return linear_search_recursive(array, item, index+1)
 	# except usually hits if array[index] doesn't exist
 	except:
 		return None # not found / error
@@ -65,12 +65,8 @@ def binary_search_iterative(array, item):
 	return None
 
 
-	# once implemented, change binary_search to call binary_search_iterative
-	# to verify that your iterative implementation passes all tests
-
-
 def binary_search_recursive(array, item):
-	# TODO: improve comments, improve try statement
+	# TODO: improve comments, improve try statement, no more accidentally quadratic
 	if len(array) > 0:
 		half = len(array)//2
 	else:
@@ -93,13 +89,13 @@ def binary_search_recursive(array, item):
 			# alphabetically, item is smaller
 			left_slice = array[:half]
 			result = binary_search_recursive(left_slice, item)
-			return result
+			return result # notice there is no half+1 here
 
 		elif item > array[half]:
 			# alphabetically, item is larger
 			right_slice = array[half+1:]
 			result = binary_search_recursive(right_slice, item)
-			return result + half + 1 # must add half+1 for right slice
+			return result + half + 1 # must add half+1 for right slices
 
 	except:
 		# break nicely
