@@ -6,8 +6,8 @@ def is_palindrome(text):
 	# implement is_palindrome_iterative and is_palindrome_recursive below, then
 	# change this to call your implementation to verify it passes all tests
 	assert isinstance(text, str), 'input is not a string: {}'.format(text)
-	return is_palindrome_iterative(text)
-	# return is_palindrome_recursive(text)
+	# return is_palindrome_iterative(text)
+	return is_palindrome_recursive(text)
 
 
 def is_palindrome_iterative(text):
@@ -45,9 +45,33 @@ def is_palindrome_iterative(text):
 
 def is_palindrome_recursive(text, lft=None, rgt=None):
 	'''
-	TODO
+	for each letter's index, check if [len-index-1] is equal
+	if its not, then its not a palindrome
 	'''
-	pass
+
+	length = len(text) # used in several places
+	if lft == None:
+		lft = 0
+	if rgt == None:
+		rgt = length - 1
+	if text == '':
+		return True
+	# we go through the string at both ends,
+	# checking if its mirrored along the way
+	while (not text[lft].isalpha()) and lft < rgt:
+		lft += 1
+	while (not text[rgt].isalpha()) and lft < rgt:
+		rgt -= 1
+	# check if the letters are symmetrical
+	if text[lft].lower() != text[rgt].lower():
+		return False
+	elif lft >= rgt:
+		return True
+	else:
+		# continue loop
+		lft += 1
+		rgt -= 1
+		return is_palindrome_recursive(text,lft,rgt)
 
 def main():
 	import sys
