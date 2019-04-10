@@ -47,31 +47,7 @@ def is_palindrome_recursive(text, lft=None, rgt=None):
 	'''
 	docstring
 	'''
-	length = len(text) # used in several places
-	lft = 0
-	rgt = length - 1
-	# we go through the string at both ends,
-	# checking if its mirrored along the way
-
-	while lft < rgt:
-		# nesting these while loops still avoids O(n^2)
-		# each time one of these while loops are hit...
-		# ...the parent while loop is hit one less time
-		while (not text[lft].isalpha()) and lft < rgt:
-			lft += 1
-		while (not text[rgt].isalpha()) and lft < rgt:
-			rgt -= 1
-
-		# check if the letters are symmetrical
-		if text[lft].lower() != text[rgt].lower():
-			return False
-		else:
-			# continue loop
-			lft += 1
-			rgt -= 1
-	else:
-		# if loop ends, this is a palindrome
-		return True
+	pass
 
 def main():
 	import sys
