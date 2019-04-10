@@ -1,26 +1,98 @@
 #!python
 
+def validate(text, pattern):
+	assert isinstance(text, str), f'text is not a string: {text}'
+	assert isinstance(pattern, str), f'pattern is not a string: {pattern}'
+
+
 def contains(text, pattern):
-	"""Return a boolean indicating whether pattern occurs in text."""
-	assert isinstance(text, str), 'text is not a string: {}'.format(text)
-	assert isinstance(pattern, str), 'pattern is not a string: {}'.format(text)
-	# TODO: Implement contains here (iteratively and/or recursively)
+	'''
+	Return a boolean indicating whether pattern occurs in text.
+	'''
+	validate(text, pattern) # validate input
+	# will iterate through a number of times equal to
+	# len(BIG) - len(sml) + 1
+	#-------------
+	# I I I I I I
+	# o o o
+	#   o o o
+	#     o o o
+	#       o o o
+	#         x x
+	if pattern == '':
+		return True
+	ii = 0
+	while ii < len(text) - len(pattern) + 1:
+		jj = 0
+		while pattern[jj] == text[ii+jj]:
+			jj += 1
+			if jj >= len(pattern):
+				return True
+				break
+		ii += 1
+	else:
+		return False
 
 
 def find_index(text, pattern):
-	"""Return the starting index of the first occurrence of pattern in text,
-	or None if not found."""
-	assert isinstance(text, str), 'text is not a string: {}'.format(text)
-	assert isinstance(pattern, str), 'pattern is not a string: {}'.format(text)
-	# TODO: Implement find_index here (iteratively and/or recursively)
+	'''
+	Return the starting index of the first occurrence of pattern in text, or None if not found.
+	'''
+	validate(text, pattern) # validate input
+	# will iterate through a number of times equal to
+	# len(BIG) - len(sml) + 1
+	#-------------
+	# I I I I I I
+	# o o o
+	#   o o o
+	#     o o o
+	#       o o o
+	#         x x
+	if pattern == '':
+		return 0
+	ii = 0
+	while ii < len(text) - len(pattern) + 1:
+		jj = 0
+		while pattern[jj] == text[ii+jj]:
+			jj += 1
+			if jj >= len(pattern):
+				return ii
+				break
+		ii += 1
+	else:
+		return None
 
 
 def find_all_indexes(text, pattern):
-	"""Return a list of starting indexes of all occurrences of pattern in text,
-	or an empty list if not found."""
-	assert isinstance(text, str), 'text is not a string: {}'.format(text)
-	assert isinstance(pattern, str), 'pattern is not a string: {}'.format(text)
+	'''
+	Return a list of starting indexes of all occurrences of pattern in text, or an empty list if not found.
+	'''
 	# TODO: Implement find_all_indexes here (iteratively and/or recursively)
+	validate(text, pattern) # validate input
+	# will iterate through a number of times equal to
+	# len(BIG) - len(sml) + 1
+	#-------------
+	# I I I I I I
+	# o o o
+	#   o o o
+	#     o o o
+	#       o o o
+	#         x x
+	found = []
+	if pattern == '':
+		found = list(range(0,len(text)))
+		return found
+	ii = 0
+	while ii < len(text) - len(pattern) + 1:
+		jj = 0
+		while pattern[jj] == text[ii+jj]:
+			jj += 1
+			if jj >= len(pattern):
+				found.append(ii)
+				break
+		ii += 1
+	else:
+		return found
 
 
 def test_string_algorithms(text, pattern):
@@ -35,7 +107,9 @@ def test_string_algorithms(text, pattern):
 
 
 def main():
-	"""Read command-line arguments and test string searching algorithms."""
+	'''
+	Read command-line arguments and test string searching algorithms.
+	'''
 	import sys
 	args = sys.argv[1:]  # Ignore script file name
 	if len(args) == 2:

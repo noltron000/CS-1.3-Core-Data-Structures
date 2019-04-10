@@ -45,7 +45,7 @@ def is_palindrome_iterative(text):
 
 def is_palindrome_recursive(text, lft=None, rgt=None):
 	'''
-	docstring
+	TODO
 	'''
 	pass
 
