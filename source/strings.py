@@ -28,7 +28,6 @@ def contains(text, pattern):
 			jj += 1
 			if jj >= len(pattern):
 				return True
-				break
 		ii += 1
 	else:
 		return False
@@ -50,15 +49,19 @@ def find_index(text, pattern):
 	#         x x
 	if pattern == '':
 		return 0
-	ii = 0
-	while ii < len(text) - len(pattern) + 1:
-		jj = 0
-		while pattern[jj] == text[ii+jj]:
-			jj += 1
-			if jj >= len(pattern):
-				return ii
-				break
-		ii += 1
+	text_index = 0
+	while text_index < len(text) - len(pattern) + 1:
+		patt_index = 0
+
+		# start iterating the pattern
+		# check if next pattern letter matches
+		while pattern[patt_index] == text[text_index+patt_index]:
+			patt_index += 1
+
+			# reached end of pattern
+			if patt_index >= len(pattern):
+				return text_index
+		text_index += 1
 	else:
 		return None
 

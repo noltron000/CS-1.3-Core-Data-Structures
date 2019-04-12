@@ -1,5 +1,7 @@
 #!python
 
+
+
 def is_palindrome(text):
 	"""A string of characters is a palindrome if it reads the same forwards and
 	backwards, ignoring punctuation, whitespace, and letter casing."""
@@ -10,28 +12,34 @@ def is_palindrome(text):
 	return is_palindrome_recursive(text)
 
 
+
 def is_palindrome_iterative(text):
 	'''
 	for each letter's index, check if [len-index-1] is equal
 	if its not, then its not a palindrome
 	'''
 
-	length = len(text) # used in several places
+	# lft & rgt represent index locations in the text
+	# lft character index mirrors rgt character index
 	lft = 0
-	rgt = length - 1
+	rgt = len(text) - 1
+
 	# we go through the string at both ends,
 	# checking if its mirrored along the way
-
 	while lft < rgt:
+
+		# these while loops will skip non-alphabetical chars
+		# also, if lft==rgt, text[lft]==text[rgt], hence lft<rgt
+		while not text[lft].isalpha() and lft < rgt:
+			lft += 1
+		while not text[rgt].isalpha() and lft < rgt:
+			rgt -= 1
+
 		# nesting these while loops still avoids O(n^2)
 		# each time one of these while loops are hit...
 		# ...the parent while loop is hit one less time
-		while (not text[lft].isalpha()) and lft < rgt:
-			lft += 1
-		while (not text[rgt].isalpha()) and lft < rgt:
-			rgt -= 1
 
-		# check if the letters are symmetrical
+		# check if the letters are (not) symmetrical
 		if text[lft].lower() != text[rgt].lower():
 			return False
 		else:
@@ -43,24 +51,26 @@ def is_palindrome_iterative(text):
 		return True
 
 
+
 def is_palindrome_recursive(text, lft=None, rgt=None):
 	'''
 	for each letter's index, check if [len-index-1] is equal
 	if its not, then its not a palindrome
 	'''
 
-	length = len(text) # used in several places
+	# these can only be true on first run
 	if lft == None:
 		lft = 0
 	if rgt == None:
-		rgt = length - 1
+		rgt = len(text) - 1
 	if text == '':
 		return True
+
 	# we go through the string at both ends,
 	# checking if its mirrored along the way
-	while (not text[lft].isalpha()) and lft < rgt:
+	while lft < rgt and not text[lft].isalpha():
 		lft += 1
-	while (not text[rgt].isalpha()) and lft < rgt:
+	while lft < rgt and not text[rgt].isalpha():
 		rgt -= 1
 	# check if the letters are symmetrical
 	if text[lft].lower() != text[rgt].lower():
@@ -72,6 +82,8 @@ def is_palindrome_recursive(text, lft=None, rgt=None):
 		lft += 1
 		rgt -= 1
 		return is_palindrome_recursive(text,lft,rgt)
+
+
 
 def main():
 	import sys
