@@ -119,9 +119,6 @@ class LinkedList(object):
 			# Check if condition is met
 			if index_count == index:
 				# Will always eventually get here
-				print("\nFOUND NODE:",node)
-				print("HEAD:",self.head)
-				print("TAIL:",self.tail)
 				return node
 			# Count one for this node
 			index_count += 1
