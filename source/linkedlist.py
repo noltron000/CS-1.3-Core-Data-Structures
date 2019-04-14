@@ -1,13 +1,14 @@
 #!python
 
-class Node(object):
 
+class Node(object):
 	def __init__(self, data):
 		'''
 		Initialize this node with the given data.
 		'''
 		self.data = data
 		self.next = None
+
 
 	def __repr__(self):
 		'''
@@ -17,7 +18,6 @@ class Node(object):
 
 
 class LinkedList(object):
-
 	def __init__(self, iterable=None):
 		'''
 		Initialize this linked list and append the given items, if any.
@@ -30,6 +30,7 @@ class LinkedList(object):
 			for item in iterable:
 				self.append(item)
 
+
 	def __str__(self):
 		'''
 		Return a formatted string representation of this linked list.
@@ -37,11 +38,13 @@ class LinkedList(object):
 		items = [f'({item})' for item in self.items()]
 		return f'[{" -> ".join(items)}]'
 
+
 	def __repr__(self):
 		'''
 		Return a string representation of this linked list.
 		'''
 		return f'LinkedList({self.items()})'
+
 
 	def items(self):
 		'''
@@ -63,11 +66,13 @@ class LinkedList(object):
 		# Now result contains the data from all nodes
 		return result  # Constant time to return a list
 
+
 	def is_empty(self):
 		'''
 		Return True if this linked list is empty, or False.
 		'''
 		return self.head is None
+
 
 	def length(self):
 		'''
@@ -88,6 +93,7 @@ class LinkedList(object):
 			node = node.next
 		# Now node_count contains the number of nodes
 		return node_count
+
 
 	def get_at_index(self, index):
 		'''
@@ -119,6 +125,7 @@ class LinkedList(object):
 			# Skip to the next node
 			node = node.next
 
+
 	def insert_at_index(self, index, item):
 		'''
 		Insert the given item at the given index in this linked list, or
@@ -133,12 +140,15 @@ class LinkedList(object):
 			raise ValueError(f'List index out of range: {index}')
 		# TODO: Find the node before the given index and insert item after it
 
+		# Finally, update size
+		self.size += 1
+
 	def append(self, item):
 		'''
 		Insert the given item at the tail of this linked list.
 		---
 		Best & worst case run time: O(1)
-		this ends very quickly and only calls functionality of constant time. [todo]
+		Reading the tail or head is blazing fast. The other features in here are constant too.
 		'''
 		# Create a new node to hold the given item
 		new_node = Node(item)
@@ -151,13 +161,16 @@ class LinkedList(object):
 			self.tail.next = new_node
 		# Update tail to new node regardless
 		self.tail = new_node
+		# Finally, update size
+		self.size += 1
+
 
 	def prepend(self, item):
 		'''
 		Insert the given item at the head of this linked list.
 		---
 		Best & worst case run time: O(1)
-		this ends very quickly and only calls functionality of constant time. [todo]
+		Reading the tail or head is blazing fast. The other features in here are constant too.
 		'''
 		# Create a new node to hold the given item
 		new_node = Node(item)
@@ -170,6 +183,9 @@ class LinkedList(object):
 			new_node.next = self.head
 		# Update head to new node regardless
 		self.head = new_node
+		# Finally, update size
+		self.size += 1
+
 
 	def find_quality(self, quality):
 		'''
@@ -194,6 +210,7 @@ class LinkedList(object):
 			node = node.next  # Constant time to reassign a variable
 		# We never found data satisfying quality, but have to return something
 		return None  # Constant time to return None
+
 
 	def find_node(self, data):
 		'''
@@ -240,13 +257,16 @@ class LinkedList(object):
 		# changed nodes data with new data
 		node.data = new_item
 
+
 	def delete(self, item):
 		'''
 		Delete the given item from this linked list, or raise ValueError.
 		---
-		Best case run time: O() under what conditions? [TODO]
+		Best case run time: O(1)
+		item is at the head
 		---
-		Worst case run time: O() under what conditions? [TODO]
+		Worst case run time: O(n)
+		item is at the tail
 		'''
 		# Start at the head node
 		node = self.head
@@ -286,6 +306,8 @@ class LinkedList(object):
 					previous.next = None
 				# Update tail to the previous node regardless
 				self.tail = previous
+			# Finally, update size
+			self.size -= 1
 		else:
 			# Otherwise raise an error to tell the user that delete has failed
 			raise ValueError(f'Item not found: {item}')
