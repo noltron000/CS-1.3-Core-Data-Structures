@@ -47,7 +47,7 @@ class LinkedList(object):
 		'''
 		Return a list of all items in this linked list.
 		---
-		Best & worst case run time: Θ(n)
+		Best & worst case run time: Θ(n) <theta>
 		for n items in the list because we always need to loop through all n nodes.
 		'''
 		# Create an empty list of results
@@ -73,7 +73,8 @@ class LinkedList(object):
 		'''
 		Return the length of this linked list by traversing its nodes.
 		---
-		Best & worst case run time: O() under what conditions? [TODO]
+		Best & worst case run time: O(n) [todo] <Θ theta?>
+		for n items in the list because we always need to loop through all n nodes
 		'''
 		# Node counter initialized to zero
 		node_count = 0
@@ -93,9 +94,11 @@ class LinkedList(object):
 		Return the item at the given index in this linked list, or
 		raise ValueError if the given index is out of range of the list size.
 		---
-		Best case run time: O() under what conditions? [TODO]
+		Best case run time: O(1) [todo] <Ω omega?>
+		if item is near the head of the list or is not present.
 		---
-		Worst case run time: O() under what conditions? [TODO]
+		Worst case run time: O(n)
+		if item is near the tail of the list.
 		'''
 		# Check if the given index is out of range and if so raise an error
 		if not (0 <= index < self.size):
@@ -134,7 +137,8 @@ class LinkedList(object):
 		'''
 		Insert the given item at the tail of this linked list.
 		---
-		Best & worst case run time: O() under what conditions? [TODO]
+		Best & worst case run time: O(1)
+		this ends very quickly and only calls functionality of constant time. [todo]
 		'''
 		# Create a new node to hold the given item
 		new_node = Node(item)
@@ -153,7 +157,7 @@ class LinkedList(object):
 		Insert the given item at the head of this linked list.
 		---
 		Best & worst case run time: O(1)
-		this ends very quickly and only calls functionality of constant time.
+		this ends very quickly and only calls functionality of constant time. [todo]
 		'''
 		# Create a new node to hold the given item
 		new_node = Node(item)
@@ -167,9 +171,9 @@ class LinkedList(object):
 		# Update head to new node regardless
 		self.head = new_node
 
-	def find(self, quality):
+	def find_quality(self, quality):
 		'''
-		Return an item from this linked list satisfying the given quality.
+		Return an item's data from this linked list satisfying the given quality function.
 		---
 		Best case run time: Ω(1) <omega>
 		if item is near the head of the list.
@@ -191,18 +195,50 @@ class LinkedList(object):
 		# We never found data satisfying quality, but have to return something
 		return None  # Constant time to return None
 
+	def find_node(self, data):
+		'''
+		This function was copied from above and modified.
+		Return a node whose data matches the given data parameter.
+		---
+		Best case run time: Ω(1) <omega>
+		if item is near the head of the list.
+		---
+		Worst case run time: O(n)
+		if item is near the tail of the list or not present
+		and we need to loop through all n nodes in the list.
+		'''
+		# Start at the head node
+		node = self.head  # Constant time to assign a variable reference
+		# Loop until the node is None, which is one node too far past the tail
+		while node is not None:  # Up to n iterations if we don't exit early
+			# Check if this node's data satisfies the given data param
+			if node.data == data:
+				# We found matching data, so exit early
+				return node
+			# Skip to the next node
+			node = node.next  # Constant time to reassign a variable
+		# We never found data satisfying quality, but have to return something
+		return None  # Constant time to return None
+
+
 	def replace(self, old_item, new_item):
 		'''
 		Replace the given old_item in this linked list with given new_item
 		using the same node, or raise ValueError if old_item is not found.
 		---
-		Best case run time: O() under what conditions? [TODO]
+		Best case run time: Ω(1) <omega>
+		if item is near the head of the list.
 		---
-		Worst case run time: O() under what conditions? [TODO]
+		Worst case run time: O(n)
+		if item is near the tail of the list or not present
+		and we need to loop through all n nodes in the list.
+		---
+		These run times are exactly the same as the called function it uses.
 		'''
-		# TODO: Find the node containing the given old_item and replace its
-		# data with new_item, without creating a new node object
-		pass
+		# used find function to find node
+		node = self.find_node(old_item)
+		# changed nodes data with new data
+		node.data = new_item
 
 	def delete(self, item):
 		'''

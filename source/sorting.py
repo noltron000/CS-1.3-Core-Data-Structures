@@ -169,7 +169,7 @@ def main():
 			print('Sorting function {!r} does not exist'.format(sort_name))
 			print('Available sorting functions:')
 			for name in globals():
-				if name.find('sort') >= 0:
+				if name.find_quality('sort') >= 0:
 					print('	{}'.format(name))
 			return
 
