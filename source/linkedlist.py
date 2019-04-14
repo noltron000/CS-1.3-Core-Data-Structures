@@ -13,7 +13,7 @@ class Node(object):
 		'''
 		Return a string representation of this node.
 		'''
-		return 'Node({!r})'.format(self.data)
+		return f'Node({self.data})'
 
 
 class LinkedList(object):
@@ -34,14 +34,14 @@ class LinkedList(object):
 		'''
 		Return a formatted string representation of this linked list.
 		'''
-		items = ['({!r})'.format(item) for item in self.items()]
-		return '[{}]'.format(' -> '.join(items))
+		items = [f'({item})' for item in self.items()]
+		return f'[{" -> ".join(items)}]'
 
 	def __repr__(self):
 		'''
 		Return a string representation of this linked list.
 		'''
-		return 'LinkedList({!r})'.format(self.items())
+		return f'LinkedList({self.items()})'
 
 	def items(self):
 		'''
@@ -99,7 +99,7 @@ class LinkedList(object):
 		'''
 		# Check if the given index is out of range and if so raise an error
 		if not (0 <= index < self.size):
-			raise ValueError('List index out of range: {}'.format(index))
+			raise ValueError(f'List index out of range: {index}')
 
 		# Index counter initialized to zero
 		index_count = 0
@@ -127,7 +127,7 @@ class LinkedList(object):
 		'''
 		# Check if the given index is out of range and if so raise an error
 		if not (0 <= index <= self.size):
-			raise ValueError('List index out of range: {}'.format(index))
+			raise ValueError(f'List index out of range: {index}')
 		# TODO: Find the node before the given index and insert item after it
 
 	def append(self, item):
@@ -252,7 +252,7 @@ class LinkedList(object):
 				self.tail = previous
 		else:
 			# Otherwise raise an error to tell the user that delete has failed
-			raise ValueError('Item not found: {}'.format(item))
+			raise ValueError(f'Item not found: {item}')
 
 
 def test_linked_list():
@@ -266,15 +266,15 @@ def test_linked_list():
 	print(ll)
 	ll.append('C')
 	print(ll)
-	print('head: {}'.format(ll.head))
-	print('tail: {}'.format(ll.tail))
-	print('size: {}'.format(ll.size))
-	print('length: {}'.format(ll.length()))
+	print(f'head: {ll.head}')
+	print(f'tail: {ll.tail}')
+	print(f'size: {ll.size}')
+	print(f'length: {ll.length()}')
 
 	print('Getting items by index:')
 	for index in range(ll.size):
 		item = ll.get_at_index(index)
-		print('get_at_index({}): {!r}'.format(index, item))
+		print(f'get_at_index({index}): {item}')
 
 	print('Deleting items:')
 	ll.delete('B')
@@ -283,10 +283,10 @@ def test_linked_list():
 	print(ll)
 	ll.delete('A')
 	print(ll)
-	print('head: {}'.format(ll.head))
-	print('tail: {}'.format(ll.tail))
-	print('size: {}'.format(ll.size))
-	print('length: {}'.format(ll.length()))
+	print(f'head: {ll.head}')
+	print(f'tail: {ll.tail}')
+	print(f'size: {ll.size}')
+	print(f'length: {ll.length()}')
 
 
 if __name__ == '__main__':
