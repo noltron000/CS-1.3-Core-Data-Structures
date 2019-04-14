@@ -131,9 +131,11 @@ class LinkedList(object):
 		Insert the given item at the given index in this linked list, or
 		raise ValueError if the given index is out of range of the list size.
 		---
-		Best case run time: O() under what conditions? [TODO]
+		Best case run time: O(1)
+		insert near head or at tail
 		---
-		Worst case run time: O() under what conditions? [TODO]
+		Worst case run time: O(n)
+		insert near tail
 		'''
 		# Check if the given index is out of range and if so raise an error
 		if not (0 <= index <= self.size):
