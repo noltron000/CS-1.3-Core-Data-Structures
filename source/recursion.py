@@ -11,31 +11,25 @@ def factorial(n):
 	return factorial_iterative(n)
 	# return factorial_recursive(n)
 
-
 def factorial_iterative(n):
-	# check if n is one of the base cases
-	if n == 0 or n == 1:
-		return 1
-
 	# initialize total
 	total = 1
 
-	# loop-multiply total by n while n > base cases
 	while n > 1:
+		# loop-multiply total by n
 		total *= n
 		# subtract multiplier (n) by one before looping again
 		n -= 1
-
-	return total
+	else:
+		return total
 
 def factorial_recursive(n):
-	# check if n is one of the base cases
-	if n == 0 or n == 1:
-		return 1
 	# check if n is an integer larger than the base cases
-	elif n > 1:
+	if n > 1:
 		# call function recursively
 		return n * factorial_recursive(n - 1)
+	else:
+		return 1
 
 
 def main():
