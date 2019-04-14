@@ -119,6 +119,9 @@ class LinkedList(object):
 			# Check if condition is met
 			if index_count == index:
 				# Will always eventually get here
+				print("\nFOUND NODE:",node)
+				print("HEAD:",self.head)
+				print("TAIL:",self.tail)
 				return node
 			# Count one for this node
 			index_count += 1
@@ -138,7 +141,21 @@ class LinkedList(object):
 		# Check if the given index is out of range and if so raise an error
 		if not (0 <= index <= self.size):
 			raise ValueError(f'List index out of range: {index}')
-		# TODO: Find the node before the given index and insert item after it
+
+		# Check if index is head or tail
+		if index == 0:
+			return self.prepend(item)
+		elif index == self.size:
+			return self.append(item)
+
+		# Get all our important nodes laid out
+		prv_node = self.get_at_index(index - 1)
+		new_node = Node(item)
+		nxt_node = prv_node.next
+
+		# Change some pointers around
+		new_node.next = nxt_node
+		prv_node.next = new_node
 
 		# Finally, update size
 		self.size += 1
@@ -254,6 +271,11 @@ class LinkedList(object):
 		'''
 		# used find function to find node
 		node = self.find_node(old_item)
+
+		# Check if the node was not found
+		if node == None:
+			raise ValueError(f'Target node was not found: {node}')
+
 		# changed nodes data with new data
 		node.data = new_item
 
@@ -263,10 +285,10 @@ class LinkedList(object):
 		Delete the given item from this linked list, or raise ValueError.
 		---
 		Best case run time: O(1)
-		item is at the head
+		item is at the head.
 		---
 		Worst case run time: O(n)
-		item is at the tail
+		item is at the tail.
 		'''
 		# Start at the head node
 		node = self.head
@@ -331,7 +353,7 @@ def test_linked_list():
 
 	print('Getting items by index:')
 	for index in range(ll.size):
-		item = ll.get_at_index(index)
+		item = ll.get_at_index(index).data
 		print(f'get_at_index({index}): {item}')
 
 	print('Deleting items:')

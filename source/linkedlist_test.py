@@ -75,13 +75,13 @@ class LinkedListTest(unittest.TestCase):
 
 	def test_get_at_index(self):
 		ll = LinkedList(['A', 'B', 'C'])
-		assert ll.get_at_index(0) == 'A'  # head item
-		assert ll.get_at_index(1) == 'B'  # middle item
-		assert ll.get_at_index(2) == 'C'  # tail item
+		assert ll.get_at_index(0).data == 'A'  # head item
+		assert ll.get_at_index(1).data == 'B'  # middle item
+		assert ll.get_at_index(2).data == 'C'  # tail item
 		with self.assertRaises(ValueError):
-			ll.get_at_index(3)  # index too high
+			ll.get_at_index(3).data  # index too high
 		with self.assertRaises(ValueError):
-			ll.get_at_index(-1)  # index too low
+			ll.get_at_index(-1).data  # index too low
 
 	def test_insert_at_index(self):
 		ll = LinkedList()
