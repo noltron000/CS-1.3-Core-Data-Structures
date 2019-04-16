@@ -119,9 +119,6 @@ class LinkedList(object):
 			# Check if condition is met
 			if index_count == index:
 				# Will always eventually get here
-				print("\nFOUND NODE:",node)
-				print("HEAD:",self.head)
-				print("TAIL:",self.tail)
 				return node
 			# Count one for this node
 			index_count += 1
@@ -134,31 +131,36 @@ class LinkedList(object):
 		Insert the given item at the given index in this linked list, or
 		raise ValueError if the given index is out of range of the list size.
 		---
-		Best case run time: O() under what conditions? [TODO]
+		Best case run time: O(1)
+		if item is near the head of the list or is not present, as in get_at_index.
 		---
-		Worst case run time: O() under what conditions? [TODO]
+		Worst case run time: O(n)
+		if item is near the tail of the list, as in get_at_index.
 		'''
 		# Check if the given index is out of range and if so raise an error
 		if not (0 <= index <= self.size):
 			raise ValueError(f'List index out of range: {index}')
 
 		# Check if index is head or tail
-		if index == 0:
-			return self.prepend(item)
+		elif index == 0:
+			self.prepend(item)
 		elif index == self.size:
-			return self.append(item)
+			self.append(item)
 
-		# Get all our important nodes laid out
-		prv_node = self.get_at_index(index - 1)
-		new_node = Node(item)
-		nxt_node = prv_node.next
+		# Index is in the center of the list
+		else:
+			# Get all our important nodes laid out
+			prv_node = self.get_at_index(index - 1)
+			new_node = Node(item)
+			nxt_node = prv_node.next
 
-		# Change some pointers around
-		new_node.next = nxt_node
-		prv_node.next = new_node
+			# Change some pointers around
+			new_node.next = nxt_node
+			prv_node.next = new_node
 
-		# Finally, update size
-		self.size += 1
+			# Finally, update size
+			self.size += 1
+
 
 	def append(self, item):
 		'''
