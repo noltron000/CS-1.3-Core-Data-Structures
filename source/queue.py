@@ -28,14 +28,14 @@ class LinkedQueue(object):
 		'''
 		Return True if this queue is empty, or False otherwise.
 		'''
-		# TODO: Check if empty
+		return self.length() == 0
 
 
 	def length(self):
 		'''
 		Return the number of items in this queue.
 		'''
-		# TODO: Count number of items
+		return self.list.size
 
 
 	def enqueue(self, item):
@@ -43,7 +43,7 @@ class LinkedQueue(object):
 		Insert the given item at the back of this queue.
 		Running time: O(???) – Why? [TODO]
 		'''
-		# TODO: Insert given item
+		self.list.prepend(item)
 
 
 	def front(self):
@@ -51,7 +51,10 @@ class LinkedQueue(object):
 		Return the item at the front of this queue without removing it,
 		or None if this queue is empty.
 		'''
-		# TODO: Return front item, if any
+		if self.list.tail == None:
+			return None
+		else:
+			return self.list.tail.data
 
 
 	def dequeue(self):
@@ -60,14 +63,16 @@ class LinkedQueue(object):
 		or raise ValueError if this queue is empty.
 		Running time: O(???) – Why? [TODO]
 		'''
-		# TODO: Remove and return front item, if any
-
+		if self.list.tail == None:
+			raise ValueError("there's nothing to pop!")
+		else: 
+			node = self.list.tail
+			self.list.delete(node.data)
+			return node.data
 
 # Implement ArrayQueue below, then change the assignment at the bottom
 # to use this Queue implementation to verify it passes all tests
 class ArrayQueue(object):
-
-
 	def __init__(self, iterable=None):
 		'''
 		Initialize this queue and enqueue the given items, if any.
@@ -90,14 +95,14 @@ class ArrayQueue(object):
 		'''
 		Return True if this queue is empty, or False otherwise.
 		'''
-		# TODO: Check if empty
+		return self.length() == 0
 
 
 	def length(self):
 		'''
 		Return the number of items in this queue.
 		'''
-		# TODO: Count number of items
+		return len(self.list)
 
 
 	def enqueue(self, item):
@@ -105,7 +110,8 @@ class ArrayQueue(object):
 		Insert the given item at the back of this queue.
 		Running time: O(???) – Why? [TODO]
 		'''
-		# TODO: Insert given item
+		# insert item at location 0, aka prepend
+		self.list.insert(0, item)
 
 
 	def front(self):
@@ -113,7 +119,10 @@ class ArrayQueue(object):
 		Return the item at the front of this queue without removing it,
 		or None if this queue is empty.
 		'''
-		# TODO: Return front item, if any
+		if len(self.list) == 0:
+			return None
+		else:
+			return self.list[len(self.list) - 1]
 
 
 	def dequeue(self):
@@ -122,7 +131,10 @@ class ArrayQueue(object):
 		or raise ValueError if this queue is empty.
 		Running time: O(???) – Why? [TODO]
 		'''
-		# TODO: Remove and return front item, if any
+		if len(self.list) == 0:
+			raise ValueError("there's nothing to pop!")
+		else:
+			return self.list.pop()
 
 
 # Implement LinkedQueue and ArrayQueue above, then change the assignment below

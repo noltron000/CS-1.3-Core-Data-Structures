@@ -6,6 +6,7 @@ from linkedlist import LinkedList
 # Implement LinkedStack below, then change the assignment at the bottom
 # to use this Stack implementation to verify it passes all tests
 class LinkedStack(object):
+
 	def __init__(self, iterable=None):
 		'''
 		Initialize this stack and push the given items, if any.
@@ -16,11 +17,13 @@ class LinkedStack(object):
 			for item in iterable:
 				self.push(item)
 
+
 	def __repr__(self):
 		'''
 		Return a string representation of this stack.
 		'''
 		return f'Stack({self.length()} items, top={self.peek()})'
+
 
 	def is_empty(self):
 		'''
@@ -28,11 +31,13 @@ class LinkedStack(object):
 		'''
 		return self.length() == 0
 
+
 	def length(self):
 		'''
 		Return the number of items in this stack.
 		'''
 		return self.list.size
+
 
 	def push(self, item):
 		'''
@@ -40,6 +45,7 @@ class LinkedStack(object):
 		Running time: O(???) – Why? [TODO]
 		'''
 		self.list.append(item)
+
 
 	def peek(self):
 		'''
@@ -50,6 +56,7 @@ class LinkedStack(object):
 			return None
 		else:
 			return self.list.tail.data
+
 
 	def pop(self):
 		'''
@@ -79,11 +86,13 @@ class ArrayStack(object):
 			for item in iterable:
 				self.push(item)
 
+
 	def __repr__(self):
 		'''
 		Return a string representation of this stack.
 		'''
 		return f'Stack({self.length()} items, top={self.peek()})'
+
 
 	def is_empty(self):
 		'''
@@ -91,11 +100,13 @@ class ArrayStack(object):
 		'''
 		return self.length() == 0
 
+
 	def length(self):
 		'''
 		Return the number of items in this stack.
 		'''
 		return len(self.list)
+
 
 	def push(self, item):
 		'''
@@ -103,6 +114,7 @@ class ArrayStack(object):
 		Running time: O(???) – Why? [TODO]
 		'''
 		self.list.append(item)
+
 
 	def peek(self):
 		'''
@@ -113,6 +125,7 @@ class ArrayStack(object):
 			return None
 		else:
 			return self.list[len(self.list) - 1]
+
 
 	def pop(self):
 		'''
