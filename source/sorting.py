@@ -2,67 +2,81 @@
 
 
 def is_sorted(items):
-	"""Return a boolean indicating whether given items are in sorted order.
+	'''
+	Return a boolean indicating whether given items are in sorted order.
 	TODO: Running time: ??? Why and under what conditions?
-	TODO: Memory usage: ??? Why and under what conditions?"""
+	TODO: Memory usage: ??? Why and under what conditions?
+	'''
 	# TODO: Check that all adjacent items are in order, return early if not
 
 
 def bubble_sort(items):
-	"""Sort given items by swapping adjacent items that are out of order, and
+	'''
+	Sort given items by swapping adjacent items that are out of order, and
 	repeating until all items are in sorted order.
 	TODO: Running time: ??? Why and under what conditions?
-	TODO: Memory usage: ??? Why and under what conditions?"""
+	TODO: Memory usage: ??? Why and under what conditions?
+	'''
 	# TODO: Repeat until all items are in sorted order
 	# TODO: Swap adjacent items that are out of order
 
 
 def selection_sort(items):
-	"""Sort given items by finding minimum item, swapping it with first
+	'''
+	Sort given items by finding minimum item, swapping it with first
 	unsorted item, and repeating until all items are in sorted order.
 	TODO: Running time: ??? Why and under what conditions?
-	TODO: Memory usage: ??? Why and under what conditions?"""
+	TODO: Memory usage: ??? Why and under what conditions?
+	'''
 	# TODO: Repeat until all items are in sorted order
 	# TODO: Find minimum item in unsorted items
 	# TODO: Swap it with first unsorted item
 
 
 def insertion_sort(items):
-	"""Sort given items by taking first unsorted item, inserting it in sorted
+	'''
+	Sort given items by taking first unsorted item, inserting it in sorted
 	order in front of items, and repeating until all items are in order.
 	TODO: Running time: ??? Why and under what conditions?
-	TODO: Memory usage: ??? Why and under what conditions?"""
+	TODO: Memory usage: ??? Why and under what conditions?
+	'''
 	# TODO: Repeat until all items are in sorted order
 	# TODO: Take first unsorted item
 	# TODO: Insert it in sorted order in front of items
 
 
 def merge(items1, items2):
-	"""Merge given lists of items, each assumed to already be in sorted order,
+	'''
+	Merge given lists of items, each assumed to already be in sorted order,
 	and return a new list containing all items in sorted order.
 	TODO: Running time: ??? Why and under what conditions?
-	TODO: Memory usage: ??? Why and under what conditions?"""
+	TODO: Memory usage: ??? Why and under what conditions?
+	'''
 	# TODO: Repeat until one list is empty
 	# TODO: Find minimum item in both lists and append it to new list
 	# TODO: Append remaining items in non-empty list to new list
 
 
 def split_sort_merge(items):
-	"""Sort given items by splitting list into two approximately equal halves,
+	'''
+	Sort given items by splitting list into two approximately equal halves,
 	sorting each with an iterative sorting algorithm, and merging results into
 	a list in sorted order.
 	TODO: Running time: ??? Why and under what conditions?
-	TODO: Memory usage: ??? Why and under what conditions?"""
+	TODO: Memory usage: ??? Why and under what conditions?
+	'''
 	# TODO: Split items list into approximately equal halves
 	# TODO: Sort each half using any other sorting algorithm
 	# TODO: Merge sorted halves into one list in sorted order
 
 
 def merge_sort(items):
-	"""Sort given items by splitting list into two approximately equal halves,
+	'''
+	Sort given items by splitting list into two approximately equal halves,
 	sorting each recursively, and merging results into a list in sorted order.
 	TODO: Running time: ??? Why and under what conditions?
-	TODO: Memory usage: ??? Why and under what conditions?"""
+	TODO: Memory usage: ??? Why and under what conditions?
+	'''
 	# TODO: Check if list is so small it's already sorted (base case)
 	# TODO: Split items list into approximately equal halves
 	# TODO: Sort each half by recursively calling merge sort
@@ -70,12 +84,14 @@ def merge_sort(items):
 
 
 def partition(items, low, high):
-	"""Return index `p` after in-place partitioning given items in range
+	'''
+	Return index `p` after in-place partitioning given items in range
 	`[low...high]` by choosing a pivot (TODO: document your method here) from
 	that range, moving pivot into index `p`, items less than pivot into range
 	`[low...p-1]`, and items greater than pivot into range `[p+1...high]`.
 	TODO: Running time: ??? Why and under what conditions?
-	TODO: Memory usage: ??? Why and under what conditions?"""
+	TODO: Memory usage: ??? Why and under what conditions?
+	'''
 	# TODO: Choose a pivot any way and document your method in docstring above
 	# TODO: Loop through all items in range [low...high]
 	# TODO: Move items less than pivot into front of range [low...p-1]
@@ -84,11 +100,13 @@ def partition(items, low, high):
 
 
 def quick_sort(items, low=None, high=None):
-	"""Sort given items in place by partitioning items in range `[low...high]`
+	'''
+	Sort given items in place by partitioning items in range `[low...high]`
 	around a pivot item and recursively sorting each remaining sublist range.
 	TODO: Best case running time: ??? Why and under what conditions?
 	TODO: Worst case running time: ??? Why and under what conditions?
-	TODO: Memory usage: ??? Why and under what conditions?"""
+	TODO: Memory usage: ??? Why and under what conditions?
+	'''
 	# TODO: Check if high and low range bounds have default values (not given)
 	# TODO: Check if list or range is so small it's already sorted (base case)
 	# TODO: Partition items in-place around a pivot and get index of pivot
@@ -96,10 +114,12 @@ def quick_sort(items, low=None, high=None):
 
 
 def counting_sort(numbers):
-	"""Sort given numbers (integers) by counting occurrences of each number,
+	'''
+	Sort given numbers (integers) by counting occurrences of each number,
 	then looping over counts and copying that many numbers into output list.
 	TODO: Running time: ??? Why and under what conditions?
-	TODO: Memory usage: ??? Why and under what conditions?"""
+	TODO: Memory usage: ??? Why and under what conditions?
+	'''
 	# TODO: Find range of given numbers (minimum and maximum integer values)
 	# TODO: Create list of counts with a slot for each number in input range
 	# TODO: Loop over given numbers and increment each number's count
@@ -108,10 +128,12 @@ def counting_sort(numbers):
 
 
 def bucket_sort(numbers, num_buckets=10):
-	"""Sort given numbers by distributing into buckets representing subranges,
+	'''
+	Sort given numbers by distributing into buckets representing subranges,
 	sorting each bucket, and combining contents of all buckets in sorted order.
 	TODO: Running time: ??? Why and under what conditions?
-	TODO: Memory usage: ??? Why and under what conditions?"""
+	TODO: Memory usage: ??? Why and under what conditions?
+	'''
 	# TODO: Find range of given numbers (minimum and maximum integer values)
 	# TODO: Create list of buckets to store numbers in subranges of input range
 	# TODO: Loop over given numbers and place each item in appropriate bucket
@@ -121,14 +143,18 @@ def bucket_sort(numbers, num_buckets=10):
 
 
 def random_ints(count=20, min=1, max=50):
-	"""Return a list of `count` integers sampled uniformly at random from
-	given range [`min`...`max`] with replacement (duplicates are allowed)."""
+	'''
+	Return a list of `count` integers sampled uniformly at random from
+	given range [`min`...`max`] with replacement (duplicates are allowed).
+	'''
 	import random
 	return [random.randint(min, max) for _ in range(count)]
 
 
 def test_sorting(sort=bubble_sort, num_items=20, max_value=50):
-	"""Test sorting algorithms with a small list of random items."""
+	'''
+	Test sorting algorithms with a small list of random items.
+	'''
 	# Create a list of items randomly sampled from range [1...max_value]
 	items = random_ints(num_items, 1, max_value)
 	print('Initial items: {!r}'.format(items))
@@ -143,7 +169,9 @@ def test_sorting(sort=bubble_sort, num_items=20, max_value=50):
 
 
 def main():
-	"""Read command-line arguments and test sorting algorithms."""
+	'''
+	Read command-line arguments and test sorting algorithms.
+	'''
 	import sys
 	args = sys.argv[1:]  # Ignore script file name
 
