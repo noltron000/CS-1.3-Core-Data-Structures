@@ -6,7 +6,6 @@ from linkedlist import LinkedList
 # Implement LinkedQueue below, then change the assignment at the bottom
 # to use this Queue implementation to verify it passes all tests
 class LinkedQueue(object):
-
 	def __init__(self, iterable=None):
 		'''
 		Initialize this queue and enqueue the given items, if any.
@@ -17,11 +16,13 @@ class LinkedQueue(object):
 			for item in iterable:
 				self.enqueue(item)
 
+
 	def __repr__(self):
 		'''
 		Return a string representation of this queue.
 		'''
 		return f'Queue({self.length()} items, front={self.front()})'
+
 
 	def is_empty(self):
 		'''
@@ -29,11 +30,13 @@ class LinkedQueue(object):
 		'''
 		# TODO: Check if empty
 
+
 	def length(self):
 		'''
 		Return the number of items in this queue.
 		'''
 		# TODO: Count number of items
+
 
 	def enqueue(self, item):
 		'''
@@ -42,12 +45,14 @@ class LinkedQueue(object):
 		'''
 		# TODO: Insert given item
 
+
 	def front(self):
 		'''
 		Return the item at the front of this queue without removing it,
 		or None if this queue is empty.
 		'''
 		# TODO: Return front item, if any
+
 
 	def dequeue(self):
 		'''
@@ -62,6 +67,7 @@ class LinkedQueue(object):
 # to use this Queue implementation to verify it passes all tests
 class ArrayQueue(object):
 
+
 	def __init__(self, iterable=None):
 		'''
 		Initialize this queue and enqueue the given items, if any.
@@ -72,11 +78,13 @@ class ArrayQueue(object):
 			for item in iterable:
 				self.enqueue(item)
 
+
 	def __repr__(self):
 		'''
 		Return a string representation of this queue.
 		'''
 		return f'Queue({self.length()} items, front={self.front()})'
+
 
 	def is_empty(self):
 		'''
@@ -84,11 +92,13 @@ class ArrayQueue(object):
 		'''
 		# TODO: Check if empty
 
+
 	def length(self):
 		'''
 		Return the number of items in this queue.
 		'''
 		# TODO: Count number of items
+
 
 	def enqueue(self, item):
 		'''
@@ -97,12 +107,14 @@ class ArrayQueue(object):
 		'''
 		# TODO: Insert given item
 
+
 	def front(self):
 		'''
 		Return the item at the front of this queue without removing it,
 		or None if this queue is empty.
 		'''
 		# TODO: Return front item, if any
+
 
 	def dequeue(self):
 		'''
