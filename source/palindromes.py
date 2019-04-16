@@ -9,7 +9,7 @@ def is_palindrome(text):
 	'''
 	# implement is_palindrome_iterative and is_palindrome_recursive below, then
 	# change this to call your implementation to verify it passes all tests
-	assert isinstance(text, str), 'input is not a string: {}'.format(text)
+	assert isinstance(text, str), f'input is not a string: {text}'
 	# return is_palindrome_iterative(text)
 	return is_palindrome_recursive(text)
 
@@ -93,9 +93,9 @@ def main():
 			is_pal = is_palindrome(arg)
 			result = 'PASS' if is_pal else 'FAIL'
 			is_str = 'is' if is_pal else 'is not'
-			print('{}: {} {} a palindrome'.format(result, repr(arg), is_str))
+			print(f'{result}: {repr(arg)} {is_str} a palindrome')
 	else:
-		print('Usage: {} string1 string2 ... stringN'.format(sys.argv[0]))
+		print(f'Usage: {sys.argv[0]} string1 string2 ... stringN')
 		print('  checks if each argument given is a palindrome')
 
 

@@ -162,7 +162,7 @@ def test_sorting(sort=bubble_sort, num_items=20, max_value=50):
 
 	# Change this sort variable to the sorting algorithm you want to test
 	# sort = bubble_sort
-	print('Sorting items with {}(items)'.format(sort.__name__))
+	print(f'Sorting items with {sort.__name__}(items)')
 	sort(items)
 	print('Sorted items:  {!r}'.format(items))
 	print('Sorted order?  {!r}'.format(is_sorted(items)))
@@ -177,10 +177,10 @@ def main():
 
 	if len(args) == 0:
 		script = sys.argv[0]  # Get script file name
-		print('Usage: {} sort num max'.format(script))
+		print(f'Usage: {script} sort num max')
 		print('Test sorting algorithm `sort` with a list of `num` integers')
 		print('	randomly sampled from the range [1...`max`] (inclusive)')
-		print('\nExample: {} bubble_sort 10 20'.format(script))
+		print(f'\nExample: {script} bubble_sort 10 20')
 		print('Initial items: [3, 15, 4, 7, 20, 6, 18, 11, 9, 7]')
 		print('Sorting items with bubble_sort(items)')
 		print('Sorted items:  [3, 4, 6, 7, 7, 9, 11, 15, 18, 20]')
@@ -198,14 +198,14 @@ def main():
 			print('Available sorting functions:')
 			for name in globals():
 				if name.find('sort') >= 0: # hope its not broken! CHANGED FROM EARLIER
-					print('	{}'.format(name))
+					print(f'	{name}')
 			return
 
 	# Get num_items and max_value, but don't explode if input is not an integer
 	try:
 		num_items = int(args[1]) if len(args) >= 2 else 20
 		max_value = int(args[2]) if len(args) >= 3 else 50
-		# print('Num items: {}, max value: {}'.format(num_items, max_value))
+		# print(f'Num items: {num_items}, max value: {max_value}')
 	except ValueError:
 		print('Integer required for `num` and `max` command-line arguments')
 		return

@@ -21,7 +21,7 @@ class LinkedQueue(object):
 		'''
 		Return a string representation of this queue.
 		'''
-		return 'Queue({} items, front={})'.format(self.length(), self.front())
+		return f'Queue({self.length()} items, front={self.front()})'
 
 	def is_empty(self):
 		'''
@@ -76,7 +76,7 @@ class ArrayQueue(object):
 		'''
 		Return a string representation of this queue.
 		'''
-		return 'Queue({} items, front={})'.format(self.length(), self.front())
+		return f'Queue({self.length()} items, front={self.front()})'
 
 	def is_empty(self):
 		'''

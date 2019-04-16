@@ -21,7 +21,7 @@ class LinkedStack(object):
 		'''
 		Return a string representation of this stack.
 		'''
-		return 'Stack({} items, top={})'.format(self.length(), self.peek())
+		return f'Stack({self.length()} items, top={self.peek()})'
 
 	def is_empty(self):
 		'''
@@ -76,7 +76,7 @@ class ArrayStack(object):
 		'''
 		Return a string representation of this stack.
 		'''
-		return 'Stack({} items, top={})'.format(self.length(), self.peek())
+		return f'Stack({self.length()} items, top={self.peek()})'
 
 	def is_empty(self):
 		'''

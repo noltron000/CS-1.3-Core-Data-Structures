@@ -61,7 +61,7 @@ class BinarySearchTree(object):
 		'''
 		Return a string representation of this binary search tree.
 		'''
-		return 'BinarySearchTree({} nodes)'.format(self.size)
+		return f'BinarySearchTree({self.size} nodes)'
 
 	def is_empty(self):
 		'''
@@ -386,31 +386,31 @@ def test_binary_search_tree():
 	# items = [2, 1, 3]
 	items = [4, 2, 6, 1, 3, 5, 7]
 	# items = [8, 4, 12, 2, 6, 10, 14, 1, 3, 5, 7, 9, 11, 13, 15]
-	print('items: {}'.format(items))
+	print(f'items: {items}')
 
 	tree = BinarySearchTree()
-	print('tree: {}'.format(tree))
-	print('root: {}'.format(tree.root))
+	print(f'tree: {tree}')
+	print(f'root: {tree.root}')
 
 	print('\nInserting items:')
 	for item in items:
 		tree.insert(item)
-		print('insert({}), size: {}'.format(item, tree.size))
-	print('root: {}'.format(tree.root))
+		print(f'insert({item}), size: {tree.size}')
+	print(f'root: {tree.root}')
 
 	print('\nSearching for items:')
 	for item in items:
 		result = tree.search(item)
-		print('search({}): {}'.format(item, result))
+		print(f'search({item}): {result}')
 	item = 123
 	result = tree.search(item)
-	print('search({}): {}'.format(item, result))
+	print(f'search({item}): {result}')
 
 	print('\nTraversing items:')
-	print('items in-order:    {}'.format(tree.items_in_order()))
-	print('items pre-order:   {}'.format(tree.items_pre_order()))
-	print('items post-order:  {}'.format(tree.items_post_order()))
-	print('items level-order: {}'.format(tree.items_level_order()))
+	print(f'items in-order:    {tree.items_in_order()}')
+	print(f'items pre-order:   {tree.items_pre_order()}')
+	print(f'items post-order:  {tree.items_post_order()}')
+	print(f'items level-order: {tree.items_level_order()}')
 
 
 if __name__ == '__main__':

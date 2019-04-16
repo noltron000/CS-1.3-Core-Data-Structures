@@ -119,7 +119,7 @@ class HashTable(object):
 			assert len(entry) == 2
 			return entry[1]
 		else:  # Not found
-			raise KeyError('Key not found: {}'.format(key))
+			raise KeyError(f'Key not found: {key}')
 
 	def set(self, key, value):
 		'''
@@ -161,7 +161,7 @@ class HashTable(object):
 			# Remove the key-value entry from the bucket
 			bucket.delete(entry)
 		else:  # Not found
-			raise KeyError('Key not found: {}'.format(key))
+			raise KeyError(f'Key not found: {key}')
 
 	def _resize(self, new_size=None):
 		'''

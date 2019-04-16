@@ -121,9 +121,9 @@ def main():
 		test_string_algorithms(text, pattern)
 	else:
 		script = sys.argv[0]
-		print('Usage: {} text pattern'.format(script))
+		print(f'Usage: {script} text pattern')
 		print('Searches for occurrences of pattern in text')
-		print("\nExample: {} 'abra cadabra' 'abra'".format(script))
+		print(f"\nExample: {script} 'abra cadabra' 'abra'")
 		print("contains('abra cadabra', 'abra') => True")
 		print("find_index('abra cadabra', 'abra') => 0")
 		print("find_all_indexes('abra cadabra', 'abra') => [0, 8]")

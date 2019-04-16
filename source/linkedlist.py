@@ -169,7 +169,8 @@ class LinkedList(object):
 		Insert the given item at the tail of this linked list.
 		---
 		Best & worst case run time: O(1)
-		Reading the tail or head is blazing fast. The other features in here are constant too.
+		Reading the tail or head is blazing fast.
+		The other features in here are constant too.
 		'''
 		# Create a new node to hold the given item
 		new_node = Node(item)
@@ -191,7 +192,8 @@ class LinkedList(object):
 		Insert the given item at the head of this linked list.
 		---
 		Best & worst case run time: O(1)
-		Reading the tail or head is blazing fast. The other features in here are constant too.
+		Reading the tail or head is blazing fast.
+		The other features in here are constant too.
 		'''
 		# Create a new node to hold the given item
 		new_node = Node(item)
