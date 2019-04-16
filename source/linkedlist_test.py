@@ -136,12 +136,12 @@ class LinkedListTest(unittest.TestCase):
 		assert ll.tail.data == 'C'  # unchanged
 		assert ll.size == 3
 
-	def test_find_quality(self):
+	def test_find(self):
 		ll = LinkedList(['A', 'B', 'C'])
-		assert ll.find_quality(lambda item: item == 'B') == 'B'
-		assert ll.find_quality(lambda item: item < 'B') == 'A'
-		assert ll.find_quality(lambda item: item > 'B') == 'C'
-		assert ll.find_quality(lambda item: item == 'X') is None
+		assert ll.find(lambda item: item < 'B').data == 'A'
+		assert ll.find(lambda item: item > 'B').data == 'C'
+		assert ll.find(lambda item: item == 'B').data == 'B'
+		assert ll.find(lambda item: item == 'X') is None
 
 	def test_replace(self):
 		ll = LinkedList(['A', 'B', 'C'])

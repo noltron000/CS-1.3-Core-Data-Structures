@@ -65,7 +65,7 @@ class BinarySearchTree(object):
 		TODO: Best case running time: ??? under what conditions?
 		TODO: Worst case running time: ??? under what conditions?"""
 		# Find a node with the given item, if any
-		node = self._find_node_recursive(item, self.root)
+		node = self._find_recursive(item, self.root)
 		# Return True if a node was found, or False
 		return node is not None
 
@@ -75,7 +75,7 @@ class BinarySearchTree(object):
 		TODO: Best case running time: ??? under what conditions?
 		TODO: Worst case running time: ??? under what conditions?"""
 		# Find a node with the given item, if any
-		node = self._find_node_recursive(item, self.root)
+		node = self._find_recursive(item, self.root)
 		# TODO: Return the node's data if found, or None
 		return node.data if ... else None
 
@@ -103,7 +103,7 @@ class BinarySearchTree(object):
 		# TODO: Increase the tree size
 		self.size ...
 
-	def _find_node_iterative(self, item):
+	def _find_iterative(self, item):
 		"""Return the node containing the given item in this binary search tree,
 		or None if the given item is not found. Search is performed iteratively
 		starting from the root node.
@@ -128,7 +128,7 @@ class BinarySearchTree(object):
 		# Not found
 		return None
 
-	def _find_node_recursive(self, item, node):
+	def _find_recursive(self, item, node):
 		"""Return the node containing the given item in this binary search tree,
 		or None if the given item is not found. Search is performed recursively
 		starting from the given node (give the root node to start recursion).

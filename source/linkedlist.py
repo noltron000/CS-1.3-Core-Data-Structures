@@ -22,9 +22,9 @@ class LinkedList(object):
 		'''
 		Initialize this linked list and append the given items, if any.
 		'''
-		self.head = None  # First node
-		self.tail = None  # Last node
-		self.size = 0  # Number of nodes
+		self.head = None # First node
+		self.tail = None # Last node
+		self.size = 0 # Number of nodes
 		# Append the given items
 		if iterable is not None:
 			for item in iterable:
@@ -54,17 +54,17 @@ class LinkedList(object):
 		for n items in the list because we always need to loop through all n nodes.
 		'''
 		# Create an empty list of results
-		result = []  # Constant time to create a new list
+		result = [] # Constant time to create a new list
 		# Start at the head node
-		node = self.head  # Constant time to assign a variable reference
+		node = self.head # Constant time to assign a variable reference
 		# Loop until the node is None, which is one node too far past the tail
-		while node is not None:  # Always n iterations because no early exit
+		while node is not None: # Always n iterations because no early exit
 			# Append this node's data to the results list
-			result.append(node.data)  # Constant time to append to a list
+			result.append(node.data) # Constant time to append to a list
 			# Skip to the next node
-			node = node.next  # Constant time to reassign a variable
+			node = node.next # Constant time to reassign a variable
 		# Now result contains the data from all nodes
-		return result  # Constant time to return a list
+		return result # Constant time to return a list
 
 
 	def is_empty(self):
@@ -206,7 +206,7 @@ class LinkedList(object):
 		self.size += 1
 
 
-	def find_quality(self, quality):
+	def find(self, quality):
 		'''
 		Return an item's data from this linked list satisfying the given quality function.
 		---
@@ -218,43 +218,17 @@ class LinkedList(object):
 		and we need to loop through all n nodes in the list.
 		'''
 		# Start at the head node
-		node = self.head  # Constant time to assign a variable reference
+		node = self.head # Constant time to assign a variable reference
 		# Loop until the node is None, which is one node too far past the tail
-		while node is not None:  # Up to n iterations if we don't exit early
+		while node is not None: # Up to n iterations if we don't exit early
 			# Check if this node's data satisfies the given quality function
-			if quality(node.data):  # Constant time to call quality function
+			if quality(node.data): # Constant time to call quality function
 				# We found data satisfying the quality function, so exit early
-				return node.data  # Constant time to return data
+				return node # Constant time to return node
 			# Skip to the next node
-			node = node.next  # Constant time to reassign a variable
+			node = node.next # Constant time to reassign a variable
 		# We never found data satisfying quality, but have to return something
-		return None  # Constant time to return None
-
-
-	def find_node(self, data):
-		'''
-		This function was copied from above and modified.
-		Return a node whose data matches the given data parameter.
-		---
-		Best case run time: Ω(1) <omega>
-		if item is near the head of the list.
-		---
-		Worst case run time: O(n)
-		if item is near the tail of the list or not present
-		and we need to loop through all n nodes in the list.
-		'''
-		# Start at the head node
-		node = self.head  # Constant time to assign a variable reference
-		# Loop until the node is None, which is one node too far past the tail
-		while node is not None:  # Up to n iterations if we don't exit early
-			# Check if this node's data satisfies the given data param
-			if node.data == data:
-				# We found matching data, so exit early
-				return node
-			# Skip to the next node
-			node = node.next  # Constant time to reassign a variable
-		# We never found data satisfying quality, but have to return something
-		return None  # Constant time to return None
+		return None # Constant time to return None
 
 
 	def replace(self, old_item, new_item):
@@ -272,8 +246,7 @@ class LinkedList(object):
 		These run times are exactly the same as the called function it uses.
 		'''
 		# used find function to find node
-		node = self.find_node(old_item)
-
+		node = self.find(lambda item: item == old_item)
 		# Check if the node was not found
 		if node == None:
 			raise ValueError(f'Target node was not found: {node}')
