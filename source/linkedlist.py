@@ -115,7 +115,7 @@ class LinkedList(object):
 		# Start at the head node
 		node = self.head
 		# Loop until the node is None or index item is found
-		while True:
+		while (0 <= index_count < self.size): # note that this will never be false
 			# Check if condition is met
 			if index_count == index:
 				# Will always eventually get here
@@ -124,6 +124,8 @@ class LinkedList(object):
 			index_count += 1
 			# Skip to the next node
 			node = node.next
+		else:
+			raise ValueError('While loop broke unexpectedly')
 
 
 	def insert_at_index(self, index, item):
@@ -151,8 +153,8 @@ class LinkedList(object):
 		else:
 			# Get all our important nodes laid out
 			prv_node = self.get_at_index(index - 1)
-			new_node = Node(item)
 			nxt_node = prv_node.next
+			new_node = Node(item)
 
 			# Change some pointers around
 			new_node.next = nxt_node
@@ -247,6 +249,7 @@ class LinkedList(object):
 		'''
 		# used find function to find node
 		node = self.find(lambda item: item == old_item)
+		
 		# Check if the node was not found
 		if node == None:
 			raise ValueError(f'Target node was not found: {node}')
