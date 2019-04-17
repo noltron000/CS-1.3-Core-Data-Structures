@@ -42,15 +42,15 @@ class LinkedStack(object):
 	def push(self, item):
 		'''
 		Insert the given item on the top of this stack.
-		Running time: O(???) – Why? [TODO]
+		Running time: O(1) – append just uses the HEAD pointer.
 		'''
 		self.list.append(item)
 
 
 	def peek(self):
 		'''
-		Return the item on the top of this stack without removing it,
-		or None if this stack is empty.
+		Return the item on the top of this stack,
+		w/out removing it, or None if this stack is empty.
 		'''
 		if self.list.tail == None:
 			return None
@@ -62,12 +62,16 @@ class LinkedStack(object):
 		'''
 		Remove and return the item on the top of this stack,
 		or raise ValueError if this stack is empty.
-		Running time: O(???) – Why? [TODO]
+		Running time: O(n) - must change TAIL by iterating
+		through the entire list, and pointing to it.
 		'''
 		if self.list.tail == None:
 			raise ValueError("there's nothing to pop!")
 		else: 
 			node = self.list.tail
+			# there's a case with repeated data where
+			# this implementation could be concerning
+			# it'd be better to remove from an index
 			self.list.delete(node.data)
 			return node.data
 
@@ -111,7 +115,7 @@ class ArrayStack(object):
 	def push(self, item):
 		'''
 		Insert the given item on the top of this stack.
-		Running time: O(???) – Why? [TODO]
+		Running time: O(1) - append is constant time
 		'''
 		self.list.append(item)
 
@@ -131,7 +135,7 @@ class ArrayStack(object):
 		'''
 		Remove and return the item on the top of this stack,
 		or raise ValueError if this stack is empty.
-		Running time: O(???) – Why? [TODO]
+		Running time: O(1) - the array doesn't shift at all.
 		'''
 		if len(self.list) == 0:
 			raise ValueError("there's nothing to pop!")

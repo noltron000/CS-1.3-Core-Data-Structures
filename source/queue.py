@@ -41,7 +41,9 @@ class LinkedQueue(object):
 	def enqueue(self, item):
 		'''
 		Insert the given item at the back of this queue.
-		Running time: O(???) – Why? [TODO]
+		Running time: O(1) – uses HEAD pointer
+		Also, linkedlists do not track their index number,
+		 so the indices don't need to be updated.
 		'''
 		self.list.prepend(item)
 
@@ -61,7 +63,14 @@ class LinkedQueue(object):
 		'''
 		Remove and return the item at the front of this queue,
 		or raise ValueError if this queue is empty.
-		Running time: O(???) – Why? [TODO]
+		---
+		Best case run time: O(1)
+		item is at the head.
+		---
+		Worst case run time: O(n)
+		item is at the tail.
+		---
+		This is the same as the delete method.
 		'''
 		if self.list.tail == None:
 			raise ValueError("there's nothing to pop!")
@@ -108,7 +117,7 @@ class ArrayQueue(object):
 	def enqueue(self, item):
 		'''
 		Insert the given item at the back of this queue.
-		Running time: O(???) – Why? [TODO]
+		Running time: O(n) - Must shift every index down by one.
 		'''
 		# insert item at location 0, aka prepend
 		self.list.insert(0, item)
@@ -116,8 +125,8 @@ class ArrayQueue(object):
 
 	def front(self):
 		'''
-		Return the item at the front of this queue without removing it,
-		or None if this queue is empty.
+		Return the item at the front of the queue,
+		w/out removing it, or None if this queue is empty.
 		'''
 		if len(self.list) == 0:
 			return None
@@ -129,7 +138,7 @@ class ArrayQueue(object):
 		'''
 		Remove and return the item at the front of this queue,
 		or raise ValueError if this queue is empty.
-		Running time: O(???) – Why? [TODO]
+		Running time: O(1)
 		'''
 		if len(self.list) == 0:
 			raise ValueError("there's nothing to pop!")
