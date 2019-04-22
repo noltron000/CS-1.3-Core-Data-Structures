@@ -11,10 +11,12 @@ class HashTable(object):
 		'''
 		self.buckets = [LinkedList() for i in range(init_size)]
 		self.size = 0  # Number of key-value entries
+		
+		self.load_threshold = 0.75 # load factor threshold
 
 	def __str__(self):
 		'''
-		Return a formatted string representation of this hash table.
+		Return a string representation of this hash table.
 		'''
 		items = ['{!r}: {!r}'.format(key, val) for key, val in self.items()]
 		return '{' + ', '.join(items) + '}'
@@ -27,22 +29,26 @@ class HashTable(object):
 
 	def _bucket_index(self, key):
 		'''
-		Return the bucket index where the given key would be stored.
+		Return the bucket index for the given key.
 		'''
 		return hash(key) % len(self.buckets)
 
 	def load_factor(self):
 		'''
-		Return the load factor, the ratio of number of entries to buckets.
-		Best and worst case running time: ??? under what conditions? [TODO]
+		Return the load factor.
+		(load factor: the ratio of number of entries to buckets)
+		---
+		Best and worst case running time:
+		O(1) -> Division is a constant time operation
 		'''
-		# TODO: Calculate load factor
-		# return ...
+		return self.size / len(self.buckets)
 
 	def keys(self):
 		'''
 		Return a list of all keys in this hash table.
-		Best and worst case running time: ??? under what conditions? [TODO]
+		---
+		Best and worst case running time:
+		O(Items) -> this will run once per item (not bucket)
 		'''
 		# Collect all keys in each of the buckets
 		all_keys = []
@@ -54,7 +60,9 @@ class HashTable(object):
 	def values(self):
 		'''
 		Return a list of all values in this hash table.
-		Best and worst case running time: ??? under what conditions? [TODO]
+		---
+		Best and worst case running time:
+		O(Items) -> this will run once per item (not bucket)
 		'''
 		# Collect all values in each of the buckets
 		all_values = []
@@ -65,8 +73,12 @@ class HashTable(object):
 
 	def items(self):
 		'''
-		Return a list of all entries (key-value pairs) in this hash table.
-		Best and worst case running time: ??? under what conditions? [TODO]
+		Return a list of all entries in this hash table.
+		(entries are key-value pairs) 
+		---
+		Best and worst case running time:
+		O(Items) -> this will run once per item (not bucket)
+		.extend runs O(n) time
 		'''
 		# Collect all pairs of key-value entries in each of the buckets
 		all_items = []
@@ -77,7 +89,8 @@ class HashTable(object):
 	def length(self):
 		'''
 		Return the number of key-value entries by traversing its buckets.
-		Best and worst case running time: ??? under what conditions? [TODO]
+		---
+		Best and worst case running time: ??? under what conditions? [NOTE]
 		'''
 		# Count number of key-value entries in each of the buckets
 		item_count = 0
@@ -90,30 +103,35 @@ class HashTable(object):
 	def contains(self, key):
 		'''
 		Return True if this hash table contains the given key, or False.
-		Best case running time: ??? under what conditions? [TODO]
-		Worst case running time: ??? under what conditions? [TODO]
+		---
+		Best case running time: ??? under what conditions? [NOTE]
+		---
+		Worst case running time: ??? under what conditions? [NOTE]
 		'''
 		# Find the bucket the given key belongs in
 		index = self._bucket_index(key)
 		bucket = self.buckets[index]
 		# Check if an entry with the given key exists in that bucket
 		node = bucket.find(lambda key_value: key_value[0] == key)
-		entry = node.data
-		return entry is not None  # True or False
+		return node is not None  # True or False
 
 	def get(self, key):
 		'''
 		Return the value associated with the given key, or raise KeyError.
-		Best case running time: ??? under what conditions? [TODO]
-		Worst case running time: ??? under what conditions? [TODO]
+		---
+		Best case running time: ??? under what conditions? [NOTE]
+		---
+		Worst case running time: ??? under what conditions? [NOTE]
 		'''
 		# Find the bucket the given key belongs in
 		index = self._bucket_index(key)
 		bucket = self.buckets[index]
 		# Find the entry with the given key in that bucket, if one exists
 		node = bucket.find(lambda key_value: key_value[0] == key)
-		entry = node.data
-		if entry is not None:  # Found
+		
+		if node is not None: # Found
+			# Get entry from node
+			entry = node.data
 			# Return the given key's associated value
 			assert isinstance(entry, tuple)
 			assert len(entry) == 2
@@ -124,40 +142,51 @@ class HashTable(object):
 	def set(self, key, value):
 		'''
 		Insert or update the given key with its associated value.
-		Best case running time: ??? under what conditions? [TODO]
-		Worst case running time: ??? under what conditions? [TODO]
+		---
+		Best case running time: ??? under what conditions? [NOTE]
+		---
+		Worst case running time: ??? under what conditions? [NOTE]
 		'''
 		# Find the bucket the given key belongs in
 		index = self._bucket_index(key)
 		bucket = self.buckets[index]
-		# Find the entry with the given key in that bucket, if one exists
-		# Check if an entry with the given key exists in that bucket
+
+		# Find the node with the given key in that bucket, if one exists
+		# Check if an node with the given key exists in that bucket
 		node = bucket.find(lambda key_value: key_value[0] == key)
-		entry = node.data
-		if entry is not None:  # Found
+		
+		if node is not None: # Found
+			# Get entry from node
+			entry = node.data
 			# In this case, the given key's value is being updated
 			# Remove the old key-value entry from the bucket first
 			bucket.delete(entry)
-		# Insert the new key-value entry into the bucket in either case
+		# Insert the new key-value entry into bucket either way
 		bucket.append((key, value))
-		# TODO: Check if the load factor exceeds a threshold such as 0.75
-		# ...
-		# TODO: If so, automatically resize to reduce the load factor
-		# ...
+		
+		# Check if the load factor exceeds a threshold
+		if self.load_factor() > self.load_threshold:
+			# Automatically resize to reduce the load factor
+			self._resize(self)
 
 	def delete(self, key):
 		'''
 		Delete the given key and its associated value, or raise KeyError.
-		Best case running time: ??? under what conditions? [TODO]
-		Worst case running time: ??? under what conditions? [TODO]
+		---
+		Best case running time: ??? under what conditions? [NOTE]
+		---
+		Worst case running time: ??? under what conditions? [NOTE]
 		'''
 		# Find the bucket the given key belongs in
 		index = self._bucket_index(key)
 		bucket = self.buckets[index]
+
 		# Find the entry with the given key in that bucket, if one exists
 		node = bucket.find(lambda key_value: key_value[0] == key)
-		entry = node.data
-		if entry is not None:  # Found
+
+		if node is not None: # Found
+			# Get entry from node
+			entry = node.data
 			# Remove the key-value entry from the bucket
 			bucket.delete(entry)
 		else:  # Not found
@@ -168,19 +197,36 @@ class HashTable(object):
 		Resize this hash table's buckets and rehash all key-value entries.
 		Should be called automatically when load factor exceeds a threshold
 		such as 0.75 after an insertion (when set is called with a new key).
-		Best and worst case running time: ??? under what conditions? [TODO]
-		Best and worst case space usage: ??? what uses this memory? [TODO]
+		---
+		Best and worst case running time: ??? under what conditions? [NOTE]
+		---
+		Best and worst case space usage: ??? what uses this memory? [NOTE]
 		'''
 		# If unspecified, choose new size dynamically based on current size
 		if new_size is None:
 			new_size = len(self.buckets) * 2  # Double size
+
 		# Option to reduce size if buckets are sparsely filled (low load factor)
 		elif new_size is 0:
 			new_size = len(self.buckets) / 2  # Half size
-		# TODO: Get a list to temporarily hold all current key-value entries
-		# ...
-		# TODO: Create a new list of new_size total empty linked list buckets
-		# ...
+		
+		# Get a list to temporarily hold all current key-value entries
+		temp_entries = self.items()
+		temp_buckets = []
+		
+		# Create a new list of new_size total empty linked list buckets
+		for _ in range(new_size):
+			temp_buckets += LinkedList()
+
+		# Replace current buckets
+		self.buckets = temp_buckets
+		self.size = 0
+
+		for entry in temp_entries:
+			key = entry[0]
+			val = entry[1]
+			self.set(key, val)
+
 		# TODO: Insert each key-value entry into the new list of buckets,
 		# which will rehash them into a new bucket index based on the new size
 		# ...
