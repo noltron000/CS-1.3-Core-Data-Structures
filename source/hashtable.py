@@ -126,7 +126,7 @@ class HashTable(object):
 		# Find the bucket the given key belongs in
 		index = self._bucket_index(key)
 		bucket = self.buckets[index]
-		# Find the entry with the given key in that bucket, if one exists
+		# Find the node with the given key in that bucket, if one exists
 		node = bucket.find(lambda key_value: key_value[0] == key)
 		
 		if node is not None: # Found
@@ -151,8 +151,8 @@ class HashTable(object):
 		index = self._bucket_index(key)
 		bucket = self.buckets[index]
 
-		# Find the node with the given key in that bucket, if one exists
 		# Check if an node with the given key exists in that bucket
+		# Find the node with the given key in that bucket, if one exists
 		node = bucket.find(lambda key_value: key_value[0] == key)
 		
 		if node is not None: # Found
@@ -161,13 +161,16 @@ class HashTable(object):
 			# In this case, the given key's value is being updated
 			# Remove the old key-value entry from the bucket first
 			bucket.delete(entry)
+		else:
+			# Since node doesnt exist, we create a new one
+			self.size += 1
 		# Insert the new key-value entry into bucket either way
 		bucket.append((key, value))
 		
 		# Check if the load factor exceeds a threshold
 		if self.load_factor() > self.load_threshold:
 			# Automatically resize to reduce the load factor
-			self._resize(self)
+			self._resize()
 
 	def delete(self, key):
 		'''
@@ -181,7 +184,7 @@ class HashTable(object):
 		index = self._bucket_index(key)
 		bucket = self.buckets[index]
 
-		# Find the entry with the given key in that bucket, if one exists
+		# Find the node with the given key in that bucket, if one exists
 		node = bucket.find(lambda key_value: key_value[0] == key)
 
 		if node is not None: # Found
@@ -189,6 +192,8 @@ class HashTable(object):
 			entry = node.data
 			# Remove the key-value entry from the bucket
 			bucket.delete(entry)
+			# Reduce self.size
+			self.size -= 1
 		else:  # Not found
 			raise KeyError(f'Key not found: {key}')
 
@@ -210,13 +215,16 @@ class HashTable(object):
 		elif new_size is 0:
 			new_size = len(self.buckets) / 2  # Half size
 		
+		# ensure new_size is an int
+		new_size = int(new_size)
+		
 		# Get a list to temporarily hold all current key-value entries
 		temp_entries = self.items()
 		temp_buckets = []
 		
 		# Create a new list of new_size total empty linked list buckets
 		for _ in range(new_size):
-			temp_buckets += LinkedList()
+			temp_buckets.append(LinkedList())
 
 		# Replace current buckets
 		self.buckets = temp_buckets
