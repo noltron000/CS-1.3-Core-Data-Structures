@@ -4,15 +4,15 @@ from linkedlist import LinkedList
 
 
 class HashTable(object):
-
 	def __init__(self, init_size=8):
 		'''
 		Initialize this hash table with the given initial size.
+		O(b) time where b is init_size
 		'''
 		self.buckets = [LinkedList() for i in range(init_size)]
 		self.size = 0  # Number of key-value entries
-		
 		self.load_threshold = 0.75 # load factor threshold
+
 
 	def __str__(self):
 		'''
@@ -21,11 +21,13 @@ class HashTable(object):
 		items = ['{!r}: {!r}'.format(key, val) for key, val in self.items()]
 		return '{' + ', '.join(items) + '}'
 
+
 	def __repr__(self):
 		'''
 		Return a string representation of this hash table.
 		'''
 		return 'HashTable({!r})'.format(self.items())
+
 
 	def _bucket_index(self, key):
 		'''
@@ -33,15 +35,18 @@ class HashTable(object):
 		'''
 		return hash(key) % len(self.buckets)
 
+
 	def load_factor(self):
 		'''
 		Return the load factor.
 		(load factor: the ratio of number of entries to buckets)
 		---
 		Best and worst case running time:
-		O(1) -> Division is a constant time operation
+		O(n) -> Division is a constant time operation
+		length of self.buckets is O(n) though!
 		'''
 		return self.size / len(self.buckets)
+
 
 	def keys(self):
 		'''
@@ -57,6 +62,7 @@ class HashTable(object):
 				all_keys.append(key)
 		return all_keys
 
+
 	def values(self):
 		'''
 		Return a list of all values in this hash table.
@@ -71,20 +77,21 @@ class HashTable(object):
 				all_values.append(value)
 		return all_values
 
+
 	def items(self):
 		'''
 		Return a list of all entries in this hash table.
-		(entries are key-value pairs) 
+		(entries are key-value pairs)
 		---
 		Best and worst case running time:
-		O(Items) -> this will run once per item (not bucket)
-		.extend runs O(n) time
+		O(n) where n is total number of entries
 		'''
 		# Collect all pairs of key-value entries in each of the buckets
 		all_items = []
 		for bucket in self.buckets:
 			all_items.extend(bucket.items())
 		return all_items
+
 
 	def length(self):
 		'''
@@ -99,6 +106,7 @@ class HashTable(object):
 		return item_count
 		# Equivalent to this list comprehension:
 		return sum(bucket.length() for bucket in self.buckets)
+
 
 	def contains(self, key):
 		'''
@@ -115,6 +123,7 @@ class HashTable(object):
 		node = bucket.find(lambda key_value: key_value[0] == key)
 		return node is not None  # True or False
 
+
 	def get(self, key):
 		'''
 		Return the value associated with the given key, or raise KeyError.
@@ -128,7 +137,7 @@ class HashTable(object):
 		bucket = self.buckets[index]
 		# Find the node with the given key in that bucket, if one exists
 		node = bucket.find(lambda key_value: key_value[0] == key)
-		
+
 		if node is not None: # Found
 			# Get entry from node
 			entry = node.data
@@ -138,6 +147,7 @@ class HashTable(object):
 			return entry[1]
 		else:  # Not found
 			raise KeyError(f'Key not found: {key}')
+
 
 	def set(self, key, value):
 		'''
@@ -154,7 +164,7 @@ class HashTable(object):
 		# Check if an node with the given key exists in that bucket
 		# Find the node with the given key in that bucket, if one exists
 		node = bucket.find(lambda key_value: key_value[0] == key)
-		
+
 		if node is not None: # Found
 			# Get entry from node
 			entry = node.data
@@ -166,11 +176,12 @@ class HashTable(object):
 			self.size += 1
 		# Insert the new key-value entry into bucket either way
 		bucket.append((key, value))
-		
+
 		# Check if the load factor exceeds a threshold
 		if self.load_factor() > self.load_threshold:
 			# Automatically resize to reduce the load factor
 			self._resize()
+
 
 	def delete(self, key):
 		'''
@@ -197,6 +208,7 @@ class HashTable(object):
 		else:  # Not found
 			raise KeyError(f'Key not found: {key}')
 
+
 	def _resize(self, new_size=None):
 		'''
 		Resize this hash table's buckets and rehash all key-value entries.
@@ -210,34 +222,20 @@ class HashTable(object):
 		# If unspecified, choose new size dynamically based on current size
 		if new_size is None:
 			new_size = len(self.buckets) * 2  # Double size
-
 		# Option to reduce size if buckets are sparsely filled (low load factor)
 		elif new_size is 0:
 			new_size = len(self.buckets) / 2  # Half size
-		
-		# ensure new_size is an int
-		new_size = int(new_size)
-		
+
 		# Get a list to temporarily hold all current key-value entries
 		temp_entries = self.items()
-		temp_buckets = []
-		
-		# Create a new list of new_size total empty linked list buckets
-		for _ in range(new_size):
-			temp_buckets.append(LinkedList())
 
-		# Replace current buckets
-		self.buckets = temp_buckets
-		self.size = 0
+		# Re-Initialize using an empty array with new_size
+		self.__init__(new_size)
 
 		for entry in temp_entries:
 			key = entry[0]
 			val = entry[1]
 			self.set(key, val)
-
-		# TODO: Insert each key-value entry into the new list of buckets,
-		# which will rehash them into a new bucket index based on the new size
-		# ...
 
 
 def test_hash_table():
