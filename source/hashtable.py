@@ -149,7 +149,7 @@ class HashTable(object):
 			raise KeyError(f'Key not found: {key}')
 
 
-	def set(self, key, value):
+	def set(self, key, value=None):
 		'''
 		Insert or update the given key with its associated value.
 		---

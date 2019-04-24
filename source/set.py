@@ -56,14 +56,15 @@ class Set(object):
 			self.size -= 1
 
 
-	def is_superset(self, other):
+	def is_subset(self, other):
 		'''
 		checks if every item in other exists in self
 		returns true or false
+		[NOTE] this is a special case where the order matters
 		'''
-		for other_item in other.table:
+		for item in self.table.keys():
 			# check in case the item does not exist
-			if not self.contains(other_item):
+			if not other.contains(item):
 				return False
 		# for loop has ended successfully
 		return True
@@ -86,8 +87,8 @@ class Set(object):
 		┃         ┃
 		┗━━━━━━━━━┛ = ∅
 		'''
-		# [FIXME] COMPLETE
-		pass
+		# [FIXME] COMPLETE & ADD COMMENTS
+		return Set()
 
 
 	def self(self, other=None):
@@ -106,13 +107,13 @@ class Set(object):
 		┃         ┃
 		┗━━━━━━━━━┛ = self
 		'''
-		# self.table already records itself, return it
-		return self.table
+		# [FIXME] COMPLETE & ADD COMMENTS
+		return self
 
 	def union(self, other):
 		'''
 		THE UNION OF TWO SETS
-		contain all items appearing in either set
+		contains all items appearing in either set
 		┏━━━━━━━━━┓
 		┃         ┃
 		┃ ┌───┐   ┃
@@ -125,14 +126,20 @@ class Set(object):
 		┃         ┃
 		┗━━━━━━━━━┛ = self ∪ other
 		'''
-		# [FIXME] COMPLETE
-		pass
+		# [FIXME] COMPLETE & ADD COMMENTS
+		output = Set()
+
+		for item in self.table.keys():
+			output.add(item)
+		for item in other.table.keys():
+			output.add(item)
+		return output
 
 
 	def intersection(self, other):
 		'''
 		THE INTERSECTION OF TWO SETS
-		contain only items appearing in both sets
+		contains only items appearing in both sets
 		┏━━━━━━━━━┓
 		┃         ┃
 		┃ ┌───┐   ┃
@@ -145,15 +152,19 @@ class Set(object):
 		┃         ┃
 		┗━━━━━━━━━┛ = self ∩ other
 		'''
-		# [FIXME] COMPLETE
-		pass
-
+		# [FIXME] COMPLETE & ADD COMMENTS
+		output = Set()
+		for item in self.table.keys():
+			# check if the item exists
+			if other.contains(item):
+				output.add(item)
+		return output
 
 	def complement(self, other):
 		'''
 		THE RELATIVE COMPLEMENT OF TWO SETS
-		contain items from the 1st set that arent in the 2nd
-		[NOTE] this is the only case where the order matters
+		contains items from the 1st set that arent in the 2nd
+		[NOTE] this is a special case where the order matters
 		┏━━━━━━━━━┓
 		┃         ┃
 		┃ ┌───┐   ┃
@@ -166,14 +177,20 @@ class Set(object):
 		┃         ┃
 		┗━━━━━━━━━┛ = self \ other
 		'''
-		# [FIXME] COMPLETE
-		pass
+		# [FIXME] COMPLETE & ADD COMMENTS
+		output = Set()
+		for item in self.table.keys():
+			# check if the item exists
+			if not other.contains(item):
+				output.add(item)
+		return output
+
 
 
 	def difference(self, other):
 		'''
 		THE SYMMETRIC DIFFERENCE OF TWO SETS
-		contain items appearing in either set, but not both sets
+		contains items appearing in either set, but not both
 		┏━━━━━━━━━┓
 		┃         ┃
 		┃ ┌───┐   ┃
@@ -186,5 +203,32 @@ class Set(object):
 		┃         ┃
 		┗━━━━━━━━━┛ = self ∪ other - self ∩ other
 		'''
-		# [FIXME] COMPLETE
-		pass
+		# [FIXME] COMPLETE & ADD COMMENTS
+		output = Set()
+		for item in self.complement(other).table.keys():
+			output.add(item)
+		for item in other.complement(self).table.keys():
+			output.add(item)
+		return output
+
+def mini_test():
+	my_set = Set([1,2,3])
+	your_set = Set([2,3,4])
+
+	print(my_set.table)
+	print(your_set.table)
+
+	new_set = my_set.union(your_set)
+	print(new_set.table)
+
+	new_set = my_set.intersection(your_set)
+	print(new_set.table)
+
+	new_set = my_set.complement(your_set)
+	print(new_set.table)
+
+	new_set = my_set.difference(your_set)
+	print(new_set.table)
+
+if __name__ == '__main__':
+	mini_test()
