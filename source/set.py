@@ -1,5 +1,6 @@
 #!python
 
+
 from hashtable import HashTable
 
 
@@ -8,42 +9,64 @@ class Set(object):
 		'''
 		[TODO] DOCSTRING
 		'''
-		# [FIXME] COMPLETE
-		this.size = 0
-		this.table = HashTable()
+		self.size = 0
+		# self.table param should only be used where necessary;
+		# enables hotswapping HashTable with another structure
+		self.table = HashTable()
 
+		# add data, if it is given
+		if data:
+			for item in data:
+				self.add(item)
 
 
 	def contains(self, item):
 		'''
-		[TODO] DOCSTRING
+		verify whether an item exists in our set
+		returns true or false
 		'''
-		# [FIXME] COMPLETE
-		pass
+		# table.contains hashes a key and looks for it
+		# in this case, our key is also the value we have
+		return self.table.contains(item) # our item is the key
 
 
 	def add(self, item):
 		'''
-		[TODO] DOCSTRING
+		adds an item to our set
+		unless it already exists
 		'''
-		# [FIXME] COMPLETE
-		pass
+		# a set is a collection of well defined, unique objects
+		# therefore, a set cannot hold duplicate items
+		if not self.contains(item):
+			# usually a hashtable has key-value pairs
+			# notice how there is no value in our table.set()
+			# table.set() assumes the value is none, if not given
+			self.table.set(item) # item is a key, not a value
+			self.size += 1
 
 
 	def remove(self, item):
 		'''
-		[TODO] DOCSTRING
+		removes an item from our set
+		unless it does not exist
 		'''
-		# [FIXME] COMPLETE
-		pass
+		# the set must contain the item before it can be removed
+		if self.contains(item):
+			self.table.delete(item)
+			self.size -= 1
 
 
-	def is_subset(self, other):
+	def is_superset(self, other):
 		'''
-		[TODO] DOCSTRING
+		checks if every item in other exists in self
+		returns true or false
 		'''
-		# [FIXME] COMPLETE
-		pass
+		for other_item in other.table:
+			# check in case the item does not exist
+			if not self.contains(other_item):
+				return False
+		# for loop has ended successfully
+		return True
 
 
 	def empty(self, other=None):
@@ -83,9 +106,8 @@ class Set(object):
 		┃         ┃
 		┗━━━━━━━━━┛ = self
 		'''
-		# [FIXME] COMPLETE
-		pass
-
+		# self.table already records itself, return it
+		return self.table
 
 	def union(self, other):
 		'''

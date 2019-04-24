@@ -97,7 +97,7 @@ class HashTable(object):
 		'''
 		Return the number of key-value entries by traversing its buckets.
 		---
-		Best and worst case running time: ??? under what conditions? [NOTE]
+		Best and worst case running time: ??? under what conditions? [TODO]
 		'''
 		# Count number of key-value entries in each of the buckets
 		item_count = 0
@@ -112,9 +112,9 @@ class HashTable(object):
 		'''
 		Return True if this hash table contains the given key, or False.
 		---
-		Best case running time: ??? under what conditions? [NOTE]
+		Best case running time: ??? under what conditions? [TODO]
 		---
-		Worst case running time: ??? under what conditions? [NOTE]
+		Worst case running time: ??? under what conditions? [TODO]
 		'''
 		# Find the bucket the given key belongs in
 		index = self._bucket_index(key)
@@ -128,9 +128,9 @@ class HashTable(object):
 		'''
 		Return the value associated with the given key, or raise KeyError.
 		---
-		Best case running time: ??? under what conditions? [NOTE]
+		Best case running time: ??? under what conditions? [TODO]
 		---
-		Worst case running time: ??? under what conditions? [NOTE]
+		Worst case running time: ??? under what conditions? [TODO]
 		'''
 		# Find the bucket the given key belongs in
 		index = self._bucket_index(key)
@@ -153,9 +153,9 @@ class HashTable(object):
 		'''
 		Insert or update the given key with its associated value.
 		---
-		Best case running time: ??? under what conditions? [NOTE]
+		Best case running time: ??? under what conditions? [TODO]
 		---
-		Worst case running time: ??? under what conditions? [NOTE]
+		Worst case running time: ??? under what conditions? [TODO]
 		'''
 		# Find the bucket the given key belongs in
 		index = self._bucket_index(key)
@@ -187,9 +187,9 @@ class HashTable(object):
 		'''
 		Delete the given key and its associated value, or raise KeyError.
 		---
-		Best case running time: ??? under what conditions? [NOTE]
+		Best case running time: ??? under what conditions? [TODO]
 		---
-		Worst case running time: ??? under what conditions? [NOTE]
+		Worst case running time: ??? under what conditions? [TODO]
 		'''
 		# Find the bucket the given key belongs in
 		index = self._bucket_index(key)
@@ -215,9 +215,9 @@ class HashTable(object):
 		Should be called automatically when load factor exceeds a threshold
 		such as 0.75 after an insertion (when set is called with a new key).
 		---
-		Best and worst case running time: ??? under what conditions? [NOTE]
+		Best and worst case running time: ??? under what conditions? [TODO]
 		---
-		Best and worst case space usage: ??? what uses this memory? [NOTE]
+		Best and worst case space usage: ??? what uses this memory? [TODO]
 		'''
 		# If unspecified, choose new size dynamically based on current size
 		if new_size is None:
