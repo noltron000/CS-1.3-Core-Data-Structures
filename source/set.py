@@ -1,56 +1,55 @@
 #!python
 
-from hasthable import HashTable
+from hashtable import HashTable
+
 
 class Set(object):
-	'''
-	[NOTE] DOCSTRING
-	'''
-
 	def __init__(this, data=None):
 		'''
-		[NOTE] DOCSTRING
+		[TODO] DOCSTRING
 		'''
-		# [TODO] COMPLETE
+		# [FIXME] COMPLETE
 		this.size = 0
 		this.table = HashTable()
 
 
 	def contains(this, item):
 		'''
-		[NOTE] DOCSTRING
+		[TODO] DOCSTRING
 		'''
-		# [TODO] COMPLETE
+		# [FIXME] COMPLETE
 		pass
 
 
 	def add(this, item):
 		'''
-		[NOTE] DOCSTRING
+		[TODO] DOCSTRING
 		'''
-		# [TODO] COMPLETE
+		# [FIXME] COMPLETE
 		pass
 
 
 	def remove(this, item):
 		'''
-		[NOTE] DOCSTRING
+		[TODO] DOCSTRING
 		'''
-		# [TODO] COMPLETE
+		# [FIXME] COMPLETE
 		pass
 
 
 	def is_subset(this, that):
 		'''
-		[NOTE] DOCSTRING
+		[TODO] DOCSTRING
 		'''
-		# [TODO] COMPLETE
+		# [FIXME] COMPLETE
 		pass
 
 
 	def empty(this, that=None):
 		'''
-		∅;  //;  {}
+		THE EMPTY SET
+		will always return the empty set
+		symbols include ∅, //, and {}
 		┏━━━━━━━━━┓
 		┃         ┃
 		┃ ┌───┐   ┃
@@ -61,15 +60,16 @@ class Set(object):
 		┃   │   │ ┃
 		┃   └───┘ ┃
 		┃         ┃
-		┗━━━━━━━━━┛
+		┗━━━━━━━━━┛ = ∅
 		'''
-		# [TODO] COMPLETE
+		# [FIXME] COMPLETE
 		pass
 
 
 	def self(this, that=None):
 		'''
-		this
+		THE SELF SET
+		will always return itself
 		┏━━━━━━━━━┓
 		┃         ┃
 		┃ ┌───┐   ┃
@@ -80,12 +80,16 @@ class Set(object):
 		┃   │   │ ┃
 		┃   └───┘ ┃
 		┃         ┃
-		┗━━━━━━━━━┛
+		┗━━━━━━━━━┛ = this
 		'''
+		# [FIXME] COMPLETE
+		pass
+
 
 	def union(this, that):
 		'''
-		this ∪ that
+		THE UNION OF TWO SETS
+		contain all items appearing in either set
 		┏━━━━━━━━━┓
 		┃         ┃
 		┃ ┌───┐   ┃
@@ -96,15 +100,16 @@ class Set(object):
 		┃   │███│ ┃
 		┃   └───┘ ┃
 		┃         ┃
-		┗━━━━━━━━━┛
+		┗━━━━━━━━━┛ = this ∪ that
 		'''
-		# [TODO] COMPLETE
+		# [FIXME] COMPLETE
 		pass
 
 
 	def intersection(this, that):
 		'''
-		this ∩ that
+		THE INTERSECTION OF TWO SETS
+		contain only items appearing in both sets
 		┏━━━━━━━━━┓
 		┃         ┃
 		┃ ┌───┐   ┃
@@ -115,15 +120,17 @@ class Set(object):
 		┃   │   │ ┃
 		┃   └───┘ ┃
 		┃         ┃
-		┗━━━━━━━━━┛
+		┗━━━━━━━━━┛ = this ∩ that
 		'''
-		# [TODO] COMPLETE
+		# [FIXME] COMPLETE
 		pass
 
 
 	def complement(this, that):
 		'''
-		this \ that
+		THE RELATIVE COMPLEMENT OF TWO SETS
+		contain items from the 1st set that arent in the 2nd
+		[NOTE] this is the only case where the order matters
 		┏━━━━━━━━━┓
 		┃         ┃
 		┃ ┌───┐   ┃
@@ -134,14 +141,16 @@ class Set(object):
 		┃   │   │ ┃
 		┃   └───┘ ┃
 		┃         ┃
-		┗━━━━━━━━━┛
+		┗━━━━━━━━━┛ = this \ that
 		'''
-		# [TODO] COMPLETE
+		# [FIXME] COMPLETE
 		pass
+
 
 	def difference(this, that):
 		'''
-		this ∪ that - this ∩ that
+		THE SYMMETRIC DIFFERENCE OF TWO SETS
+		contain items appearing in either set, but not both sets
 		┏━━━━━━━━━┓
 		┃         ┃
 		┃ ┌───┐   ┃
@@ -152,7 +161,7 @@ class Set(object):
 		┃   │███│ ┃
 		┃   └───┘ ┃
 		┃         ┃
-		┗━━━━━━━━━┛
+		┗━━━━━━━━━┛ = this ∪ that - this ∩ that
 		'''
-		# [TODO] COMPLETE
+		# [FIXME] COMPLETE
 		pass
