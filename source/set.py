@@ -2,11 +2,10 @@
 
 from hasthable import HashTable
 
-class Set():
+class Set(object):
 	'''
 	[NOTE] DOCSTRING
 	'''
-
 
 	def __init__(this, data=None):
 		'''
@@ -41,9 +40,63 @@ class Set():
 		pass
 
 
-	def union(this, that):
+	def is_subset(this, that):
 		'''
 		[NOTE] DOCSTRING
+		'''
+		# [TODO] COMPLETE
+		pass
+
+
+	def empty(this, that=None):
+		'''
+		∅;  //;  {}
+		┏━━━━━━━━━┓
+		┃         ┃
+		┃ ┌───┐   ┃
+		┃ │   │   ┃
+		┃ │ ┌─┼─┐ ┃
+		┃ │ │ │ │ ┃
+		┃ └─┼─┘ │ ┃
+		┃   │   │ ┃
+		┃   └───┘ ┃
+		┃         ┃
+		┗━━━━━━━━━┛
+		'''
+		# [TODO] COMPLETE
+		pass
+
+
+	def self(this, that=None):
+		'''
+		this
+		┏━━━━━━━━━┓
+		┃         ┃
+		┃ ┌───┐   ┃
+		┃ │███│   ┃
+		┃ │█┌─┼─┐ ┃
+		┃ │█│█│ │ ┃
+		┃ └─┼─┘ │ ┃
+		┃   │   │ ┃
+		┃   └───┘ ┃
+		┃         ┃
+		┗━━━━━━━━━┛
+		'''
+
+	def union(this, that):
+		'''
+		this ∪ that
+		┏━━━━━━━━━┓
+		┃         ┃
+		┃ ┌───┐   ┃
+		┃ │███│   ┃
+		┃ │█┌─┼─┐ ┃
+		┃ │█│█│█│ ┃
+		┃ └─┼─┘█│ ┃
+		┃   │███│ ┃
+		┃   └───┘ ┃
+		┃         ┃
+		┗━━━━━━━━━┛
 		'''
 		# [TODO] COMPLETE
 		pass
@@ -51,23 +104,55 @@ class Set():
 
 	def intersection(this, that):
 		'''
-		[NOTE] DOCSTRING
+		this ∩ that
+		┏━━━━━━━━━┓
+		┃         ┃
+		┃ ┌───┐   ┃
+		┃ │   │   ┃
+		┃ │ ┌─┼─┐ ┃
+		┃ │ │█│ │ ┃
+		┃ └─┼─┘ │ ┃
+		┃   │   │ ┃
+		┃   └───┘ ┃
+		┃         ┃
+		┗━━━━━━━━━┛
 		'''
 		# [TODO] COMPLETE
 		pass
 
+
+	def complement(this, that):
+		'''
+		this \ that
+		┏━━━━━━━━━┓
+		┃         ┃
+		┃ ┌───┐   ┃
+		┃ │███│   ┃
+		┃ │█┌─┼─┐ ┃
+		┃ │█│ │ │ ┃
+		┃ └─┼─┘ │ ┃
+		┃   │   │ ┃
+		┃   └───┘ ┃
+		┃         ┃
+		┗━━━━━━━━━┛
+		'''
+		# [TODO] COMPLETE
+		pass
 
 	def difference(this, that):
 		'''
-		[NOTE] DOCSTRING
-		'''
-		# [TODO] COMPLETE
-		pass
-
-
-	def is_subset(this, that):
-		'''
-		[NOTE] DOCSTRING
+		this ∪ that - this ∩ that
+		┏━━━━━━━━━┓
+		┃         ┃
+		┃ ┌───┐   ┃
+		┃ │███│   ┃
+		┃ │█┌─┼─┐ ┃
+		┃ │█│ │█│ ┃
+		┃ └─┼─┘█│ ┃
+		┃   │███│ ┃
+		┃   └───┘ ┃
+		┃         ┃
+		┗━━━━━━━━━┛
 		'''
 		# [TODO] COMPLETE
 		pass
