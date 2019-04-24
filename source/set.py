@@ -81,7 +81,7 @@ class Set(object):
 		┃   │   │ ┃
 		┃   └───┘ ┃
 		┃         ┃
-		┗━━━━━━━━━┛ = this
+		┗━━━━━━━━━┛ = self
 		'''
 		# [FIXME] COMPLETE
 		pass
@@ -101,7 +101,7 @@ class Set(object):
 		┃   │███│ ┃
 		┃   └───┘ ┃
 		┃         ┃
-		┗━━━━━━━━━┛ = this ∪ that
+		┗━━━━━━━━━┛ = self ∪ other
 		'''
 		# [FIXME] COMPLETE
 		pass
@@ -121,7 +121,7 @@ class Set(object):
 		┃   │   │ ┃
 		┃   └───┘ ┃
 		┃         ┃
-		┗━━━━━━━━━┛ = this ∩ that
+		┗━━━━━━━━━┛ = self ∩ other
 		'''
 		# [FIXME] COMPLETE
 		pass
@@ -142,7 +142,7 @@ class Set(object):
 		┃   │   │ ┃
 		┃   └───┘ ┃
 		┃         ┃
-		┗━━━━━━━━━┛ = this \ that
+		┗━━━━━━━━━┛ = self \ other
 		'''
 		# [FIXME] COMPLETE
 		pass
@@ -162,7 +162,7 @@ class Set(object):
 		┃   │███│ ┃
 		┃   └───┘ ┃
 		┃         ┃
-		┗━━━━━━━━━┛ = this ∪ that - this ∩ that
+		┗━━━━━━━━━┛ = self ∪ other - self ∩ other
 		'''
 		# [FIXME] COMPLETE
 		pass
