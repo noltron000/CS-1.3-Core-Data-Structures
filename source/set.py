@@ -4,7 +4,7 @@ from hashtable import HashTable
 
 
 class Set(object):
-	def __init__(this, data=None):
+	def __init__(self, data=None):
 		'''
 		[TODO] DOCSTRING
 		'''
@@ -13,7 +13,8 @@ class Set(object):
 		this.table = HashTable()
 
 
-	def contains(this, item):
+
+	def contains(self, item):
 		'''
 		[TODO] DOCSTRING
 		'''
@@ -21,7 +22,7 @@ class Set(object):
 		pass
 
 
-	def add(this, item):
+	def add(self, item):
 		'''
 		[TODO] DOCSTRING
 		'''
@@ -29,7 +30,7 @@ class Set(object):
 		pass
 
 
-	def remove(this, item):
+	def remove(self, item):
 		'''
 		[TODO] DOCSTRING
 		'''
@@ -37,7 +38,7 @@ class Set(object):
 		pass
 
 
-	def is_subset(this, that):
+	def is_subset(self, other):
 		'''
 		[TODO] DOCSTRING
 		'''
@@ -45,7 +46,7 @@ class Set(object):
 		pass
 
 
-	def empty(this, that=None):
+	def empty(self, other=None):
 		'''
 		THE EMPTY SET
 		will always return the empty set
@@ -66,7 +67,7 @@ class Set(object):
 		pass
 
 
-	def self(this, that=None):
+	def self(self, other=None):
 		'''
 		THE SELF SET
 		will always return itself
@@ -86,7 +87,7 @@ class Set(object):
 		pass
 
 
-	def union(this, that):
+	def union(self, other):
 		'''
 		THE UNION OF TWO SETS
 		contain all items appearing in either set
@@ -106,7 +107,7 @@ class Set(object):
 		pass
 
 
-	def intersection(this, that):
+	def intersection(self, other):
 		'''
 		THE INTERSECTION OF TWO SETS
 		contain only items appearing in both sets
@@ -126,7 +127,7 @@ class Set(object):
 		pass
 
 
-	def complement(this, that):
+	def complement(self, other):
 		'''
 		THE RELATIVE COMPLEMENT OF TWO SETS
 		contain items from the 1st set that arent in the 2nd
@@ -147,7 +148,7 @@ class Set(object):
 		pass
 
 
-	def difference(this, that):
+	def difference(self, other):
 		'''
 		THE SYMMETRIC DIFFERENCE OF TWO SETS
 		contain items appearing in either set, but not both sets
