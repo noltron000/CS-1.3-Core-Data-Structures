@@ -1,7 +1,9 @@
 #!python
 
 
+
 from hashtable import HashTable
+
 
 
 class Set(object):
@@ -20,6 +22,7 @@ class Set(object):
 				self.add(item)
 
 
+
 	def contains(self, item):
 		'''
 		verify whether an item exists in our set
@@ -28,6 +31,7 @@ class Set(object):
 		# table.contains hashes a key and looks for it
 		# in this case, our key is also the value we have
 		return self.table.contains(item) # our item is the key
+
 
 
 	def add(self, item):
@@ -45,6 +49,7 @@ class Set(object):
 			self.size += 1
 
 
+
 	def remove(self, item):
 		'''
 		removes an item from our set
@@ -54,6 +59,7 @@ class Set(object):
 		if self.contains(item):
 			self.table.delete(item)
 			self.size -= 1
+
 
 
 	def is_subset(self, other):
@@ -68,6 +74,7 @@ class Set(object):
 				return False
 		# for loop has ended successfully
 		return True
+
 
 
 	def empty(self, other=None):
@@ -91,6 +98,7 @@ class Set(object):
 		return Set()
 
 
+
 	def self(self, other=None):
 		'''
 		THE SELF SET
@@ -109,6 +117,8 @@ class Set(object):
 		'''
 		# [FIXME] COMPLETE & ADD COMMENTS
 		return self
+
+
 
 	def union(self, other):
 		'''
@@ -136,6 +146,7 @@ class Set(object):
 		return output
 
 
+
 	def intersection(self, other):
 		'''
 		THE INTERSECTION OF TWO SETS
@@ -159,6 +170,8 @@ class Set(object):
 			if other.contains(item):
 				output.add(item)
 		return output
+
+
 
 	def complement(self, other):
 		'''
@@ -211,6 +224,8 @@ class Set(object):
 			output.add(item)
 		return output
 
+
+
 def mini_test():
 	my_set = Set([1,2,3])
 	your_set = Set([2,3,4])
@@ -229,6 +244,8 @@ def mini_test():
 
 	new_set = my_set.difference(your_set)
 	print(new_set.table)
+
+
 
 if __name__ == '__main__':
 	mini_test()
