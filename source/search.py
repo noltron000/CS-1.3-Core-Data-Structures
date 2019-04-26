@@ -21,13 +21,13 @@ def linear_search_iterative(array, item):
 def linear_search_recursive(array, item, index=0):
 	# try breaks nicely on errors
 	try:
-	# check if found
-	if item == array[index]:
-		return index # found
+		# check if found
+		if item == array[index]:
+			return index # found
 	# else redo function with index+1
-	else:
-		return linear_search_recursive(array, item, index+1)
-	# except usually hits if array[index] doesn't exist
+		else:
+			return linear_search_recursive(array, item, index+1)
+		# except usually hits if array[index] doesn't exist
 	except:
 		return None # not found / error
 
