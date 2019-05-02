@@ -150,6 +150,7 @@ class BinarySearchTree(object):
 		if node is None:
 			return None
 		else:
+			# XXX This is sort of done wierd, should just be data
 			return node.data
 
 	def insert(self, item):
