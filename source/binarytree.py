@@ -13,47 +13,56 @@ class BinaryTreeNode(object):
 
 	def __repr__(self):
 		'''
-		Return a string representation of this binary tree node.
+		Return a sensible string representation of this Node.
 		'''
 		return 'BinaryTreeNode({!r})'.format(self.data)
 
 	def is_leaf(self):
 		'''
-		Return True if this node is a leaf (has no children).
+		Return True if this node is a leaf.
+		A leaf has zero children.
 		'''
-		# Check if both left child and right child have no value
-		return (self.left is None) and (self.right is None)
+		# check if both left child and right child have no value
+		return self.left is None and self.right is None
 
 	def is_branch(self):
 		'''
-		Return True if this node is a branch (has at least one child).
+		Return True if this node is a branch.
+		A branch has one or more children.
 		'''
-		# Check if either left child or right child has a value
-		return (self.left is not None) or (self.right is not None)
+		# check if either left child or right child has a value
+		return self.left is not None or self.right is not None
 
 	def height(self):
 		'''
-		Return the height of this node (the number of edges on the longest
-		downward path from this node to a descendant leaf node).
-		Best and worst case running time: ??? under what conditions?
+		Return the height of this node.
+		The height of a node is the number of edges on the path
+		to get to the lowest descendant leaf node possible.
+		If this node itself is a leaf, it has a height of zero.
+		The height of a non-existant node (NoneType) is zero.
+		---
+		best & worst case runtime: O(n)
+		-> we must traverse every node to find the height.
 		'''
 		if self.is_leaf():
 			return 0
 
 		else:
-			# Check if left child has a value and if so calculate its height
+			# does right child have a value?
 			if self.left is not None:
+				# if so, calculate its height
 				left_height = self.left.height()
 			else:
 				left_height = 0
 
-			# Check if right child has a value and if so calculate its height
+			# does right child have a value?
 			if self.right is not None:
+				# if so, calculate its height
 				right_height = self.right.height()
 			else:
 				right_height = 0
 
-		# Return one more than the greater of the left height and right height
+			# retrieve the bigger of the two sides, and add one
 			return max(left_height, right_height) + 1
 
 
@@ -61,57 +70,84 @@ class BinarySearchTree(object):
 
 	def __init__(self, items=None):
 		'''
-		Initialize this binary search tree and insert the given items.
+		1. Initialize binary search tree.
+		2. Insert given items.
 		'''
+		# initialize properties
 		self.root = None
 		self.size = 0
+		
+		# insert items
 		if items is not None:
 			for item in items:
 				self.insert(item)
 
 	def __repr__(self):
 		'''
-		Return a string representation of this binary search tree.
+		Return a sensible string representation of this Tree.
 		'''
 		return f'BinarySearchTree({self.size} nodes)'
 
 	def is_empty(self):
 		'''
-		Return True if this binary search tree is empty (has no nodes).
+		Return True if this binary search tree is empty.
+		An empty tree has no nodes.
 		'''
 		return self.root is None
 
 	def height(self):
 		'''
-		Return the height of this tree (the number of edges on the longest
-		downward path from this tree's root node to a descendant leaf node).
-		TODO: Best and worst case running time: ??? under what conditions?
+		Return the height of this tree.
+		The height of a tree equals the height of the root node.
+		---
+		best & worst case runtime: O(n)
+		--> we must traverse every node to find the height.
 		'''
-		# TODO: Check if root node has a value and if so calculate its height
-		# ...
+		return self.root.height()
 
 	def contains(self, item):
 		'''
-		Return True if this binary search tree contains the given item.
-		TODO: Best case running time: ??? under what conditions?
-		TODO: Worst case running time: ??? under what conditions?
+		Does this binary search tree contain the given item?
+		- Yes! Return True; the item is found.
+		- No! Return False; the item is not found.
+		* Note that search is eerily similar to contains.
+		---
+		best case runtime: O(1)
+		--> the root node contains our item.
+		---
+		median case runtime: O(ln(n))
+		--> the item is a leaf in a balanced tree.
+		---
+		worst case runtime: O(n)
+		--> the tree can be represented using a linked list.
+		    the item is at the tail of the linked list.
 		'''
-		# Find a node with the given item, if any
+		# find a node with the given item, if any
 		node = self._find_recursive(item, self.root)
-		# Return True if a node was found, or False
-		return node is not None
+		# return true if item was found...or false if not
+		return node is not None 
 
 	def search(self, item):
 		'''
-		Return an item in this binary search tree matching the given item,
-		or None if the given item is not found.
-		TODO: Best case running time: ??? under what conditions?
-		TODO: Worst case running time: ??? under what conditions?
+		Does this binary search tree contain the given item?
+		- Yes! Return our Node; here is our item's container.
+		- No! Return None; the node for our item doesn't exist.
+		* Note that search is eerily similar to contains.
+		---
+		best case runtime: O(1)
+		--> the root node contains our item.
+		---
+		median case runtime: O(ln(n))
+		--> the item is a leaf in a balanced tree.
+		---
+		worst case runtime: O(n)
+		--> the tree can be represented using a linked list.
+		    the item is at the tail of the linked list.
 		'''
-		# Find a node with the given item, if any
+		# find a node with the given item, if any
 		node = self._find_recursive(item, self.root)
-		# TODO: Return the node's data if found, or None
-		return node.data if ... else None
+		# return our node if item was found...or none if not
+		return node
 
 	def insert(self, item):
 		'''
@@ -423,7 +459,13 @@ def test_binary_search_tree():
 	print(f'items pre-order:   {tree.items_pre_order()}')
 	print(f'items post-order:  {tree.items_post_order()}')
 	print(f'items level-order: {tree.items_level_order()}')
-
+# recommended mnemonic (& synonym list)
+# TODO
+# FIXME
+# XXX
+# BUG (BUGFIX)
+# HACK (CLEVER, MAGIC)
+# NOTE (HELP)
 
 if __name__ == '__main__':
 	test_binary_search_tree()
