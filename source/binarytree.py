@@ -151,29 +151,42 @@ class BinarySearchTree(object):
 
 	def insert(self, item):
 		'''
-		Insert the given item in order into this binary search tree.
-		TODO: Best case running time: ??? under what conditions?
-		TODO: Worst case running time: ??? under what conditions?
+		Insert a given item into this tree.
+		The tree must maintain a strict sorted structure.
+		* Note the runtime is based on our search methods.
+		---
+		best case runtime: O(1)
+		--> the root node is our parent node.
+		---
+		median case runtime: O(ln(n))
+		--> our parent node is a leaf in a balanced tree.
+		---
+		worst case runtime: O(n)
+		--> the tree can be represented using a linked list.
+		    our parent node is at the tail of the linked list.
 		'''
-		# Handle the case where the tree is empty
+		# handle the case where the tree is empty
 		if self.is_empty():
-			# TODO: Create a new root node
-			self.root = ...
-			# TODO: Increase the tree size
-			self.size ...
-			return
-		# Find the parent node of where the given item should be inserted
-		parent = self._find_parent_node_recursive(item, self.root)
-		# TODO: Check if the given item should be inserted left of parent node
-		if ...:
-			# TODO: Create a new node and set the parent's left child
-			parent.left = ...
-		# TODO: Check if the given item should be inserted right of parent node
-		elif ...:
-			# TODO: Create a new node and set the parent's right child
-			parent.right = ...
-		# TODO: Increase the tree size
-		self.size ...
+			# create a new root node with given item
+			self.root = BinaryTreeNode(item)
+			self.size += 1
+
+		else:
+			# find the parent node of our new item
+			# this determines where the item should be inserted
+			parent = self._find_parent_node_recursive(item, self.root)
+
+			# should the item be inserted left of its parent?
+			if item <= parent.data:
+				# if so, set the parent's left child to a new node
+				parent.left = BinaryTreeNode(item)
+				self.size += 1
+
+			# should the item be inserted right of its parent?
+			elif item > parent.data :
+				# if so, set the parent's right child to a new node
+				parent.right =  BinaryTreeNode(item)
+				self.size += 1
 
 	def _find_iterative(self, item):
 		'''
