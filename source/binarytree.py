@@ -211,7 +211,7 @@ class BinarySearchTree(object):
 			return node
 
 		# is the given item smaller than the node's data?
-		elif item <= node.data
+		elif item <= node.data:
 			# recursively descend to the node's left child, if it exists
 			return self._find_recursive(item, node.left)
 
@@ -233,7 +233,8 @@ class BinarySearchTree(object):
 		# check if starting node exists
 		if node is None:
 			# not found (base case)
-			return None
+			# if there is no parent, this is NoneType
+			return parent
 
 		# check if the given item matches the node's data
 		elif item == node.data:
@@ -241,7 +242,7 @@ class BinarySearchTree(object):
 			return parent
 
 		# is the given item smaller than the node's data?
-		elif item <= node.data
+		elif item <= node.data:
 			# recursively descend to the node's left child, if it exists
 			return self._find_parent_node_recursive(item, node.left, node)
 
@@ -269,11 +270,11 @@ class BinarySearchTree(object):
 		NOTE: Memory usage: ??? Why and under what conditions?
 		'''
 		# traverse left subtree, if it exists
-		_traverse_in_order_recursive(self, node.left, visit)
+		self._traverse_in_order_recursive(self, node.left, visit)
 		# visit this node's data with given function
 		visit(node)
 		# traverse right subtree, if it exists
-		_traverse_in_order_recursive(self, node.right, visit)
+		self._traverse_in_order_recursive(self, node.right, visit)
 
 	def items_pre_order(self):
 		'''
