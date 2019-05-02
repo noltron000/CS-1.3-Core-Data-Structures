@@ -178,7 +178,7 @@ class BinarySearchTree(object):
 		else:
 			# find the parent node of our new item
 			# this determines where the item should be inserted
-			parent = self._find_parent_node_recursive(item, self.root)
+			parent = self._find_parent_recursive(item, self.root)
 
 			# should the item be inserted left of its parent?
 			if item <= parent.data:
@@ -194,11 +194,19 @@ class BinarySearchTree(object):
 
 	def _find_recursive(self, item, node):
 		'''
-		Return the node containing the given item in this binary search tree,
-		or None if the given item is not found. Search is performed recursively
-		starting from the given node (give the root node to start recursion).
-		NOTE: Best case running time: ??? under what conditions?
-		NOTE: Worst case running time: ??? under what conditions?
+		Retrieve the node holding the given item in this tree.
+		If the item is not found, return None.
+		Search is used recursively, starting from given node.
+		---
+		best case runtime: O(1)
+		--> the root node is our parent node.
+		---
+		median case runtime: O(ln(n))
+		--> our parent node is a leaf in a balanced tree.
+		---
+		worst case runtime: O(n)
+		--> the tree can be represented using a linked list.
+		    our parent node is at the tail of the linked list.
 		'''
 		# check if starting node exists
 		if node is None:
@@ -220,15 +228,22 @@ class BinarySearchTree(object):
 			# recursively descend to the node's right child, if it exists
 			return self._find_recursive(item, node.right)
 
-	def _find_parent_node_recursive(self, item, node, parent=None):
+	def _find_parent_recursive(self, item, node, parent=None):
 		'''
-		Return the parent node of the node containing the given item
-		(or the parent node of where the given item would be if inserted)
-		in this tree, or None if this tree is empty or has only a root node.
-		Search is performed recursively starting from the given node
-		(give the root node to start recursion).
-		NOTE: Best case running time: ??? under what conditions?
-		NOTE: Worst case running time: ??? under what conditions?
+		Find the parent node of the node with the given item.
+		This parent is where the given item would be inserted.
+		If the tree has one or none nodes, there is no parent.
+		The search is performed recursively from the given node.
+		---
+		best case runtime: O(1)
+		--> the root node is our parent node.
+		---
+		median case runtime: O(ln(n))
+		--> our parent node is a leaf in a balanced tree.
+		---
+		worst case runtime: O(n)
+		--> the tree can be represented using a linked list.
+		    our parent node is at the tail of the linked list.
 		'''
 		# check if starting node exists
 		if node is None:
@@ -244,12 +259,12 @@ class BinarySearchTree(object):
 		# is the given item smaller than the node's data?
 		elif item <= node.data:
 			# recursively descend to the node's left child, if it exists
-			return self._find_parent_node_recursive(item, node.left, node)
+			return self._find_parent_recursive(item, node.left, node)
 
 		# is the given item is bigger than the node's data?
 		elif item > node.data:
 			# recursively descend to the node's right child, if it exists
-			return self._find_parent_node_recursive(item, node.right, node)
+			return self._find_parent_recursive(item, node.right, node)
 
 	def items_in_order(self):
 		'''
@@ -349,9 +364,9 @@ class BinarySearchTree(object):
 		# Return level-order list of all items in tree
 		return items
 
-#X#X#X#X#X#X#X#X#X#X#X#X#X#X#X#
+#XXX#X#X#X#X#X#X#X#X#X#X#X#XXX#
 #XXX# STRETCH CHALLENGES! #XXX#
-#X#X#X#X#X#X#X#X#X#X#X#X#X#X#X#
+#XXX#X#X#X#X#X#X#X#X#X#X#X#XXX#
 """
 	def _find_iterative(self, item):
 		'''
@@ -382,7 +397,7 @@ class BinarySearchTree(object):
 """
 
 """
-	def _find_parent_node_iterative(self, item):
+	def _find_parent_iterative(self, item):
 		'''
 		Return the parent node of the node containing the given item
 		(or the parent node of where the given item would be if inserted)
