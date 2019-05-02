@@ -32,8 +32,8 @@
 - To simplify the `contains`, `search`, and `insert` methods with code reuse, implement iterative and recursive tree search helper methods:
 	- `_find_iterative(item)` - return the node containing `item` in the tree, or `None` if not found
 	- `_find_recursive(item)` - return the node containing `item` in the tree, or `None` if not found
-	- `_find_parent_node_iterative(item)` - return the parent of the node containing `item` (or the parent of where `item` would be if inserted) in the tree, or `None` if the tree is empty or has only a root node
-	- `_find_parent_node_recursive(item)` - return the parent of the node containing `item` (or the parent of where `item` would be if inserted) in the tree, or `None` if the tree is empty or has only a root node
+	- `_find_parent_iterative(item)` - return the parent of the node containing `item` (or the parent of where `item` would be if inserted) in the tree, or `None` if the tree is empty or has only a root node
+	- `_find_parent_recursive(item)` - return the parent of the node containing `item` (or the parent of where `item` would be if inserted) in the tree, or `None` if the tree is empty or has only a root node
 - Run `python binarytree.py` to test `BinarySearchTree` class instance methods on a small example
 - Run `pytest binarytree_test.py` to run the [binary tree unit tests] and fix any failures
 - Write additional unit tests for the `BinaryTreeNode` and `BinarySearchTree` classes
