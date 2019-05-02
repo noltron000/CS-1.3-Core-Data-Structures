@@ -336,28 +336,6 @@ class BinarySearchTree(object):
 		# Return level-order list of all items in tree
 		return items
 
-	def _traverse_level_order_iterative(self, start_node, visit):
-		'''
-		Traverse this binary tree with iterative level-order traversal (BFS).
-		Start at the given node and visit each node with the given function.
-		NOTE: Running time: ??? Why and under what conditions?
-		NOTE: Memory usage: ??? Why and under what conditions?
-		'''
-		# TODO: Create queue to store nodes not yet traversed in level-order
-		queue = ...
-		# TODO: Enqueue given starting node
-		# ...
-		# TODO: Loop until queue is empty
-		while ...:
-			# TODO: Dequeue node at front of queue
-			node = ...
-			# TODO: Visit this node's data with given function
-			# ...
-			# TODO: Enqueue this node's left child, if it exists
-			# ...
-			# TODO: Enqueue this node's right child, if it exists
-			# ...
-
 #X#X#X#X#X#X#X#X#X#X#X#X#X#X#X#
 #XXX# STRETCH CHALLENGES! #XXX#
 #X#X#X#X#X#X#X#X#X#X#X#X#X#X#X#
@@ -467,6 +445,30 @@ class BinarySearchTree(object):
 		TODO: Memory usage: ??? Why and under what conditions?
 		'''
 		# TODO: Traverse post-order without using recursion (stretch challenge)
+"""
+
+"""
+	def _traverse_level_order_iterative(self, start_node, visit):
+		'''
+		Traverse this binary tree with iterative level-order traversal (BFS).
+		Start at the given node and visit each node with the given function.
+		NOTE: Running time: ??? Why and under what conditions?
+		NOTE: Memory usage: ??? Why and under what conditions?
+		'''
+		# TODO: Create queue to store nodes not yet traversed in level-order
+		queue = ...
+		# TODO: Enqueue given starting node
+		# ...
+		# TODO: Loop until queue is empty
+		while ...:
+			# TODO: Dequeue node at front of queue
+			node = ...
+			# TODO: Visit this node's data with given function
+			# ...
+			# TODO: Enqueue this node's left child, if it exists
+			# ...
+			# TODO: Enqueue this node's right child, if it exists
+			# ...
 """
 
 def test_binary_search_tree():
