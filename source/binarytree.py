@@ -150,7 +150,7 @@ class BinarySearchTree(object):
 		if node is None:
 			return None
 		else:
-			# XXX This is sort of done wierd, should just be data
+			# HACK This is sort of done wierd, should just be data
 			return node.data
 
 	def insert(self, item):
@@ -343,12 +343,12 @@ class BinarySearchTree(object):
 		TODO: Running time: ??? Why and under what conditions?
 		TODO: Memory usage: ??? Why and under what conditions?
 		'''
-		# TODO: Traverse left subtree, if it exists
-		# ...
-		# TODO: Visit this node's data with given function
-		# ...
-		# TODO: Traverse right subtree, if it exists
-		# ...
+		# traverse left subtree, if it exists
+		_traverse_in_order_recursive(self, node.left, visit)
+		# visit this node's data with given function
+		visit(node)
+		# traverse right subtree, if it exists
+		_traverse_in_order_recursive(self, node.right, visit)
 
 	def _traverse_in_order_iterative(self, node, visit):
 		'''
@@ -377,12 +377,13 @@ class BinarySearchTree(object):
 		TODO: Running time: ??? Why and under what conditions?
 		TODO: Memory usage: ??? Why and under what conditions?
 		'''
-		# TODO: Visit this node's data with given function
-		# ...
-		# TODO: Traverse left subtree, if it exists
-		# ...
-		# TODO: Traverse right subtree, if it exists
-		# ...
+		# visit this node's data with given function
+		visit(node)
+		# traverse left subtree, if it exists
+		_traverse_in_order_recursive(self, node.left, visit)
+		# traverse right subtree, if it exists
+		_traverse_in_order_recursive(self, node.right, visit)
+
 
 	def _traverse_pre_order_iterative(self, node, visit):
 		'''
@@ -491,13 +492,6 @@ def test_binary_search_tree():
 	print(f'items pre-order:   {tree.items_pre_order()}')
 	print(f'items post-order:  {tree.items_post_order()}')
 	print(f'items level-order: {tree.items_level_order()}')
-# recommended mnemonic (& synonym list)
-# TODO
-# FIXME
-# XXX
-# BUG (BUGFIX)
-# HACK (CLEVER, MAGIC)
-# NOTE (HELP)
 
 if __name__ == '__main__':
 	test_binary_search_tree()
