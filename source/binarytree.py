@@ -147,7 +147,10 @@ class BinarySearchTree(object):
 		# find a node with the given item, if any
 		node = self._find_recursive(item, self.root)
 		# return our node if item was found...or none if not
-		return node
+		if node is None:
+			return None
+		else:
+			return node.data
 
 	def insert(self, item):
 		'''
