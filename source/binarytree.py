@@ -188,6 +188,7 @@ class BinarySearchTree(object):
 				parent.right =  BinaryTreeNode(item)
 				self.size += 1
 
+"""
 	def _find_iterative(self, item):
 		'''
 		Return the node containing the given item in this binary search tree,
@@ -214,6 +215,7 @@ class BinarySearchTree(object):
 				node = ...
 		# Not found
 		return None
+"""
 
 	def _find_recursive(self, item, node):
 		'''
@@ -240,6 +242,7 @@ class BinarySearchTree(object):
 			# TODO: Recursively descend to the node's right child, if it exists
 			return ...
 
+"""
 	def _find_parent_node_iterative(self, item):
 		'''
 		Return the parent node of the node containing the given item
@@ -270,6 +273,7 @@ class BinarySearchTree(object):
 				node = ...
 		# Not found
 		return parent
+"""
 
 	def _find_parent_node_recursive(self, item, node, parent=None):
 		'''
@@ -296,6 +300,7 @@ class BinarySearchTree(object):
 			# TODO: Recursively descend to the node's right child, if it exists
 			return ...  # Hint: Remember to update the parent parameter
 
+"""
 	def delete(self, item):
 		'''
 		Remove given item from this tree, if present, or raise ValueError.
@@ -305,6 +310,8 @@ class BinarySearchTree(object):
 		# TODO: Use helper methods and break this algorithm down into 3 cases
 		# based on how many children the node containing the given item has and
 		# implement new helper methods for subtasks of the more complex cases
+		pass
+"""
 
 	def items_in_order(self):
 		'''
