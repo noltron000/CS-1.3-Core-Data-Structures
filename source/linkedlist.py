@@ -251,7 +251,7 @@ class LinkedList(object):
 		'''
 		# used find function to find node
 		node = self.find(lambda item: item == old_item)
-		
+
 		# Check if the node was not found
 		if node == None:
 			raise ValueError(f'Target node was not found: {node}')
