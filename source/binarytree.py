@@ -125,7 +125,7 @@ class BinarySearchTree(object):
 		# find a node with the given item, if any
 		node = self._find_recursive(item, self.root)
 		# return true if item was found...or false if not
-		return node is not None 
+		return node is not None
 
 	def search(self, item):
 		'''
@@ -270,11 +270,15 @@ class BinarySearchTree(object):
 		NOTE: Memory usage: ??? Why and under what conditions?
 		'''
 		# traverse left subtree, if it exists
-		self._traverse_in_order_recursive(self, node.left, visit)
+		if node.left is not None:
+			self._traverse_in_order_recursive(node.left, visit)
+
 		# visit this node's data with given function
-		visit(node)
+		visit(node.data)
+
 		# traverse right subtree, if it exists
-		self._traverse_in_order_recursive(self, node.right, visit)
+		if node.right is not None:
+			self._traverse_in_order_recursive(node.right, visit)
 
 	def items_pre_order(self):
 		'''
@@ -295,11 +299,15 @@ class BinarySearchTree(object):
 		NOTE: Memory usage: ??? Why and under what conditions?
 		'''
 		# visit this node's data with given function
-		visit(node)
+		visit(node.data)
+
 		# traverse left subtree, if it exists
-		_traverse_in_order_recursive(self, node.left, visit)
+		if node.left is not None:
+			self._traverse_pre_order_recursive(node.left, visit)
+
 		# traverse right subtree, if it exists
-		_traverse_in_order_recursive(self, node.right, visit)
+		if node.right is not None:
+			self._traverse_pre_order_recursive(node.right, visit)
 
 	def items_post_order(self):
 		'''
@@ -319,12 +327,16 @@ class BinarySearchTree(object):
 		NOTE: Running time: ??? Why and under what conditions?
 		NOTE: Memory usage: ??? Why and under what conditions?
 		'''
-		# TODO: Traverse left subtree, if it exists
-		# ...
-		# TODO: Traverse right subtree, if it exists
-		# ...
-		# TODO: Visit this node's data with given function
-		# ...
+		# traverse left subtree, if it exists
+		if node.left is not None:
+			self._traverse_post_order_recursive(node.left, visit)
+
+		# traverse right subtree, if it exists
+		if node.right is not None:
+			self._traverse_post_order_recursive(node.right, visit)
+
+		# visit this node's data with given function
+		visit(node.data)
 
 	def items_level_order(self):
 		'''
