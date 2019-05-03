@@ -123,7 +123,7 @@ class BinarySearchTree(object):
 		    the item is at the tail of the linked list.
 		'''
 		# find a node with the given item, if any
-		node = self._find_recursive(item, self.root)
+		node = self._find_iterative(item, self.root)
 		# return true if item was found...or false if not
 		return node is not None
 
@@ -145,12 +145,12 @@ class BinarySearchTree(object):
 		    the item is at the tail of the linked list.
 		'''
 		# find a node with the given item, if any
-		node = self._find_recursive(item, self.root)
+		node = self._find_iterative(item, self.root)
 		# return our node if item was found...or none if not
 		if node is None:
 			return None
 		else:
-			# HACK This is sort of done wierd, should just be data
+			# HACK this is sort of done wierd, should return entire node
 			return node.data
 
 	def insert(self, item):
@@ -223,8 +223,8 @@ class BinarySearchTree(object):
 		'''
 		# check if starting node exists
 		if node is None:
-			# not found (base case)
-			return None
+			# item not found (base case)
+			return node
 
 		# check if the given item matches the node's data
 		elif item == node.data:
@@ -232,7 +232,7 @@ class BinarySearchTree(object):
 			return node
 
 		# is the given item smaller than the node's data?
-		elif item <= node.data:
+		elif item < node.data:
 			# recursively descend to the node's left children
 			return self._find_recursive(item, node.left)
 
@@ -260,7 +260,7 @@ class BinarySearchTree(object):
 		'''
 		# check if starting node exists
 		if node is None:
-			# not found (base case)
+			# item not found (base case)
 			# if there is no parent, this is NoneType
 			return parent
 
@@ -361,34 +361,44 @@ class BinarySearchTree(object):
 		'''
 	"""
 
-	"""
-	def _find_iterative(self, item):
+	def _find_iterative(self, item, node):
 		'''
-		Return the node containing the given item in this binary search tree,
-		or None if the given item is not found. Search is performed iteratively
-		starting from the root node.
-		TODO: Best case running time: ??? under what conditions?
-		TODO: Worst case running time: ??? under what conditions?
+		Retrieve the node holding the given item in this tree.
+		If the item is not found, return None.
+		Search is used iteratively, starting from given node.
+		---
+		best case runtime: O(1)
+		--> the root node is our parent node.
+		---
+		median case runtime: O(ln(n))
+		--> our parent node is a leaf in a balanced tree.
+		---
+		worst case runtime: O(n)
+		--> the tree can be represented using a linked list.
+		    our parent node is at the tail of the linked list.
 		'''
-		# Start with the root node
-		node = self.root
-		# Loop until we descend past the closest leaf node
+		# loop until node is none, a non-existant element
 		while node is not None:
-			# TODO: Check if the given item matches the node's data
-			if ...:
-				# Return the found node
+
+			# check if the given item matches the node's data
+			if item == node.data:
+				# return the found node
 				return node
-			# TODO: Check if the given item is less than the node's data
-			elif ...:
-				# TODO: Descend to the node's left child
-				node = ...
-			# TODO: Check if the given item is greater than the node's data
-			elif ...:
-				# TODO: Descend to the node's right child
-				node = ...
-		# Not found
-		return None
-	"""
+
+			# is the given item smaller than the node's data?
+			elif item < node.data:
+				# descend to the node's left child
+				node = node.left
+
+			# is the given item is bigger than the node's data?
+			elif item > node.data:
+				# descend to the node's right child
+				node = node.right
+
+		# expected node does not exist
+		else:
+			# item not found (base case)
+			return node
 
 	"""
 	def _find_parent_iterative(self, item):
@@ -494,7 +504,7 @@ class BinarySearchTree(object):
 		if not self.is_empty():
 			# traverse the tree in-order from the root node.
 			# here, 'visit' appends nodes to the items array.
-			self._traverse_in_order_recursive(self.root, items.append)
+			self._traverse_in_order_iterative(self.root, items.append)
 		# return the in-order list of all items in tree
 		return items
 
@@ -512,7 +522,7 @@ class BinarySearchTree(object):
 		if not self.is_empty():
 			# traverse the tree pre-order from the root node.
 			# here, 'visit' appends nodes to the items array.
-			self._traverse_pre_order_recursive(self.root, items.append)
+			self._traverse_pre_order_iterative(self.root, items.append)
 		# return the pre-order list of all items in tree
 		return items
 
@@ -530,7 +540,7 @@ class BinarySearchTree(object):
 		if not self.is_empty():
 			# traverse tree post-order from the root node.
 			# here, 'visit' appends nodes to the items array.
-			self._traverse_post_order_recursive(self.root, items.append)
+			self._traverse_post_order_iterative(self.root, items.append)
 		# return post-order list of all items in tree
 		return items
 
