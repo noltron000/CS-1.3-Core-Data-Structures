@@ -94,7 +94,7 @@ class Set(object):
 		┃         ┃
 		┗━━━━━━━━━┛ = ∅
 		'''
-		# [FIXME] COMPLETE & ADD COMMENTS
+		# [FIXME] COMPLETE BY ADDING COMMENTS
 		return Set()
 
 
@@ -115,7 +115,7 @@ class Set(object):
 		┃         ┃
 		┗━━━━━━━━━┛ = self
 		'''
-		# [FIXME] COMPLETE & ADD COMMENTS
+		# [FIXME] COMPLETE BY ADDING COMMENTS
 		return self
 
 
@@ -136,7 +136,7 @@ class Set(object):
 		┃         ┃
 		┗━━━━━━━━━┛ = self ∪ other
 		'''
-		# [FIXME] COMPLETE & ADD COMMENTS
+		# [FIXME] COMPLETE BY ADDING COMMENTS
 		output = Set()
 
 		for item in self.table.keys():
@@ -163,7 +163,7 @@ class Set(object):
 		┃         ┃
 		┗━━━━━━━━━┛ = self ∩ other
 		'''
-		# [FIXME] COMPLETE & ADD COMMENTS
+		# [FIXME] COMPLETE BY ADDING COMMENTS
 		output = Set()
 		for item in self.table.keys():
 			# check if the item exists
@@ -190,7 +190,7 @@ class Set(object):
 		┃         ┃
 		┗━━━━━━━━━┛ = self \ other
 		'''
-		# [FIXME] COMPLETE & ADD COMMENTS
+		# [FIXME] COMPLETE BY ADDING COMMENTS
 		output = Set()
 		for item in self.table.keys():
 			# check if the item exists
@@ -216,7 +216,7 @@ class Set(object):
 		┃         ┃
 		┗━━━━━━━━━┛ = self ∪ other - self ∩ other
 		'''
-		# [FIXME] COMPLETE & ADD COMMENTS
+		# [FIXME] COMPLETE BY ADDING COMMENTS
 		output = Set()
 		for item in self.complement(other).table.keys():
 			output.add(item)
