@@ -296,7 +296,7 @@ class LinkedList(object):
 		# keep track of the previous node.
 		# do this since the list is not doubly-linked.
 		prv_node = None
-		# create a flag to track if we have found the given item.
+		# create a flag to track if we found the given item.
 		found = False
 		# loop until we find the given item, or reach the tail.
 		# if the node is None, we have reached the tail.

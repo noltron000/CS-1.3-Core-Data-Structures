@@ -49,7 +49,7 @@ class LinkedStack(object):
 		Running time: O(1)
 		--> push just uses the HEAD pointer.
 		'''
-		self.list.append(item)
+		self.list.prepend(item)
 
 
 	def peek(self):
@@ -57,32 +57,28 @@ class LinkedStack(object):
 		Return the item on top of this stack. Don't remove it!
 		If the stack is empty, return None instead.
 		'''
-		if self.list.tail == None:
+		if self.list.head == None:
 			return None
 		else:
-			return self.list.tail.data
-
+			return self.list.head.data
 
 	def pop(self):
 		'''
 		Return the item on top of this stack, and remove it.
 		If the stack is empty, raise ValueError instead.
 		---
-		Running time: O(n)
+		Running time: O(1)
+
+		=== FIXME the comment below is incorrect. ===
 		--> must change TAIL by iterating through entire list,
 		    and then pointing two it.
 		'''
-		if self.list.tail == None:
+		if self.list.head == None:
 			raise ValueError("there's nothing to pop!")
 		else: 
-			node = self.list.tail
-			# HACK:
-			# there's a case with repeated data where
-			# this implementation could be concerning
-			# it'd be better to remove from an index
+			node = self.list.head
 			self.list.delete(node.data)
 			return node.data
-
 
 class ArrayStack(object):
 # assignment details:
