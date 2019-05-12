@@ -2,16 +2,20 @@
 
 from linkedlist import LinkedList
 
+# assignment details:
+# 1. implement LinkedQueue.
+# 2. change the variable at the bottom to use this queue.
+# 3. verify it passes all tests.
 
-# Implement LinkedQueue below, then change the assignment at the bottom
-# to use this Queue implementation to verify it passes all tests
 class LinkedQueue(object):
 	def __init__(self, iterable=None):
 		'''
-		Initialize this queue and enqueue the given items, if any.
+		Initialize this queue and enqueue any given items.
 		'''
-		# Initialize a new linked list to store the items
+		# make a new LinkedList.
 		self.list = LinkedList()
+
+		# add iterable items, if they exist.
 		if iterable is not None:
 			for item in iterable:
 				self.enqueue(item)
@@ -41,11 +45,11 @@ class LinkedQueue(object):
 	def enqueue(self, item):
 		'''
 		Insert the given item at the back of this queue.
-		Running time: O(1) – uses HEAD pointer
+		Running time: O(1) – uses TAIL pointer
 		Also, linkedlists do not track their index number,
-		 so the indices don't need to be updated.
+		so the indices don't need to be updated.
 		'''
-		self.list.prepend(item)
+		self.list.append(item)
 
 
 	def front(self):
@@ -53,10 +57,10 @@ class LinkedQueue(object):
 		Return the item at the front of this queue without removing it,
 		or None if this queue is empty.
 		'''
-		if self.list.tail == None:
+		if self.list.head == None:
 			return None
 		else:
-			return self.list.tail.data
+			return self.list.head.data
 
 
 	def dequeue(self):
@@ -65,17 +69,17 @@ class LinkedQueue(object):
 		or raise ValueError if this queue is empty.
 		---
 		Best case run time: O(1)
-		item is at the head.
+		--> item is at the head.
+		    same as delete method.
 		---
 		Worst case run time: O(n)
-		item is at the tail.
-		---
-		This is the same as the delete method.
+		--> item is at the tail.
+		    same as delete method.
 		'''
-		if self.list.tail == None:
+		if self.list.head == None:
 			raise ValueError("there's nothing to pop!")
 		else: 
-			node = self.list.tail
+			node = self.list.head
 			self.list.delete(node.data)
 			return node.data
 
@@ -145,8 +149,8 @@ class ArrayQueue(object):
 		else:
 			return self.list.pop()
 
-
-# Implement LinkedQueue and ArrayQueue above, then change the assignment below
-# to use each of your Queue implementations to verify they each pass all tests
+# NOTE: you can switch export between the two Queue types.
+# they both do the same thing in different ways.
+# choose the prefered one by commenting out a single item:
 Queue = LinkedQueue
 # Queue = ArrayQueue

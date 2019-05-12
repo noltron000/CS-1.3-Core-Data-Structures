@@ -10,7 +10,7 @@ class LinkedStack(object):
 
 	def __init__(self, iterable=None):
 		'''
-		Initialize this stack and push the given items, if any.
+		Initialize this stack and push any given items.
 		'''
 		# make a new LinkedList.
 		self.list = LinkedList()
