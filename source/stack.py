@@ -2,18 +2,21 @@
 
 from linkedlist import LinkedList
 
-
-# Implement LinkedStack below, then change the assignment at the bottom
-# to use this Stack implementation to verify it passes all tests
 class LinkedStack(object):
+# assignment details:
+# 1. implement LinkedStack.
+# 2. change the variable at the bottom to use this stack.
+# 3. verify it passes all tests.
 
 	def __init__(self, iterable=None):
 		'''
 		Initialize this stack and push the given items, if any.
 		'''
-		# Initialize a new linked list to store the items
+		# make a new LinkedList.
 		self.list = LinkedList()
-		if iterable is not None:
+
+		# add iterable items, if they exist.
+		if iterable:
 			for item in iterable:
 				self.push(item)
 
@@ -22,7 +25,7 @@ class LinkedStack(object):
 		'''
 		Return a string representation of this stack.
 		'''
-		return f'Stack({self.length()} items, top={self.peek()})'
+		return f'Stack(count={self.length()} top={self.peek()})'
 
 
 	def is_empty(self):
@@ -42,15 +45,17 @@ class LinkedStack(object):
 	def push(self, item):
 		'''
 		Insert the given item on the top of this stack.
-		Running time: O(1) – append just uses the HEAD pointer.
+		---
+		Running time: O(1)
+		--> push just uses the HEAD pointer.
 		'''
 		self.list.append(item)
 
 
 	def peek(self):
 		'''
-		Return the item on the top of this stack,
-		w/out removing it, or None if this stack is empty.
+		Return the item on top of this stack. Don't remove it!
+		If the stack is empty, return None instead.
 		'''
 		if self.list.tail == None:
 			return None
@@ -60,15 +65,18 @@ class LinkedStack(object):
 
 	def pop(self):
 		'''
-		Remove and return the item on the top of this stack,
-		or raise ValueError if this stack is empty.
-		Running time: O(n) - must change TAIL by iterating
-		through the entire list, and pointing to it.
+		Return the item on top of this stack, and remove it.
+		If the stack is empty, raise ValueError instead.
+		---
+		Running time: O(n)
+		--> must change TAIL by iterating through entire list,
+		    and then pointing two it.
 		'''
 		if self.list.tail == None:
 			raise ValueError("there's nothing to pop!")
 		else: 
 			node = self.list.tail
+			# HACK:
 			# there's a case with repeated data where
 			# this implementation could be concerning
 			# it'd be better to remove from an index
@@ -76,16 +84,19 @@ class LinkedStack(object):
 			return node.data
 
 
-# Implement ArrayStack below, then change the assignment at the bottom
-# to use this Stack implementation to verify it passes all tests
 class ArrayStack(object):
-
+# assignment details:
+# 1. implement ArrayStack.
+# 2. change the variable at the bottom to use this stack.
+# 3. verify it passes all tests.
 	def __init__(self, iterable=None):
 		'''
 		Initialize this stack and push the given items, if any.
 		'''
-		# Initialize a new list (dynamic array) to store the items
+		# initialize a new list (dynamic array) to store items.
 		self.list = list()
+		
+		# add iterable items, if they exist.
 		if iterable is not None:
 			for item in iterable:
 				self.push(item)
@@ -95,7 +106,7 @@ class ArrayStack(object):
 		'''
 		Return a string representation of this stack.
 		'''
-		return f'Stack({self.length()} items, top={self.peek()})'
+		return f'Stack(count={self.length()} top={self.peek()})'
 
 
 	def is_empty(self):
@@ -115,15 +126,17 @@ class ArrayStack(object):
 	def push(self, item):
 		'''
 		Insert the given item on the top of this stack.
-		Running time: O(1) - append is constant time
+		---
+		Running time: O(1)
+		--> append is constant time
 		'''
 		self.list.append(item)
 
 
 	def peek(self):
 		'''
-		Return the item on the top of this stack without removing it,
-		or None if this stack is empty.
+		Return the item on top of this stack. Don't remove it!
+		If the stack is empty, return None instead.
 		'''
 		if len(self.list) == 0:
 			return None
@@ -133,9 +146,11 @@ class ArrayStack(object):
 
 	def pop(self):
 		'''
-		Remove and return the item on the top of this stack,
-		or raise ValueError if this stack is empty.
-		Running time: O(1) - the array doesn't shift at all.
+		Return the item on top of this stack, and remove it.
+		If the stack is empty, raise ValueError instead.
+		---
+		Running time: O(1)
+		--> the array doesn't shift at all.
 		'''
 		if len(self.list) == 0:
 			raise ValueError("there's nothing to pop!")
@@ -143,7 +158,8 @@ class ArrayStack(object):
 			return self.list.pop()
 
 
-# Implement LinkedStack and ArrayStack above, then change the assignment below
-# to use each of your Stack implementations to verify they each pass all tests
+# NOTE: you can switch export between the two Stack types.
+# they both do the same thing in different ways.
+# choose the prefered one by commenting out a single item:
 Stack = LinkedStack
 # Stack = ArrayStack
