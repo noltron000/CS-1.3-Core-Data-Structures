@@ -22,7 +22,7 @@ class BinaryTreeNode(object):
 		Return True if this node is a leaf.
 		A leaf has zero children.
 		'''
-		# check if both left child and right child have no value
+		# check if neither left nor right child has a value
 		return self.left is None and self.right is None
 
 
@@ -31,7 +31,7 @@ class BinaryTreeNode(object):
 		Return True if this node is a branch.
 		A branch has one or more children.
 		'''
-		# check if either left child or right child has a value
+		# check if either left or right child have a value
 		return self.left is not None or self.right is not None
 
 
@@ -129,7 +129,7 @@ class BinarySearchTree(object):
 		    the item is at the tail of the linked list.
 		'''
 		# find a node with the given item, if any
-		node = self._find_iterative(item, self.root)
+		node = self._find_ITR(item, self.root)
 		# return true if item was found...or false if not
 		return node is not None
 
@@ -152,7 +152,7 @@ class BinarySearchTree(object):
 		    the item is at the tail of the linked list.
 		'''
 		# find a node with the given item, if any
-		node = self._find_iterative(item, self.root)
+		node = self._find_ITR(item, self.root)
 		# return our node if item was found...or none if not
 		if node is None:
 			return None
@@ -187,7 +187,7 @@ class BinarySearchTree(object):
 		else:
 			# find the parent node of our new item
 			# this determines where the item should be inserted
-			parent = self._find_parent_iterative(item, self.root)
+			parent = self._find_parent_ITR(item, self.root)
 
 			# should the item be inserted left of its parent?
 			if item <= parent.data:
@@ -224,7 +224,7 @@ class BinarySearchTree(object):
 	"""
 
 
-	def _find_recursive(self, item, node):
+	def _find_RCR(self, item, node):
 		'''
 		Retrieve the node holding the given item in this tree.
 		If the item is not found, return None.
@@ -253,15 +253,15 @@ class BinarySearchTree(object):
 		# is the given item smaller than the node's data?
 		elif item < node.data:
 			# recursively descend to the node's left children
-			return self._find_recursive(item, node.left)
+			return self._find_RCR(item, node.left)
 
 		# is the given item is bigger than the node's data?
 		elif item > node.data:
 			# recursively descend to the node's right children
-			return self._find_recursive(item, node.right)
+			return self._find_RCR(item, node.right)
 
 
-	def _find_parent_recursive(self, item, node, parent=None):
+	def _find_parent_RCR(self, item, node, parent=None):
 		'''
 		Find the parent node of the node with the given item.
 		This parent is where the given item would be inserted.
@@ -292,15 +292,15 @@ class BinarySearchTree(object):
 		# is the given item smaller than the node's data?
 		elif item <= node.data:
 			# recursively descend to the node's left children
-			return self._find_parent_recursive(item, node.left, node)                           # XXX LENGTHY
+			return self._find_parent_RCR(item, node.left, node)
 
 		# is the given item is bigger than the node's data?
 		elif item > node.data:
 			# recursively descend to the node's right children
-			return self._find_parent_recursive(item, node.right, node)                          # XXX LENGTHY
+			return self._find_parent_RCR(item, node.right, node)
 
 
-	def _traverse_in_order_recursive(self, node, visit):
+	def _traverse_in_order_RCR(self, node, visit):
 		'''
 		This is a "Depth-First Search" algorithm.
 		Traverse this binary tree recursively, in-order.
@@ -316,17 +316,17 @@ class BinarySearchTree(object):
 		'''
 		# traverse left subtree, if it exists
 		if node.left is not None:
-			self._traverse_in_order_recursive(node.left, visit)
+			self._traverse_in_order_RCR(node.left, visit)
 
 		# visit this node's data with given function
 		visit(node.data)
 
 		# traverse right subtree, if it exists
 		if node.right is not None:
-			self._traverse_in_order_recursive(node.right, visit)
+			self._traverse_in_order_RCR(node.right, visit)
 
 
-	def _traverse_pre_order_recursive(self, node, visit):
+	def _traverse_pre_order_RCR(self, node, visit):
 		'''
 		This is a "Depth-First Search" algorithm.
 		Traverse this binary tree recursively, pre-order.
@@ -347,14 +347,14 @@ class BinarySearchTree(object):
 
 		# traverse left subtree, if it exists
 		if node.left is not None:
-			self._traverse_pre_order_recursive(node.left, visit)
+			self._traverse_pre_order_RCR(node.left, visit)
 
 		# traverse right subtree, if it exists
 		if node.right is not None:
-			self._traverse_pre_order_recursive(node.right, visit)
+			self._traverse_pre_order_RCR(node.right, visit)
 
 
-	def _traverse_post_order_recursive(self, node, visit):
+	def _traverse_post_order_RCR(self, node, visit):
 		'''
 		This is a "Depth-First Search" algorithm.
 		Traverse this binary tree recursively, post-order.
@@ -370,18 +370,18 @@ class BinarySearchTree(object):
 		'''
 		# traverse left subtree, if it exists
 		if node.left is not None:
-			self._traverse_post_order_recursive(node.left, visit)
+			self._traverse_post_order_RCR(node.left, visit)
 
 		# traverse right subtree, if it exists
 		if node.right is not None:
-			self._traverse_post_order_recursive(node.right, visit)
+			self._traverse_post_order_RCR(node.right, visit)
 
 		# visit this node's data with given function
 		visit(node.data)
 
 
 	"""
-	def _traverse_level_order_recursive(self):
+	def _traverse_level_order_RCR(self):
 		'''
 		this method was not on the list.
 		TODO why was it not on the list?
@@ -389,7 +389,7 @@ class BinarySearchTree(object):
 	"""
 
 
-	def _find_iterative(self, item, node):
+	def _find_ITR(self, item, node):
 		'''
 		Retrieve the node holding the given item in this tree.
 		If the item is not found, return None.
@@ -429,7 +429,7 @@ class BinarySearchTree(object):
 			return node
 
 
-	def _find_parent_iterative(self, item, node, parent=None):
+	def _find_parent_ITR(self, item, node, parent=None):
 		'''
 		Find the parent node of the node with the given item.
 		This parent is where the given item would be inserted.
@@ -473,7 +473,7 @@ class BinarySearchTree(object):
 
 
 	"""
-	def _traverse_in_order_iterative(self, node, visit):
+	def _traverse_in_order_ITR(self, node, visit):
 
 		'''
 		This is a "Depth-First Search" algorithm.
@@ -494,7 +494,7 @@ class BinarySearchTree(object):
 
 
 	"""
-	def _traverse_pre_order_iterative(self, node, visit):
+	def _traverse_pre_order_ITR(self, node, visit):
 		'''
 		This is a "Depth-First Search" algorithm.
 		Traverse this binary tree iteratively, pre-order.
@@ -514,7 +514,7 @@ class BinarySearchTree(object):
 
 
 	"""
-	def _traverse_post_order_iterative(self, node, visit):
+	def _traverse_post_order_ITR(self, node, visit):
 		'''
 		This is a "Depth-First Search" algorithm.
 		Traverse this binary tree iteratively, post-order.
@@ -533,7 +533,7 @@ class BinarySearchTree(object):
 	"""
 
 
-	def _traverse_level_order_iterative(self, start_node, visit):                           # XXX LENGTHY
+	def _traverse_level_order_ITR(self, start_node, visit):
 		'''
 		This is a "Breadth-First Search" algorithm
 		Traverse this binary tree iteratively, level-order.
@@ -577,7 +577,8 @@ class BinarySearchTree(object):
 		if not self.is_empty():
 			# traverse the tree in-order from the root node.
 			# here, 'visit' appends nodes to the items array.
-			self._traverse_in_order_recursive(self.root, items.append)                          # XXX LENGTHY
+			function = items.append
+			self._traverse_in_order_RCR(self.root, function)
 		# return the in-order list of all items in tree
 		return items
 
@@ -596,7 +597,8 @@ class BinarySearchTree(object):
 		if not self.is_empty():
 			# traverse the tree pre-order from the root node.
 			# here, 'visit' appends nodes to the items array.
-			self._traverse_pre_order_recursive(self.root, items.append)                         # XXX LENGTHY
+			function = items.append
+			self._traverse_pre_order_RCR(self.root, function)
 		# return the pre-order list of all items in tree
 		return items
 
@@ -615,7 +617,8 @@ class BinarySearchTree(object):
 		if not self.is_empty():
 			# traverse tree post-order from the root node.
 			# here, 'visit' appends nodes to the items array.
-			self._traverse_post_order_recursive(self.root, items.append)                        # XXX LENGTHY
+			function = items.append
+			self._traverse_post_order_RCR(self.root, function)
 		# return post-order list of all items in tree
 		return items
 
@@ -628,7 +631,8 @@ class BinarySearchTree(object):
 		if not self.is_empty():
 			# traverse tree level-order from the root node.
 			# here, 'visit' appends nodes to the items array.
-			self._traverse_level_order_iterative(self.root, items.append)                       # XXX LENGTHY
+			function = items.append
+			self._traverse_level_order_ITR(self.root, function)
 		# return level-order list of all items in tree
 		return items
 
