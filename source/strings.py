@@ -2,14 +2,17 @@
 
 def validate(text, pattern):
 	assert isinstance(text, str), f'text is not a string: {text}'
-	assert isinstance(pattern, str), f'pattern is not a string: {pattern}'
+	assert isinstance(pattern, str), f'pattern isnt a string: {pattern}'
 
 
-def contains(text, pattern):
-	'''
-	Return a boolean indicating whether pattern occurs in text.
-	'''
-	validate(text, pattern) # validate input
+def _search(
+	text,
+	pattern,
+	case_empty,
+	case_match,
+	case_false,
+	break_flag
+):
 	# will iterate through a number of times equal to
 	# len(BIG) - len(sml) + 1
 	#-------------
@@ -19,83 +22,69 @@ def contains(text, pattern):
 	#     o o o
 	#       o o o
 	#         x x
+	validate(text, pattern) # validate input
 	if pattern == '':
-		return True
+		return case_empty()
 	ii = 0
 	while ii < len(text) - len(pattern) + 1:
 		jj = 0
 		while pattern[jj] == text[ii+jj]:
 			jj += 1
 			if jj >= len(pattern):
-				return True
-		ii += 1
-	else:
-		return False
-
-
-def find_index(text, pattern):
-	'''
-	Return the starting index of the first occurrence of pattern in text, or None if not found.
-	'''
-	validate(text, pattern) # validate input
-	# will iterate through a number of times equal to
-	# len(BIG) - len(sml) + 1
-	#-------------
-	# I I I I I I
-	# o o o
-	#   o o o
-	#     o o o
-	#       o o o
-	#         x x
-	if pattern == '':
-		return 0
-	text_index = 0
-	while text_index < len(text) - len(pattern) + 1:
-		patt_index = 0
-
-		# start iterating the pattern
-		# check if next pattern letter matches
-		while pattern[patt_index] == text[text_index+patt_index]:
-			patt_index += 1
-
-			# reached end of pattern
-			if patt_index >= len(pattern):
-				return text_index
-		text_index += 1
-	else:
-		return None
-
-
-def find_all_indexes(text, pattern):
-	'''
-	Return a list of starting indexes of all occurrences of pattern in text, or an empty list if not found.
-	'''
-	# TODO: Implement find_all_indexes here (iteratively and/or recursively)
-	validate(text, pattern) # validate input
-	# will iterate through a number of times equal to
-	# len(BIG) - len(sml) + 1
-	#-------------
-	# I I I I I I
-	# o o o
-	#   o o o
-	#     o o o
-	#       o o o
-	#         x x
-	found = []
-	if pattern == '':
-		found = list(range(0,len(text)))
-		return found
-	ii = 0
-	while ii < len(text) - len(pattern) + 1:
-		jj = 0
-		while pattern[jj] == text[ii+jj]:
-			jj += 1
-			if jj >= len(pattern):
-				found.append(ii)
+				if not break_flag:
+					return case_match(ii)
+				case_match(ii)
 				break
 		ii += 1
 	else:
-		return found
+		return case_false()
+
+
+def contains(text, pattern):
+	case_empty = lambda x=None: True
+	case_match = lambda x=None: True
+	case_false = lambda x=None: False
+	break_flag = False
+	return _search(
+		text,
+		pattern,
+		case_empty,
+		case_match,
+		case_false,
+		break_flag
+	)
+
+
+def find_index(text, pattern):
+	found = []
+	case_empty = lambda x=None: 0
+	case_match = lambda x=None: x
+	case_false = lambda x=None: None
+	break_flag = False
+	return _search(
+		text,
+		pattern,
+		case_empty,
+		case_match,
+		case_false,
+		break_flag
+	)
+
+
+def find_all_indexes(text, pattern):
+	found = []
+	case_empty = lambda x=None: list(range(0,len(text)))
+	case_match = lambda x=None: found.append(x)
+	case_false = lambda x=None: found
+	break_flag = True
+	return _search(
+		text,
+		pattern,
+		case_empty,
+		case_match,
+		case_false,
+		break_flag
+	)
 
 
 def test_string_algorithms(text, pattern):
