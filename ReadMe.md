@@ -42,22 +42,22 @@ Students by the end of the course will be able to ...
 **Class Times:** Monday and Wednesday at 1:30-3:20pm **and** 3:30–5:20pm (14 class sessions)
 
 
-| Class |          Date          |                  Topics                    |
-|:-----:|:----------------------:|:------------------------------------------:|
-|   1   |    Monday, April 1     | [Number Bases](Lessons/Class1.md)                  |
-|   2   |    Wednesday, April 3  | [Recursion & Search Algorithms](Lessons/Class2.md) |
-|   3   |    Monday, April 8     | [String Algorithms](Lessons/Class3.md)             |
-|   4   |    Wednesday, April 10 | [Arrays & Linked Lists](Lessons/Class4.md)         |
-|   5   |    Monday, April 15    | [Lists, Stacks & Queues](Lessons/Class5.md)        |
-|   6   |    Wednesday, April 17 | [Maps & Hash Tables](Lessons/Class6.md)            |
-|   7   |    Monday, April 22    | [Sets & Circular Buffers](Lessons/Class7.md)       |
-|   8   |    Wednesday, April 24 | Sets Continued + Technical Article Peer Review     |
-|   9   |    Monday, April 29    | [Trees & Binary Search Trees](Lessons/Class8.md)   |
-|  10   |    Wednesday, May 1    | [Tree Traversals](Lessons/Class9.md)               |
-|  11   |    Monday, May 6       | [Call Routing Project](project/Project.md)         |
-|  12   |    Wednesday, May 8    | Call Routing Project Code Review                   |
-|  13   |    Monday, May 13      | Call Routing Project Presentations                 |
-|  14   |    Wednesday, May 15   | Final Exam                                         |
+| Class |          Date          |  Review of Prior Topic | New Topic / Challenges       |
+|:-----:|:----------------------:|:------------------------------------------:| :------- |
+|   1   |    Monday, April 1     |      N/A            | [Number Bases](Lessons/Class1.md) |
+|   2   |    Wednesday, April 3  | [Number Bases Review](Lessons/Class1.md#code-review-in-pairs-25-min) | [Recursion & Search Algorithms](Lessons/Class2.md) |
+|   3   |    Monday, April 8     | [Recursion & Search Algorithms Review](Lessons/Class2.md#code-review--presentations-80-min) |[String Algorithms](Lessons/Class3.md)             |
+|   4   |    Wednesday, April 10 | [String Algorithms Review](Lessons/Class3.md#code-review--presentations-80-min)             |[Arrays & Linked Lists](Lessons/Class4.md)         |
+|   5   |    Monday, April 15    | [Arrays & Linked Lists Review](Lessons/Class4.md)         |[Lists, Stacks & Queues](Lessons/Class5.md)        |
+|   6   |    Wednesday, April 17 | [Lists, Stacks & Queues Review](Lessons/Class5.md#activity---stacks-and-queues-worksheet---overview--15-min)        |[Maps & Hash Tables](Lessons/Class6.md)            |
+|   7   |    Monday, April 22    | [Maps & Hash Tables Review](Lessons/Class6.md#activity---drawing-a-hashtable--35-min)            |[Sets & Circular Buffers](Lessons/Class7.md)       |
+|   8   |    Wednesday, April 24 | [Sets & Circular Buffers Review](Lessons/Class7.md)       | Technical Article Peer Review     |
+|   9   |    Monday, April 29    | N/A   | [Trees & Binary Search Trees](Lessons/Class8.md)
+|  10   |    Wednesday, May 1    | [Trees & Binary Search Trees Review](Lessons/Class8.md)               | [Tree Traversals](Lessons/Class9.md)
+|  11   |    Monday, May 6       | [Tree Traversals Review](Lessons/Class9.md#code-review-80-min)         | N/A
+|  12   |    Wednesday, May 8    |       [Design Challenge](Lessons/design-challenge.md)            |[Call Routing Project](project/ReadMe.md)                   |
+|  13   |    Monday, May 13      |       N/A            |      Final Exam           |
+|  14   |    Wednesday, May 15   |       N/A            | Call Routing Project Presentations        |
 
 
 ## Repository Setup Instructions
@@ -69,7 +69,7 @@ Please follow [these instructions](Setup.md) exactly to set up your fork of this
 
 ### Projects
 
-- [Call Routing Project](project/Project.md)
+- [Call Routing Project](project/ReadMe.md)
 
 **All projects will require a minimum of 10 commits, and must take place throughout the entirety of the course**
 
