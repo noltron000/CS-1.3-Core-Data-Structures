@@ -1,21 +1,6 @@
 # Class 9: Tree Traversals
 
-## Minute-by-Minute [OPTIONAL]
-
-**NOTE: Fill in with the appropriate items**
-
-| **Elapsed** | **Time**  | **Activity**              |
-| ----------- | --------- | ------------------------- |
-| 0:00        | 0:05      | Objectives                |
-| 0:05        | 0:15      | Overview                  |
-| 0:20        | 0:45      | In Class Activity I       |
-| 1:05        | 0:10      | BREAK                     |
-| 1:15        | 0:45      | In Class Activity II      |
-| TOTAL       | 2:00      |                           |
-
-## Learning Objectives (5 min)
-
-**NOTE: Fill in with the appropriate items**
+## Learning Objectives
 
 By this end of this lesson, students should be able to...
 
@@ -67,6 +52,159 @@ By this end of this lesson, students should be able to...
     - Include test cases for each class instance method
 - Annotate class instance methods with complexity analysis of running time and space (memory)
 - Compare the behaviors of your `TreeMap` class to those of the `HashTable` class and the [Python `dict` type]
+
+## TT - Tree Traversals (20 min)
+
+![tree-traversals](./assets/tree-traversals.png)
+
+See [slides](https://github.com/Make-School-Courses/CS-1.3-Core-Data-Structures/blob/master/Lessons/slides/TreeTraversals.pdf)
+
+- What if you wanted to have a tree give all of its elements, instead of just one in particular?
+- The goal of a traversal is to **visit** each node once and only once. Whatever action you do on a visit is arbitrary.
+- You can **traverese either left or right** down sub-trees of a tree
+- For convention, we always traverse from left to right
+- There are two main ways to traverse: **Depth-first search (DFS) or Breadth-first search (BFS)**
+    - DFS visits a child and then descendents - you drill down one side of the tree, gradually making your way from left to right
+    - BFS vists across levels - vist all siblings before going deeper into the tree
+
+### DFS
+
+Within DFS we can visit nodes in three different ways: 
+
+1. **In-order**
+1. **Pre-order**
+1. **Post-order**
+
+#### In-order
+
+Make sure everything in the left sub-tree is visited first before the parent, then visit the parent, then visit everything in the right sub-tree. Walk through the traversal on the slides for details
+
+#### Worksheet Part 2
+
+Do the first row of the worksheet for DFS in-order
+
+#### Pre-Order
+Same as in-order, but visit first before exploring the left sub-tree. Visit node, explore the left-sub tree as far as you can, visiting each node you get to, and then do the same for the right sub-tree. Walk through the traversal on the slides for details
+
+#### Worksheet Part 2
+
+Fill in second row of the worksheet
+
+#### Post-order
+
+Traverse left sub-tree as far as you can, then the right-subtree as far as you can, and then finally visit the node when you can't traverse further. Walk through the traversal on the slides for details
+
+#### Worksheet Part 2
+
+Fill in third row of the worksheet
+
+### BFS
+
+- Vist from the root down to the leaves, left to right, one horizontal layer/level at a time
+- Use a queue that we `enqueue` and `dequeue` to explore nodes
+
+### Worksheet Part 2
+
+Fill in fourth row of the worksheet
+
+## Code Review (80 min)
+
+### Work in groups (30 min)
+
+We’ll begin class today by **code reviewing the binary search tree traversals** (in-order, pre-order, post-order, and level-order). 
+
+- Please **update the progress tracker**
+-  _Then_ **form groups of 2-3 people** (ideally, with 2 who have implemented the traversals so you can compare solutions)
+
+### Review in front of class (50 min)
+
+We first learned about tree traversals last wednesday. Walk through these traversals using the diagram on the whiteboard to talk through your code
+
+**TIPS**:
+
+- Leaf nodes do have left/right pointers, but there aren't any nodes at the other end of those pointers
+- Any time a funciton is called, the entire function body is executed, and then we jump back out to where it the function was originally called, and the code continues to execute from there
+- **Function Call Stack:** - a stack built into every programming language with function calls, allows us to write simpler recursive code since the language is keeping track of everything for us
+
+#### In-order traversal - recursive
+
+- Time complexity: `O(n)`, where `n` is the number of nodes
+    - We visit each node exactly once, which takes `O(n)`
+    - Each line of code will be called once per node
+    - Each traversal is called `n` times, and visit is called `n` times, which give us `O(3n) = O(n)`
+- Space complexity: `O(log n)` (if balanced) or `O(n)` (if unbalanced), where `n` is the number of nodes
+    - If a tree is balanced, we know the height of the tree is `O(log n)`
+    - The maximum number of functions on the function call stack is exactly the height of the tree, therefore we know that _the maximum space we would need would be the height of the tree_
+    - If the tree is NOT balanced, height could be ~`n` (i.e. if the tree is all leaning to one side)
+
+    
+#### Level-order traversal - iterative
+
+- Time complexity: `O(n)`, where `n` is the number of nodes
+    - Need to visit all nodes in the tree once, which takes `O(n)`
+    - For every node, you're going to visit it once, and enqueue its left/right child once.
+        - This is true for leaves as well
+- Space complexity: `O(n)`, where `n` is the number of nodes
+    - The largest that the queue ever gets is when you've enqued the bottom-most level
+    - Each node has at most 2 children
+    - Depth of root node is 0 (2^0 nodes)
+    - Depth of next level is 1 (2^1 nodes), one after that is 2 (2^2 nodes), etc.
+    - Once you're at the bottom most layer, you'll have the heighest number of nodes at that level (2^h), where `h` is the height of the tree
+    - We know `h = log(n)` with log base 2.
+    - The last level has `(n+1)/2` nodes in a perfectly balanced tree. Since the bottomost will always contain the most, we know this is the largest space we will need, and can simplify  `O((n+1)/2)` to `O(n)`
+
+    
+## Break (10 min)
+
+## Abstract Data Types vs Concrete Data Structures Wrapup (20 min)
+
+### Abstract Data Types
+
+- Collection
+    - List
+        - Stack
+        - Queue
+        - Deque
+- Map/Dictionary
+- Set
+    - Multiset
+- Priority Queue
+    - Queue with VIP list, can cut the line
+
+
+### Concrete Data Structures
+
+- Linear Structures
+    - Array
+    - Linked List
+- Non-linear structures
+    - Hash Table
+    - Tree
+        - Binary Search Tree
+        - Prefix tree/trie
+    - Heap
+    - Graphs
+
+## Applications of Trees
+
+- Directory/file structures
+- Tree can be used to implement a map/dictionary
+- Graphics engines
+- Phylogenetic trees (biology/bio-tech)
+- Parse trees (language you speak)
+    - how voice assistants work
+    - how calculators work
+- If you build your own programming language!
+- Image compression
+- Quadtrees
+- Octrees - used to find spatial data
+
+Trees are everywhere, they may just be invisible :)
+
+## Wrapup
+
+Finish all challenges before we kick off the Call Routing project next class!
+
 
 
 [tree traversal]: https://en.wikipedia.org/wiki/Tree_traversal
