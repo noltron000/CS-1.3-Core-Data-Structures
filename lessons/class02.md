@@ -24,14 +24,14 @@ By the end of this lesson, students should be able to...
 
 ## Challenges
 - Implement iterative [factorial] function using [recursion starter code]:
-    - Implement `factorial(n)` - the product of all integers 1 through `n`
-    - Run `python recursion.py number` to test `factorial` on a number
-        - Example: `python recursion.py 8` gives the result `factorial(8) => 40320`
-    - Run `pytest recursion_test.py` to run the [recursion unit tests] and fix any failures
+	- Implement `factorial(n)` - the product of all integers 1 through `n`
+	- Run `python recursion.py number` to test `factorial` on a number
+		- Example: `python recursion.py 8` gives the result `factorial(8) => 40320`
+	- Run `pytest recursion_test.py` to run the [recursion unit tests] and fix any failures
 - Implement recursive linear and binary search algorithms using [search starter code]:
-    - Implement `linear_search(array, item)` - the first index of `item` in `array`
-    - Implement `binary_search(array, item)` - the index of `item` in sorted `array`
-    - Run `pytest search_test.py` to run the [search unit tests] and fix any failures
+	- Implement `linear_search(array, item)` - the first index of `item` in `array`
+	- Implement `binary_search(array, item)` - the index of `item` in sorted `array`
+	- Run `pytest search_test.py` to run the [search unit tests] and fix any failures
 - Annotate functions with complexity analysis of running time and space (memory)
 
 ## Stretch Challenges
@@ -41,18 +41,18 @@ By the end of this lesson, students should be able to...
 
 <!--## Minute-by-Minute
 
-| **Elapsed** | **Time**  | **Activity**              |
+| **Elapsed** | **Time**  | **Activity**			  |
 | ----------- | --------- | ------------------------- |
-| 0:00        | 0:05      | Progress Tracker                |
-| 0:05        | 0:10      | Factoid of the Day                  |
-| 0:15        | 0:25      | Code Review in Pairs       |
-| 0:40        | 0:30      | Code Review Presentation       |
-| 1:10        | 0:05      | BREAK       |
-| 1:20        | 0:25      | Card Sorting Activity       |
-| 1:45        | 0:10      | TT - Recursion       |
-| 1:55        | 0:04      | Recursive Binary Search Card Activity       |
-| 1:59        | 0:01      | Wrap up       |
-| TOTAL       | 2:00      |                           |-->
+| 0:00		| 0:05	  | Progress Tracker				|
+| 0:05		| 0:10	  | Factoid of the Day				  |
+| 0:15		| 0:25	  | Code Review in Pairs	   |
+| 0:40		| 0:30	  | Code Review Presentation	   |
+| 1:10		| 0:05	  | BREAK	   |
+| 1:20		| 0:25	  | Card Sorting Activity	   |
+| 1:45		| 0:10	  | TT - Recursion	   |
+| 1:55		| 0:04	  | Recursive Binary Search Card Activity	   |
+| 1:59		| 0:01	  | Wrap up	   |
+| TOTAL	   | 2:00	  |						   |-->
 
 ## Progress Tracker (5 min)
 
@@ -69,16 +69,16 @@ There's a secret hexagram code known as [I Ching](https://en.wikipedia.org/wiki/
 Tips
 
 - There's 64 characters that make up this code. Why 64?
-    - Demonstrate on the whiteboard that for every bar (x) that you add, you get 2^x possible combinations
-    - Binary and the Ching code can be seen as the same representation!
-    - This means with 6 bars, we can represent 64 numbers!
+	- Demonstrate on the whiteboard that for every bar (x) that you add, you get 2^x possible combinations
+	- Binary and the Ching code can be seen as the same representation!
+	- This means with 6 bars, we can represent 64 numbers!
 
 ## Card Sorting Activity (25 min)
 
 ### Linear Search - "Special" sort
 
 - Get into pairs, each pair should have a stack of cards. No computers!
-    - Each deck should be pre-sorted by the instructor such that it takes 3-5 flips per pair to find their card
+	- Each deck should be pre-sorted by the instructor such that it takes 3-5 flips per pair to find their card
 - Each deck should have exactly 8 cards with 1 duplicate. Pull out the duplicate, this will be the **target card**
 - That one duplicate is the card you're going to be searching for
 - Leave cards face down in a row, with the duplicate target card face up and off to the side.
@@ -103,9 +103,9 @@ Tips
 
 - Imagine you have a phone book, but it has no table of contents. It's in alphabetial order, but you have no idea where the "M's" start or end, and you're looking for the name McGregor
 - Since you know it's in alphabetical order, one strategy could be:
-    - Open to the middle of the book
-    - From there, flip to the left or right depending on what letter you land on.
-        - i.e. if you open up to the "K's", you know that "M" appears later, so you can flip to the right and ignore any pages to the left of the "K" page that you opened to.
+	- Open to the middle of the book
+	- From there, flip to the left or right depending on what letter you land on.
+		- i.e. if you open up to the "K's", you know that "M" appears later, so you can flip to the right and ignore any pages to the left of the "K" page that you opened to.
 
 ### Phone Books and Cards
 
@@ -118,12 +118,12 @@ Tips
 
 - The "phone book search" we just discussed is actually **binary search!**
 - At a high level, the algorithm does the following, given an array and a target value:
-    - Looks at the middle item (let's call it "mid") of the array, and decides if mid is equal to, less than, or greater than the target value
-    - If it's equal, we're done, we've found it!
-    - If it's less than the target value, we can ignore all items to the right of mid, and we can now look at all items in between the first item of the array and mid-1. From here, we start the algorithm over
-    - If it's greater than the target value, we can ignore all items to the left of mid, and we can now look at all items in between the mid+1 and the last item in the array. From here, we start the algorithm over
+	- Looks at the middle item (let's call it "mid") of the array, and decides if mid is equal to, less than, or greater than the target value
+	- If it's equal, we're done, we've found it!
+	- If it's less than the target value, we can ignore all items to the right of mid, and we can now look at all items in between the first item of the array and mid-1. From here, we start the algorithm over
+	- If it's greater than the target value, we can ignore all items to the left of mid, and we can now look at all items in between the mid+1 and the last item in the array. From here, we start the algorithm over
 - This is pretty small stakes with 7 cards and 1 target, but imagine Facebook with 1 billion people and trying to find 1 person. **With binary search, can do this in 32 steps in the worst case!**
-    - We will analyze this in detail and write code for it in a future class!
+	- We will analyze this in detail and write code for it in a future class!
 
 **Two important notes on binary search:**
 
@@ -135,21 +135,21 @@ Tips
 ### Factorial Definition on the Whiteboard
 
 - A **factorial** is when a given number is multiplied by each number less than it. Use the "!" symbol to represent a factorial
-    - i.e. 4! = 4 * 3 * 2 * 1 = 24
+	- i.e. 4! = 4 * 3 * 2 * 1 = 24
 - Draw out 5! through 2!, what is the pattern seen?
-    - 5! = 5 * 4! = 5 * 4 * 3! = 5 * 4 * 3 * 2! = 5 * 4 * 3 * 2 * 1! = 5 * 4 * 3 * 2 * 1
-    - 0! = 1
-    - **n! = n * (n-1) * )n-2) * ... * 2 * 1**
+	- 5! = 5 * 4! = 5 * 4 * 3! = 5 * 4 * 3 * 2! = 5 * 4 * 3 * 2 * 1! = 5 * 4 * 3 * 2 * 1
+	- 0! = 1
+	- **n! = n * (n-1) * )n-2) * ... * 2 * 1**
 - **You can define factorials in terms of each other!**
 - Factorial can be written recursively based on this principle:
 
 ```python
 def factorial(n):
-    if n == 1:
-        return 1
-    else:
-        f = factorial(n-1)
-        return n*f
+	if n == 1:
+		return 1
+	else:
+		f = factorial(n-1)
+		return n*f
 ```
 
 **Think of recursion as only doing one thing yourself, and then passing the buck**
@@ -200,9 +200,9 @@ Chosen students present their solutions for Recursive Linear Search
 - Make sure you're checking for an invalid index for your array (remember this could happen both through the recursive call or through user input). Remember you need to check for _all valid array lengths_
 - Remember to comment your code to make it clear!
 - Can we do this without an index?
-    - Yes! through array slicing: `array[1:]`
-    - _But_ this is slow. Given `n` is the length of the array, it takes `n-1` steps to copy the array. Since this operation takes linear time, and we would have to call this operation a linear number of times, the algorithm would have a runtime of **n<sup>2</sup>**. Yikes!
-    - **Avoid slice operators for recursive code**. You run the risk of becoming [accidently quadratic](https://accidentallyquadratic.tumblr.com/)
+	- Yes! through array slicing: `array[1:]`
+	- _But_ this is slow. Given `n` is the length of the array, it takes `n-1` steps to copy the array. Since this operation takes linear time, and we would have to call this operation a linear number of times, the algorithm would have a runtime of **n<sup>2</sup>**. Yikes!
+	- **Avoid slice operators for recursive code**. You run the risk of becoming [accidently quadratic](https://accidentallyquadratic.tumblr.com/)
 
 
 ### Code Review in Pairs - Recursive/Iterative Binary Search (15 min)
@@ -232,9 +232,9 @@ Chosen students present their solutions for Iterative Binary Search
 - If you can't calculate the value of a parameter in the function definition, set it to `none`, and then calculate it in the function when you have access to what you need
 - The iterative solution's looping conditional _should be the same_ as the base case of recursive solution
 - Compare your iterative/recursive solutions and see where they're the same or differ
-    - Almost every line of code can be matched between the two algorithms
-    - The loop in the iterative solution iterative will be called the same number of times as the number of recursive calls in the recursives solution
-    - **Runtime should not differ here for this function**
+	- Almost every line of code can be matched between the two algorithms
+	- The loop in the iterative solution iterative will be called the same number of times as the number of recursive calls in the recursives solution
+	- **Runtime should not differ here for this function**
 
 ## TT - Algorithm Analysis (10 min)
 
@@ -245,10 +245,10 @@ Credit to [Mathwarehouse](https://www.mathwarehouse.com/programming/gifs/binary-
 ### Linear Search
 
 - **Best case:** The item we're looking for is the first one in the list: `O(1)`
-    - Contant time since we only have to do 1 operation regardless of the length of the list
+	- Contant time since we only have to do 1 operation regardless of the length of the list
 - **Worst case:** The item we're looking for is at the end of the list: `O(n)`
-    - Where `n` is the number of items in the array
-    - Linear time since we may have to search the length of the list to find the item.
+	- Where `n` is the number of items in the array
+	- Linear time since we may have to search the length of the list to find the item.
 - This is why it is called _linear_ search. It takes _linear_ time!
 - You don't need to make any assumptions about the input: sorted and unsorted both have the same runtime
 - This is slower though than other algorithms
@@ -256,21 +256,21 @@ Credit to [Mathwarehouse](https://www.mathwarehouse.com/programming/gifs/binary-
 ### Binary Search
 
 - **Best case:** The item we're looking for is exactly in the middle: `O(1)`
-    - Never examine data, just checked the middle and found it
-    -  `O(1)` space too, since it's just local variables
+	- Never examine data, just checked the middle and found it
+	- `O(1)` space too, since it's just local variables
 - **Worst case:** The item we're looking for is first, last, or one off from the median in the array: Given `n` is the length of the input array, `O(log(n))`
-    - We're _splitting the array in half_ each time until we have 1 item.
-    - **If you double the length of the array, in the worst case, you only increase the number of steps it takes to find the item by one**
-        - i.e. a 7 item array takes at most 3 steps to find the item. A 14 item array would take at most 4 steps (try it out yourself!)
+	- We're _splitting the array in half_ each time until we have 1 item.
+	- **If you double the length of the array, in the worst case, you only increase the number of steps it takes to find the item by one**
+		- i.e. a 7 item array takes at most 3 steps to find the item. A 14 item array would take at most 4 steps (try it out yourself!)
 - This algorithm runs _really_ fast, but only works if the array is _sorted_
 
 ### Graph It
 
 - Binary search has _constant run-time operations_ for checking for the target item and changing pointers
 - Given `n` is the length of the array, our range of items that we're searching through goes from `n` --> `n/2` --> `n/4` --> ... 1
-    - i.e. for a 7 item list, our number of items that we need to look through goes from 7 --> 3 --> 1
+	- i.e. for a 7 item list, our number of items that we need to look through goes from 7 --> 3 --> 1
 - This follows the **log function**
-    - This is a slow growing function because we are _dividing by two_ as we grow
+	- This is a slow growing function because we are _dividing by two_ as we grow
 - Exponent and log are **inverses** of each other - exponent is fast growing (doubles), log is slow growing (halves)
 
 See the graph below to compare exponent, linear, and log:

@@ -21,16 +21,16 @@ If you made the repo, then no further action is needed, but if not, make sure to
 
 1. In your repo, create a `travis.yml` file. This will tell Travis CI what to do when you push to your repo
 1. Make sure your repo includes the following:
-    - `language`: should specify what language you're using
-    - `install`: a command used to install dependencies
-    - `script`: a comman to run your tests
+	- `language`: should specify what language you're using
+	- `install`: a command used to install dependencies
+	- `script`: a comman to run your tests
 
 Here is an example `travis.yml` file:
 
 ```yaml
-  language: python
-  script:
-    - pytest
+	language: python
+	script:
+		- pytest
 ```
 
 **Note the "-" used for `script`!** You need that as well for `install`

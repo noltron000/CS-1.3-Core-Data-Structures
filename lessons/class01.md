@@ -19,12 +19,12 @@
 ## Challenges
 - Practice binary and hexadecimal conversions on [number bases worksheet]
 - Implement base conversion functions for unsigned numbers using [starter code]:
-    - Implement `decode` - decode digits in any base to a number
-    - Implement `encode` - encode a number to digits in any base
-    - Implement `convert` - convert digits in any base to digits in any base
-    - Run `python bases.py number base1 base2` to test `convert` on `number`
-        - Example: `python bases.py 42 10 2` should give the result `101010`
-    - Run `pytest bases_test.py` to run the [unit tests] and fix any failures
+	- Implement `decode` - decode digits in any base to a number
+	- Implement `encode` - encode a number to digits in any base
+	- Implement `convert` - convert digits in any base to digits in any base
+	- Run `python bases.py number base1 base2` to test `convert` on `number`
+		- Example: `python bases.py 42 10 2` should give the result `101010`
+	- Run `pytest bases_test.py` to run the [unit tests] and fix any failures
 - Write additional unit tests to ensure your conversion algorithms are robust
 
 ## Stretch Challenges
@@ -136,15 +136,15 @@ Each person should fill out the _first two sections_ of [integers and bases work
 
 - **Hexidecimal** - base-16, more simply known as "hex"
 - Common to represent a number as hex, even though computers use binary, because:
-    -  There's a simple conversion betweeb base-2 and base-16
-    -  They're easier to write out
+	- There's a simple conversion betweeb base-2 and base-16
+	- They're easier to write out
 - 16 digits: 0-9, A-F
-    -  9 rolls over to A, F rolls over to 10
-    -  99 rolles over to 9A, FF rolls over to 100
+	- 9 rolls over to A, F rolls over to 10
+	- 99 rolles over to 9A, FF rolls over to 100
 - A == 10, B == 11 ... F == 15
 - **very important for frontend engineers!**
-    - Used for colors
-    - Used to represent symbols
+	- Used for colors
+	- Used to represent symbols
 - Note max value is always one less than the base (i.e. 15 for base-16)
 
 ### Base 64 interlude
@@ -153,7 +153,7 @@ Give brief history of how base 64 is used for the web, commonly used to pass inf
 
 ### Back to Base-16
 - 10 will always be the base number in any base
-    - 10 is two in binary, ten in base-10, and sixteen in base-16
+	- 10 is two in binary, ten in base-10, and sixteen in base-16
 - Hex is often prefixed `0x`, makes it easier to differentiate from a variable name in programming languages
 - Subscript with 16 to also help differentiate
 - Counting in Hex: 0-F, 10-1F, 20-2F, ... 90-9F, A0-AF, B0-Bf, etc.
@@ -162,10 +162,10 @@ Give brief history of how base 64 is used for the web, commonly used to pass inf
 ### Hex to Binary
 
 - Every hex digit is 4 binary digits (bits)
-    - i.e. 0x05 = 0101
+	- i.e. 0x05 = 0101
 - Can take two hex numbers, and convert them to two 4-digit binary numbers and then combine them to get a valid binary number
-    - i.e. 0x72 = 0111 0010
-    - **can independently convert hex digits into binary!**
+	- i.e. 0x72 = 0111 0010
+	- **can independently convert hex digits into binary!**
 - **Can use this same idea to also go from binary to hex!**
 - Processors can easily convert chunks of hex into binary because of this!
 
@@ -184,18 +184,18 @@ There are a few different ways to represent negative numbers:
 
 - **Signed Magnitude**: leftmost bit indicates sign: 0 is positive, 1 is negative
 - Base-10 to Base-2 equivalents:
-    - 72 <--> 0100 1000
-    - -72 <--> 1100 1000
+	- 72 <--> 0100 1000
+	- -72 <--> 1100 1000
 - **One's compliment**: flip all the bits to switch between positive and negative numbers
 - Base-10 to Base-2 equivalents:
-    - 72 <--> 0100 1000
-    - -72 <--> 1011 0111
-    - **One's compliment Addition**: Add the two numbers, and if there's a carry, do an _end-arround carry_ (add it back to the sum)
+	- 72 <--> 0100 1000
+	- -72 <--> 1011 0111
+	- **One's compliment Addition**: Add the two numbers, and if there's a carry, do an _end-arround carry_ (add it back to the sum)
 - **Two-s Compliment**: most way processors represnt negatives, to negate a two's compliment number, invert/flip all the bits and then add 1
-    - other technique: starting from the right, find the first 1, invert all the bits to the left of that 1
+	- other technique: starting from the right, find the first 1, invert all the bits to the left of that 1
 - Base-10 to Base-2 equivalents:
-    - 72 <--> 0100 1000
-    - -72 <--> 1011 1000
+	- 72 <--> 0100 1000
+	- -72 <--> 1011 1000
 
 ## Wrap up (5 min)
 

@@ -10,8 +10,8 @@ By this end of this lesson, students should be able to...
 
 ## Topics
 - [Tree traversal]
-    - [Depth-first search]: pre-order, post-order, in-order traversal
-    - [Breadth-first search]: level-order traversal
+	- [Depth-first search]: pre-order, post-order, in-order traversal
+	- [Breadth-first search]: level-order traversal
 
 ## Resources
 - Review Make School's [tree traversal slides]
@@ -24,32 +24,32 @@ By this end of this lesson, students should be able to...
 
 ## Challenges
 - Implement tree traversal methods on the `BinarySearchTree` class using [binary tree starter code]:
-    - `_traverse_in_order_recursive` - traverse the tree with recursive in-order traversal (DFS)
-    - `_traverse_pre_order_recursive` - traverse the tree with recursive pre-order traversal (DFS)
-    - `_traverse_post_order_recursive` - traverse the tree with recursive post-order traversal (DFS)
-    - `_traverse_level_order_iterative` - traverse the tree with iterative level-order traversal (BFS)
+	- `_traverse_in_order_recursive` - traverse the tree with recursive in-order traversal (DFS)
+	- `_traverse_pre_order_recursive` - traverse the tree with recursive pre-order traversal (DFS)
+	- `_traverse_post_order_recursive` - traverse the tree with recursive post-order traversal (DFS)
+	- `_traverse_level_order_iterative` - traverse the tree with iterative level-order traversal (BFS)
 - Annotate tree traversal methods with complexity analysis of running time and space (memory)
 - Run `python binarytree.py` to test `BinarySearchTree` traversal methods on a small example
 - Run `pytest binarytree_test.py` to run the [binary tree unit tests] and fix any failures
 
 ## Stretch Challenges
 - Implement iterative tree traversal methods on the `BinarySearchTree` class (*without using recursion*):
-    - `_traverse_in_order_iterative` - traverse the tree with iterative in-order traversal (DFS)
-    - `_traverse_pre_order_iterative` - traverse the tree with iterative pre-order traversal (DFS)
-    - `_traverse_post_order_iterative` - traverse the tree with iterative post-order traversal (DFS)
+	- `_traverse_in_order_iterative` - traverse the tree with iterative in-order traversal (DFS)
+	- `_traverse_pre_order_iterative` - traverse the tree with iterative pre-order traversal (DFS)
+	- `_traverse_post_order_iterative` - traverse the tree with iterative post-order traversal (DFS)
 - Annotate tree traversal methods with complexity analysis of running time and space (memory)
 - Implement `TreeMap` class ([map/dictionary][map] abstract data type implemented with [binary search tree] data structure) with the following properties and instance methods:
-    - `__init__` - initialize a new empty tree map structure
-    - `size` - property that tracks the number of tree map entries in constant time
-    - `keys` - return a list of all keys in the tree map
-    - `values` - return a list of all values in the tree map
-    - `items` - return a list of all entries (key-value pairs) in the tree map
-    - `contains(key)` - return a boolean indicating whether `key` is in the tree map
-    - `get(key)` - return the value associated with `key` in the tree map, or raise `KeyError` if not found
-    - `set(key, value)` - insert `key` (or update, if already present) with associated `value` in the tree map
-    - `delete(key)` - delete `key` and associated value from the tree map, or raise `KeyError` if not found
+	- `__init__` - initialize a new empty tree map structure
+	- `size` - property that tracks the number of tree map entries in constant time
+	- `keys` - return a list of all keys in the tree map
+	- `values` - return a list of all values in the tree map
+	- `items` - return a list of all entries (key-value pairs) in the tree map
+	- `contains(key)` - return a boolean indicating whether `key` is in the tree map
+	- `get(key)` - return the value associated with `key` in the tree map, or raise `KeyError` if not found
+	- `set(key, value)` - insert `key` (or update, if already present) with associated `value` in the tree map
+	- `delete(key)` - delete `key` and associated value from the tree map, or raise `KeyError` if not found
 - Write unit tests to ensure the `TreeMap` class is robust (*hint: these should be very similar to the hash table unit tests*)
-    - Include test cases for each class instance method
+	- Include test cases for each class instance method
 - Annotate class instance methods with complexity analysis of running time and space (memory)
 - Compare the behaviors of your `TreeMap` class to those of the `HashTable` class and the [Python `dict` type]
 
@@ -64,8 +64,8 @@ See [slides](lessons/slides/tree-traversals.pdf)
 - You can **traverese either left or right** down sub-trees of a tree
 - For convention, we always traverse from left to right
 - There are two main ways to traverse: **Depth-first search (DFS) or Breadth-first search (BFS)**
-    - DFS visits a child and then descendents - you drill down one side of the tree, gradually making your way from left to right
-    - BFS vists across levels - vist all siblings before going deeper into the tree
+	- DFS visits a child and then descendents - you drill down one side of the tree, gradually making your way from left to right
+	- BFS vists across levels - vist all siblings before going deeper into the tree
 
 ### DFS
 
@@ -114,7 +114,7 @@ Fill in fourth row of the worksheet
 We’ll begin class today by **code reviewing the binary search tree traversals** (in-order, pre-order, post-order, and level-order). 
 
 - Please **update the progress tracker**
--  _Then_ **form groups of 2-3 people** (ideally, with 2 who have implemented the traversals so you can compare solutions)
+- _Then_ **form groups of 2-3 people** (ideally, with 2 who have implemented the traversals so you can compare solutions)
 
 ### Review in front of class (50 min)
 
@@ -129,31 +129,31 @@ We first learned about tree traversals last wednesday. Walk through these traver
 #### In-order traversal - recursive
 
 - Time complexity: `O(n)`, where `n` is the number of nodes
-    - We visit each node exactly once, which takes `O(n)`
-    - Each line of code will be called once per node
-    - Each traversal is called `n` times, and visit is called `n` times, which give us `O(3n) = O(n)`
+	- We visit each node exactly once, which takes `O(n)`
+	- Each line of code will be called once per node
+	- Each traversal is called `n` times, and visit is called `n` times, which give us `O(3n) = O(n)`
 - Space complexity: `O(log n)` (if balanced) or `O(n)` (if unbalanced), where `n` is the number of nodes
-    - If a tree is balanced, we know the height of the tree is `O(log n)`
-    - The maximum number of functions on the function call stack is exactly the height of the tree, therefore we know that _the maximum space we would need would be the height of the tree_
-    - If the tree is NOT balanced, height could be ~`n` (i.e. if the tree is all leaning to one side)
+	- If a tree is balanced, we know the height of the tree is `O(log n)`
+	- The maximum number of functions on the function call stack is exactly the height of the tree, therefore we know that _the maximum space we would need would be the height of the tree_
+	- If the tree is NOT balanced, height could be ~`n` (i.e. if the tree is all leaning to one side)
 
-    
+	
 #### Level-order traversal - iterative
 
 - Time complexity: `O(n)`, where `n` is the number of nodes
-    - Need to visit all nodes in the tree once, which takes `O(n)`
-    - For every node, you're going to visit it once, and enqueue its left/right child once.
-        - This is true for leaves as well
+	- Need to visit all nodes in the tree once, which takes `O(n)`
+	- For every node, you're going to visit it once, and enqueue its left/right child once.
+		- This is true for leaves as well
 - Space complexity: `O(n)`, where `n` is the number of nodes
-    - The largest that the queue ever gets is when you've enqued the bottom-most level
-    - Each node has at most 2 children
-    - Depth of root node is 0 (2^0 nodes)
-    - Depth of next level is 1 (2^1 nodes), one after that is 2 (2^2 nodes), etc.
-    - Once you're at the bottom most layer, you'll have the heighest number of nodes at that level (2^h), where `h` is the height of the tree
-    - We know `h = log(n)` with log base 2.
-    - The last level has `(n+1)/2` nodes in a perfectly balanced tree. Since the bottomost will always contain the most, we know this is the largest space we will need, and can simplify  `O((n+1)/2)` to `O(n)`
+	- The largest that the queue ever gets is when you've enqued the bottom-most level
+	- Each node has at most 2 children
+	- Depth of root node is 0 (2^0 nodes)
+	- Depth of next level is 1 (2^1 nodes), one after that is 2 (2^2 nodes), etc.
+	- Once you're at the bottom most layer, you'll have the heighest number of nodes at that level (2^h), where `h` is the height of the tree
+	- We know `h = log(n)` with log base 2.
+	- The last level has `(n+1)/2` nodes in a perfectly balanced tree. Since the bottomost will always contain the most, we know this is the largest space we will need, and can simplify  `O((n+1)/2)` to `O(n)`
 
-    
+	
 ## Break (10 min)
 
 ## Abstract Data Types vs Concrete Data Structures Wrapup (20 min)
@@ -161,29 +161,29 @@ We first learned about tree traversals last wednesday. Walk through these traver
 ### Abstract Data Types
 
 - Collection
-    - List
-        - Stack
-        - Queue
-        - Deque
+	- List
+		- Stack
+		- Queue
+		- Deque
 - Map/Dictionary
 - Set
-    - Multiset
+	- Multiset
 - Priority Queue
-    - Queue with VIP list, can cut the line
+	- Queue with VIP list, can cut the line
 
 
 ### Concrete Data Structures
 
 - Linear Structures
-    - Array
-    - Linked List
+	- Array
+	- Linked List
 - Non-linear structures
-    - Hash Table
-    - Tree
-        - Binary Search Tree
-        - Prefix tree/trie
-    - Heap
-    - Graphs
+	- Hash Table
+	- Tree
+		- Binary Search Tree
+		- Prefix tree/trie
+	- Heap
+	- Graphs
 
 ## Applications of Trees
 
@@ -192,8 +192,8 @@ We first learned about tree traversals last wednesday. Walk through these traver
 - Graphics engines
 - Phylogenetic trees (biology/bio-tech)
 - Parse trees (language you speak)
-    - how voice assistants work
-    - how calculators work
+	- how voice assistants work
+	- how calculators work
 - If you build your own programming language!
 - Image compression
 - Quadtrees

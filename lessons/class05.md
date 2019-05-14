@@ -4,14 +4,14 @@
 
 **NOTE: Fill in with the appropriate items**
 
-| **Elapsed** | **Time**  | **Activity**              |
+| **Elapsed** | **Time**  | **Activity**			  |
 | ----------- | --------- | ------------------------- |
-| 0:00        | 0:05      | Objectives                |
-| 0:05        | 0:15      | Overview                  |
-| 0:20        | 0:45      | In Class Activity I       |
-| 1:05        | 0:10      | BREAK                     |
-| 1:15        | 0:45      | In Class Activity II      |
-| TOTAL       | 2:00      |                           |-->
+| 0:00		| 0:05	  | Objectives				|
+| 0:05		| 0:15	  | Overview				  |
+| 0:20		| 0:45	  | In Class Activity I	   |
+| 1:05		| 0:10	  | BREAK					 |
+| 1:15		| 0:45	  | In Class Activity II	  |
+| TOTAL	   | 2:00	  |						   |-->
 
 ## Learning Objectives (5 min)
 
@@ -35,34 +35,34 @@ By this end of this lesson, students should be able to...
 
 ## Challenges
 - Implement `LinkedStack` class (stack with linked list) and `ArrayStack` class (stack with dynamic array) using [stack starter code]:
-    - Implement `is_empty` - check if the stack is empty
-    - Implement `length` - return the number of items in the stack
-    - Implement `push(item)` - insert `item` on the top of the stack
-    - Implement `peek` - return the item on the top of the stack
-    - Implement `pop` - remove and return the item on the top of the stack
-    - Run `pytest stack_test.py` to run the [stack unit tests] and fix any failures
+	- Implement `is_empty` - check if the stack is empty
+	- Implement `length` - return the number of items in the stack
+	- Implement `push(item)` - insert `item` on the top of the stack
+	- Implement `peek` - return the item on the top of the stack
+	- Implement `pop` - remove and return the item on the top of the stack
+	- Run `pytest stack_test.py` to run the [stack unit tests] and fix any failures
 - Annotate `push` and `pop` methods with running time complexity analysis
 - Implement `LinkedQueue` class (queue with linked list) and `ArrayQueue` class (queue with dynamic array) using [queue starter code]:
-    - Implement `is_empty` - check if the queue is empty
-    - Implement `length` - return the number of items in the queue
-    - Implement `enqueue(item)` - insert `item` at the back of the queue
-    - Implement `front` - return the item at the front of the queue
-    - Implement `dequeue` - remove and return the item at the front of the queue
-    - Run `pytest queue_test.py` to run the [queue unit tests] and fix any failures
+	- Implement `is_empty` - check if the queue is empty
+	- Implement `length` - return the number of items in the queue
+	- Implement `enqueue(item)` - insert `item` at the back of the queue
+	- Implement `front` - return the item at the front of the queue
+	- Implement `dequeue` - remove and return the item at the front of the queue
+	- Run `pytest queue_test.py` to run the [queue unit tests] and fix any failures
 - Annotate `enqueue` and `dequeue` methods with running time complexity analysis
 
 ## Stretch Challenges
 - Implement `Deque` class (double-ended queue) with doubly linked list or dynamic array (your choice):
-    - Implement `is_empty` - check if the deque is empty
-    - Implement `length` - return the number of items in the deque
-    - Implement `push_front(item)` - insert `item` at the front of the deque
-    - Implement `push_back(item)` - insert `item` at the back of the deque
-    - Implement `front` - return the item at the front of the deque
-    - Implement `back` - return the item at the back of the deque
-    - Implement `pop_front` - remove and return the item at the front of the deque
-    - Implement `pop_back` - remove and return the item at the back of the deque
+	- Implement `is_empty` - check if the deque is empty
+	- Implement `length` - return the number of items in the deque
+	- Implement `push_front(item)` - insert `item` at the front of the deque
+	- Implement `push_back(item)` - insert `item` at the back of the deque
+	- Implement `front` - return the item at the front of the deque
+	- Implement `back` - return the item at the back of the deque
+	- Implement `pop_front` - remove and return the item at the front of the deque
+	- Implement `pop_back` - remove and return the item at the back of the deque
 - Write unit tests for to ensure the `Deque` class is robust
-    - Include test cases for each class instance method
+	- Include test cases for each class instance method
 - Annotate `push_front`, `push_back`, `pop_front`, and `pop_back` methods with running time complexity analysis
 
 ## TT 
@@ -73,24 +73,24 @@ Stacks and Queues are abstract data types.  They can be implemented with an arra
 
 ### Queue
 - A queue is a like a line
-    -enqueue : add to front of the List
-    -dequeue: remove from end of the list
-    -front: view the object at the front
-    -FIFO : first in first out
+	-enqueue : add to front of the List
+	-dequeue: remove from end of the list
+	-front: view the object at the front
+	-FIFO : first in first out
 - Real life examples:
-    - Priority Queue: covered in CS 2.1
+	- Priority Queue: covered in CS 2.1
 
 ### Stack
 - A stack is like a set of plates you add and remove from the top.
-    - Push: add an object to the top
-    - Pop: remove top items
-    - Peek: view object on the top
-    - LIFO:
+	- Push: add an object to the top
+	- Pop: remove top items
+	- Peek: view object on the top
+	- LIFO:
 - Real life examples:
-    - Function Stack: Function calls go on the stack, popped when the function returns.
-    - Stack trace: The call stack being displayed to your terminal.
+	- Function Stack: Function calls go on the stack, popped when the function returns.
+	- Stack trace: The call stack being displayed to your terminal.
 
-    
+	
 ## Activity - Stacks and Queues Worksheet - Overview  (15 min)
 
 [Stacks and Queues Worksheet](https://docs.google.com/document/d/1zRnzN-QCKkejHTEBMzTQhdquY47Cu0JNbTNrliScVnw/edit?usp=sharing)
@@ -100,8 +100,8 @@ There are multiple ways we can implement abstract data types such as stacks and 
 For each of the eight implementations, we will do the following:
 
 1. Describe how we will implement the three key methods
-    - `push`, `peek`, `pop` for stacks
-    - `enqueue`, `front`, `dequeue` for queues
+	- `push`, `peek`, `pop` for stacks
+	- `enqueue`, `front`, `dequeue` for queues
 1. Provide the runtime for each operation
 1. Decide which of the implementations is the best/worst for the abstract data type.
 1. Update your code to match the better implementation
@@ -136,7 +136,7 @@ Now draw the same list with the top of the stack at the tail of the list
 ### Arrays
 
 Draw the array with the top of the stack at index 0
-    - Draw array vertically, with the top cell being the top of the stack
+	- Draw array vertically, with the top cell being the top of the stack
 
 **Tips:**
 
@@ -146,22 +146,22 @@ Draw the array with the top of the stack at index 0
 
 
 Now draw the array with the top of the stack at index n-1
-    - Draw array vertically, with the bottom cell being the top of the stack
+	- Draw array vertically, with the bottom cell being the top of the stack
 
 ## TT - Amortization (10 min)
 
 Think about **dynamic arrays** like tables at resturants:
 
 - You have 5 people in your party, so you get seated at a table for 8
-    - A dynamic array is similar: it has "extra seats" built in
+	- A dynamic array is similar: it has "extra seats" built in
 - But what if you have a 9th person come? How do we append a new item at the end of the array if the array is full?
-    - The resturant has to get a whole new 16 person table to accomodate everyone, and then everyone has to move over
-    - Dynamic arrays are the same: they need to allocate a whole new, larger array to make this space, and then move all the items over to that larger array
+	- The resturant has to get a whole new 16 person table to accomodate everyone, and then everyone has to move over
+	- Dynamic arrays are the same: they need to allocate a whole new, larger array to make this space, and then move all the items over to that larger array
 - When the size needs to be increased, it takes `O(n)` time. But this is **a rare occurrence**
-    -  This only happens when the array needs to double in size. Going back to the resturant, if you're at a table for 8, and a 9th person shows up, then you need to move to a 16 person table (`O(n)`), _but now you can add person 10-16 without having to change tables_ (`O(1)`)
+	- This only happens when the array needs to double in size. Going back to the resturant, if you're at a table for 8, and a 9th person shows up, then you need to move to a 16 person table (`O(n)`), _but now you can add person 10-16 without having to change tables_ (`O(1)`)
 - Therefore on average, adding items to the array still takes constant time, since the occasional times it takes `O(n)` is outwieghed by all of the times it usually takes `O(1)`
 - However, we can't say it's `O(1)` due to the occasional `O(n)`, so we say it is **Amortized** constant time, denoated as `O(1)*` or `O(1) amortized` or `O(1) avg`.
-    - Amortized means most of the time it's `O(1)`, but it is possible that it may take longer. This is rare enough though, that when we average it out, it's closer to constant time
+	- Amortized means most of the time it's `O(1)`, but it is possible that it may take longer. This is rare enough though, that when we average it out, it's closer to constant time
  
 ## Break (10 min)
 

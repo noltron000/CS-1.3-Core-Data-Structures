@@ -14,13 +14,13 @@ By this end of this lesson, students should be able to...
 
 <!--## Minute-by-Minute
 
-| **Elapsed** | **Time**  | **Activity**              |
+| **Elapsed** | **Time**  | **Activity**			  |
 | ----------- | --------- | ------------------------- |
-| 0:00        | 0:15      | Discuss Palindrome Notes                |
-| 0:05        | 1:20      | Code Review + Presentations       |
-| 1:35        | 0:10      | Break      |
-| 1:45        | 0:05      | Wrap up      |
-| TOTAL       | 1:50      |                           |
+| 0:00		| 0:15	  | Discuss Palindrome Notes				|
+| 0:05		| 1:20	  | Code Review + Presentations	   |
+| 1:35		| 0:10	  | Break	  |
+| 1:45		| 0:05	  | Wrap up	  |
+| TOTAL	   | 1:50	  |						   |
 -->
 
 ## Resources
@@ -33,18 +33,18 @@ By this end of this lesson, students should be able to...
 
 ## Challenges
 - Add new features to `LinkedList` class using [linked list starter code]:
-    - Add `size` property that tracks list length in constant running time
-    - Implement `get_at_index(index)` - returns the item at `index` in the list
-    - Implement `insert_at_index(index, item)` - inserts `item` at `index` (all items after `index` are moved down)
-    - Implement `replace(old_item, new_item)` - replaces `old_item` in the list with `new_item` using the same node
-    - Run `python linkedlist.py` to test `LinkedList` class instance methods on a small example
-    - Run `pytest linkedlist_test.py` to run the [linked list unit tests] and fix any failures
+	- Add `size` property that tracks list length in constant running time
+	- Implement `get_at_index(index)` - returns the item at `index` in the list
+	- Implement `insert_at_index(index, item)` - inserts `item` at `index` (all items after `index` are moved down)
+	- Implement `replace(old_item, new_item)` - replaces `old_item` in the list with `new_item` using the same node
+	- Run `python linkedlist.py` to test `LinkedList` class instance methods on a small example
+	- Run `pytest linkedlist_test.py` to run the [linked list unit tests] and fix any failures
 - Annotate methods with complexity analysis of running time and space (memory)
 
 ## Stretch Challenges
 - Implement `DoublyLinkedList` class with `BinaryNode` objects, which have both `next` and `previous` properties
 - Write unit tests for to ensure the `DoublyLinkedList` class is robust
-    - Include test cases for each class instance method and property
+	- Include test cases for each class instance method and property
 - Annotate methods with complexity analysis of running time and space (memory)
 
 ## Progress Tracker (3 min)
@@ -54,13 +54,13 @@ By this end of this lesson, students should be able to...
 ## Arrays and Linked Lists (5 min)
 
 - Differences between Linked List and Array
-    - can access arbitrary address of array in constant time - so can find middle element with binary search.  
-    - In Linked List, you can't access the middle directly (have to traverse from beginning) so binary search would not work.
+	- can access arbitrary address of array in constant time - so can find middle element with binary search.  
+	- In Linked List, you can't access the middle directly (have to traverse from beginning) so binary search would not work.
 - Similarity between Array and Linked List?
-    - they both are ordered
-    - both implements methods: insert, append, prepend, read
+	- they both are ordered
+	- both implements methods: insert, append, prepend, read
 - List Abstract Data Type - ADT
-    - Arrays and Linked List are concrete Data Structures that can implement the ADT / Interface / Protocol
+	- Arrays and Linked List are concrete Data Structures that can implement the ADT / Interface / Protocol
 
 #### Preview of Challenges for next class (20 min):
 Implement methods on linked list class so interface is the same as an array. [On repo - includes example, unit tests, starter code]

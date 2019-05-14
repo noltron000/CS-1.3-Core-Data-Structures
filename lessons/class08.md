@@ -22,37 +22,37 @@ By this end of this lesson, students should be able to...
 
 ## Challenges
 - Implement `BinaryTreeNode` class with the following properties and instance methods using [binary tree starter code]:
-    - `data` - the node's data element
-    - `left` - the node's left child, or `None` (if it does not exist)
-    - `right` - the node's right child, or `None` (if it does not exist)
-    - `is_leaf` - check if the node is a leaf (an external node that has no children)
-    - `is_branch` - check if the node is a branch (an internal node that has at least one child)
-    - `height` - return the node's height (the number of edges on the longest downward path from the node to a descendant leaf node)
+	- `data` - the node's data element
+	- `left` - the node's left child, or `None` (if it does not exist)
+	- `right` - the node's right child, or `None` (if it does not exist)
+	- `is_leaf` - check if the node is a leaf (an external node that has no children)
+	- `is_branch` - check if the node is a branch (an internal node that has at least one child)
+	- `height` - return the node's height (the number of edges on the longest downward path from the node to a descendant leaf node)
 - Implement `BinarySearchTree` class (using `BinaryTreeNode` objects) with the following properties and instance methods using [binary tree starter code]:
-    - `root` - the tree's root node, or `None` (if the tree is empty)
-    - `size` - property that tracks the number of nodes in constant time
-    - `is_empty` - check if the tree is empty (has no nodes)
-    - `height` - return the tree's height (the number of edges on the longest downward path from the tree's root node to a descendant leaf node)
-    - `contains(item)` - return a boolean indicating whether `item` is present in the tree
-    - `search(item)` - return an item in the tree matching the given `item`, or `None` if not found
-    - `insert(item)` - insert the given `item` in order into the tree
+	- `root` - the tree's root node, or `None` (if the tree is empty)
+	- `size` - property that tracks the number of nodes in constant time
+	- `is_empty` - check if the tree is empty (has no nodes)
+	- `height` - return the tree's height (the number of edges on the longest downward path from the tree's root node to a descendant leaf node)
+	- `contains(item)` - return a boolean indicating whether `item` is present in the tree
+	- `search(item)` - return an item in the tree matching the given `item`, or `None` if not found
+	- `insert(item)` - insert the given `item` in order into the tree
 - To simplify the `contains`, `search`, and `insert` methods with code reuse, implement iterative and recursive tree search helper methods:
-    - `_find_node_iterative(item)` - return the node containing `item` in the tree, or `None` if not found
-    - `_find_node_recursive(item)` - return the node containing `item` in the tree, or `None` if not found
-    - `_find_parent_node_iterative(item)` - return the parent of the node containing `item` (or the parent of where `item` would be if inserted) in the tree, or `None` if the tree is empty or has only a root node
-    - `_find_parent_node_recursive(item)` - return the parent of the node containing `item` (or the parent of where `item` would be if inserted) in the tree, or `None` if the tree is empty or has only a root node
+	- `_find_node_iterative(item)` - return the node containing `item` in the tree, or `None` if not found
+	- `_find_node_recursive(item)` - return the node containing `item` in the tree, or `None` if not found
+	- `_find_parent_node_iterative(item)` - return the parent of the node containing `item` (or the parent of where `item` would be if inserted) in the tree, or `None` if the tree is empty or has only a root node
+	- `_find_parent_node_recursive(item)` - return the parent of the node containing `item` (or the parent of where `item` would be if inserted) in the tree, or `None` if the tree is empty or has only a root node
 - Run `python binarytree.py` to test `BinarySearchTree` class instance methods on a small example
 - Run `pytest binarytree_test.py` to run the [binary tree unit tests] and fix any failures
 - Write additional unit tests for the `BinaryTreeNode` and `BinarySearchTree` classes
-    - Add to existing test cases to ensure the `size` property is correct
-    - Include test cases for the `height` instance method on both classes
+	- Add to existing test cases to ensure the `size` property is correct
+	- Include test cases for the `height` instance method on both classes
 - Annotate class instance methods with complexity analysis of running time
 
 ## Stretch Challenges
 - Implement this additional `BinarySearchTree` class instance method:
-    - `delete(item)` - remove `item` from the tree, if present, or else raise `ValueError` (*hint: break this down into cases based on how many children the node containing `item` has and implement helper methods for subtasks of the more complex cases*)
+	- `delete(item)` - remove `item` from the tree, if present, or else raise `ValueError` (*hint: break this down into cases based on how many children the node containing `item` has and implement helper methods for subtasks of the more complex cases*)
 - Write additional unit tests for the `BinarySearchTree` class
-    - Include several test cases for the `delete` instance method covering each case handled by the algorithm
+	- Include several test cases for the `delete` instance method covering each case handled by the algorithm
 - Implement binary search tree with singly linked list nodes (having only one link to another node) instead of binary tree nodes (having two links to other nodes)
 
 ## Trees & Binary Search Trees
@@ -95,20 +95,20 @@ By this end of this lesson, students should be able to...
 
 ### Binary Search Tree: always sorted, for each node left children are smaller, right children are larger.  No duplicate keys (usually)
  - [INSERT diagram of BST] - the root splits the tree into sub trees that also follow all the rules.
-    - _Think about it_  Does the structure of the tree depend on the order that they are entered?
-        - Without auto balancing, the root node is always the first item inserted.
+	- _Think about it_  Does the structure of the tree depend on the order that they are entered?
+		- Without auto balancing, the root node is always the first item inserted.
  - BST is good for the following:
-    - fast search, insertion, deletion - especially if it is balance.
-    - sort as you go instead of all at once.
-    - fairly simple implementation for good performance (when balanced)
-    - only allocates memory as it's needed.  Doesn't have to reallocate memory
+	- fast search, insertion, deletion - especially if it is balance.
+	- sort as you go instead of all at once.
+	- fairly simple implementation for good performance (when balanced)
+	- only allocates memory as it's needed.  Doesn't have to reallocate memory
 
 - Note: When discussing time and space complexity of algorithms, `log n` usually means `log base 2 n` ( but the 2 is sometimes left off).
-    - Recall the binary logarithm formula is the power by which 2 must be raised by to obtain n. [See Slides](https://github.com/Make-School-Courses/CS-1.3-Core-Data-Structures/blob/dual-format/lessons/slides/trees.pdf)
+	- Recall the binary logarithm formula is the power by which 2 must be raised by to obtain n. [See Slides](https://github.com/Make-School-Courses/CS-1.3-Core-Data-Structures/blob/dual-format/lessons/slides/trees.pdf)
 
 
 - Why is `log n` really fast?
-    - Imagine a BST with `2^32` nodes = (4.29 billion). This is a REALLY big number but can be represented by a tree that is only 32 levels deep.  So a search will only visit a maximum of 32 nodes to find the node containing the data we're looking for (assuming perfectly balanced).
+	- Imagine a BST with `2^32` nodes = (4.29 billion). This is a REALLY big number but can be represented by a tree that is only 32 levels deep.  So a search will only visit a maximum of 32 nodes to find the node containing the data we're looking for (assuming perfectly balanced).
 
 - Insertion [See Slides](https://github.com/Make-School-Courses/CS-1.3-Core-Data-Structures/blob/dual-format/lessons/slides/trees.pdf)
 

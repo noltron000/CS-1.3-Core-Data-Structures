@@ -37,11 +37,11 @@ By this end of this lesson, students should be able to...
 
 ## Challenges
 - Add new features to improve `HashTable` class using [hash table starter code]:
-    - Add `size` property that tracks the number of hash table entries in constant time
-    - Implement `load_factor` - return the [load factor], the ratio of number of entries to buckets
-    - Implement `_resize` - perform [dynamic resizing] when `load_factor` exceeds `0.75` after an insertion (`set` is called with a new `key`) and rehash all key-value entries
-    - Run `python hashtable.py` to test `HashTable` class instance methods on a small example
-    - Run `pytest hashtable_test.py` to run the [hash table unit tests] and fix any failures
+	- Add `size` property that tracks the number of hash table entries in constant time
+	- Implement `load_factor` - return the [load factor], the ratio of number of entries to buckets
+	- Implement `_resize` - perform [dynamic resizing] when `load_factor` exceeds `0.75` after an insertion (`set` is called with a new `key`) and rehash all key-value entries
+	- Run `python hashtable.py` to test `HashTable` class instance methods on a small example
+	- Run `pytest hashtable_test.py` to run the [hash table unit tests] and fix any failures
 - Annotate methods with complexity analysis of running time and space (memory)
 
 ## Stretch Challenges
@@ -73,22 +73,22 @@ Make sure worksheet is filled out, with bad implementations crossed out
 - These are _how you implement_ abstract data types
 - Similar to your backend: like deciding whether to build your server in node, python, go, etc.
 - Things you can draw, and describe how they're allocated in memory
-    - array (contiguous memory with indexes)
-        - static (fixed size)
-        - dynamic (resizable)
-    - linked list
-        - singly
-        - doubly
+	- array (contiguous memory with indexes)
+		- static (fixed size)
+		- dynamic (resizable)
+	- linked list
+		- singly
+		- doubly
 
 ### Maps and Hashtables
 
 #### Maps
 - **Map** is another abstract data type
-    - Same as a **dictionary** (swift, python), or an **associative array** (php, CS literature)
-    - Does _not_ have an order to it. **It is an _unordered_ collection of _key/value pairs_**
-    - A phonebook is an example of this: a person's name is the key, the value is the phone number
-    - Generally, curly braces are used to denote these
-    - Remember, this says _nothing_ about how it is organized, it just describes what the data in it looks like (key/value pairs)
+	- Same as a **dictionary** (swift, python), or an **associative array** (php, CS literature)
+	- Does _not_ have an order to it. **It is an _unordered_ collection of _key/value pairs_**
+	- A phonebook is an example of this: a person's name is the key, the value is the phone number
+	- Generally, curly braces are used to denote these
+	- Remember, this says _nothing_ about how it is organized, it just describes what the data in it looks like (key/value pairs)
 
 #### Hashtable
 
@@ -97,16 +97,16 @@ Make sure worksheet is filled out, with bad implementations crossed out
 - A **Hashtable** is a concrete data structure used to implement a map/dictionary. Python uses this to implement its dictionaries.
 - Small Side Note: you could implement a map with an array or linked list, but it wouldn't be as efficient
 - A Hashtable is made up of the following parts:
-    -  **hash function** - takes a key (`k`) and gives you a number (`n`)
-        -  `h(k)` --> `n`
-    -  **array** - a piece of contiguous memory that has indexes, which allow us to retrieve buckets in in constant time
-    -  **linked list** -  each bucket in the array is a linked list of many elements. These could be empty
-        -  Note: not all hashtables will use linked lists. Our implementation does use it though
+	- **hash function** - takes a key (`k`) and gives you a number (`n`)
+		- `h(k)` --> `n`
+	- **array** - a piece of contiguous memory that has indexes, which allow us to retrieve buckets in in constant time
+	- **linked list** - each bucket in the array is a linked list of many elements. These could be empty
+		- Note: not all hashtables will use linked lists. Our implementation does use it though
 
 #### Load Factor
 
--  The **load factor** (`L`) of a hashtable is the average length of each bucket = `(# entries in the hashtable)/(# of buckets)` = `n/b`
-    - As the load factor gets higher, the buckets get longer. This is bad because it _increases the time it takes to iterate over buckets_, which negatively affects performance
+- The **load factor** (`L`) of a hashtable is the average length of each bucket = `(# entries in the hashtable)/(# of buckets)` = `n/b`
+	- As the load factor gets higher, the buckets get longer. This is bad because it _increases the time it takes to iterate over buckets_, which negatively affects performance
 - While the number of entries in the hashtable is not in our control (that's decided by the user; how many people they want in their phone book), the _number of buckets is in our control_.
 - If we increase the number of buckets, we can get to a lower `L`, therefore dropping number of operations and _increasing performance_
 
@@ -116,9 +116,9 @@ Draw a hashtable with 3 buckets and put 5 items in it
 
 - The more buckets we have, the more space we have to store things
 - Where does a new element land? Through **rehashing**: rearranging where items go to make sure they're in the appropriate spot in the **resized** hashtable
-    - Remember the resturant tables example. The hashtable will need to be resized occasionally as you add more items
-    - Rehash will give you a new index for items
-    - More buckets means more memory!
+	- Remember the resturant tables example. The hashtable will need to be resized occasionally as you add more items
+	- Rehash will give you a new index for items
+	- More buckets means more memory!
 
 ## Activity - Drawing a Hashtable  (35 min)
 
@@ -163,7 +163,7 @@ Once you're finished, discuss with your neighbors. Make sure to discuss if the l
 
 1. Go to the Hashtable class and review the `load factor` method
 1. Review the `resize` method, then see where it's called
-    - **Note:** We use `_` to denote private methods in Python
+	- **Note:** We use `_` to denote private methods in Python
 
 ### Student Presentation (30 min)
 
@@ -175,14 +175,14 @@ Student presents their answer to the challenges
 - `init` is called when you create a new object, but isn't _only_ called then. Be sure to comment though, since you're using `init` in a non-traditional way
 - Look for opportunities to reuse code you've already written
 - Runtime analysis
-    - the `.items` method of the hashtable class takes `b` time, since it iterates over all buckets
-        - `.extend` method is to arrays like `+` is to strings. This takes `l2` time since we're appending each item in the second list to the first list
-            - note that if you extend an array with an empty array, it's the same as doing nothing
-        - `.append` happens in constant time
-        - therefore takes `O(n)` time, where `n` is the number of items in the hashtable
-    - `init` depends on `new_size`, which takes `2b` --> `O(b)` time and space
-    - Final step is a `for` loop that runs the length of `current_entries` --> `n` --> `O(n)`, and we know `.set` is constant time
-    - **`O(b) + O(n) + O(n)` --> `O(2n + b)` --> `O(n + b)` --> `O(b)` (with assumption of resize)**
+	- the `.items` method of the hashtable class takes `b` time, since it iterates over all buckets
+		- `.extend` method is to arrays like `+` is to strings. This takes `l2` time since we're appending each item in the second list to the first list
+			- note that if you extend an array with an empty array, it's the same as doing nothing
+		- `.append` happens in constant time
+		- therefore takes `O(n)` time, where `n` is the number of items in the hashtable
+	- `init` depends on `new_size`, which takes `2b` --> `O(b)` time and space
+	- Final step is a `for` loop that runs the length of `current_entries` --> `n` --> `O(n)`, and we know `.set` is constant time
+	- **`O(b) + O(n) + O(n)` --> `O(2n + b)` --> `O(n + b)` --> `O(b)` (with assumption of resize)**
 
 
 [map]: https://en.wikipedia.org/wiki/Associative_array

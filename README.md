@@ -89,7 +89,7 @@ Through this requirement, we hope to encourage you to think about projects with 
 
 ### Final Exam
 
--  **Passing the exam is a requirement for passing the class.**
+- **Passing the exam is a requirement for passing the class.**
 - You will have 2 hours to complete this exam - it will be in class using paper and pencil, or a format of the instructor's choosing
 - There are no retakes of the exam.
 - If you have a disability that needs an accommodation such as extended time or a different format, please take advantage of our [accommodations program](make.sc/disability-policy).
