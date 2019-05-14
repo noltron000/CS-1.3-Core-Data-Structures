@@ -41,23 +41,22 @@ Students by the end of the course will be able to ...
 
 **Class Times:** Monday and Wednesday at 1:30-3:20pm **and** 3:30–5:20pm (14 class sessions)
 
-
-| Class |          Date          |  Review of Prior Topic | New Topic / Challenges       |
-|:-----:|:----------------------:|:------------------------------------------:| :------- |
-|   1   |    Monday, April 1     |      N/A            | [Number Bases](lessons/class01.md) |
-|   2   |    Wednesday, April 3  | [Number Bases Review](lessons/class01.md#code-review-in-pairs-25-min) | [Recursion & Search Algorithms](lessons/class02.md) |
-|   3   |    Monday, April 8     | [Recursion & Search Algorithms Review](lessons/class02.md#code-review--presentations-80-min) |[String Algorithms](lessons/class03.md)             |
-|   4   |    Wednesday, April 10 | [String Algorithms Review](lessons/class03.md#code-review--presentations-80-min)             |[Arrays & Linked Lists](lessons/class04.md)         |
-|   5   |    Monday, April 15    | [Arrays & Linked Lists Review](lessons/class04.md)         |[Lists, Stacks & Queues](lessons/class05.md)        |
-|   6   |    Wednesday, April 17 | [Lists, Stacks & Queues Review](lessons/class05.md#activity---stacks-and-queues-worksheet---overview--15-min)        |[Maps & Hash Tables](lessons/class06.md)            |
-|   7   |    Monday, April 22    | [Maps & Hash Tables Review](lessons/class06.md#activity---drawing-a-hashtable--35-min)            |[Sets & Circular Buffers](lessons/class07.md)       |
-|   8   |    Wednesday, April 24 | [Sets & Circular Buffers Review](lessons/class07.md)       | Technical Article Peer Review     |
-|   9   |    Monday, April 29    | N/A   | [Trees & Binary Search Trees](lessons/class08.md)
-|  10   |    Wednesday, May 1    | [Trees & Binary Search Trees Review](lessons/class08.md)               | [Tree Traversals](lessons/class09.md)
-|  11   |    Monday, May 6       | [Tree Traversals Review](lessons/class09.md#code-review-80-min)         | N/A
-|  12   |    Wednesday, May 8    |       [Design Challenge](lessons/design-challenge.md)            |[Call Routing Project](project/README.md)                   |
-|  13   |    Monday, May 13      |       N/A            |      Final Exam           |
-|  14   |    Wednesday, May 15   |       N/A            | Call Routing Project Presentations        |
+| Class | Date                | Review of Prior Topic                                                                                         | New Topic / Challenges                              |
+|-------|---------------------|---------------------------------------------------------------------------------------------------------------|-----------------------------------------------------|
+| 1     | Monday, April 1     | N/A                                                                                                           | [Number Bases](lessons/class01.md)                  |
+| 2     | Wednesday, April 3  | [Number Bases Review](lessons/class01.md#code-review-in-pairs-25-min)                                         | [Recursion & Search Algorithms](lessons/class02.md) |
+| 3     | Monday, April 8     | [Recursion & Search Algorithms Review](lessons/class02.md#code-review--presentations-80-min)                  | [String Algorithms](lessons/class03.md)             |
+| 4     | Wednesday, April 10 | [String Algorithms Review](lessons/class03.md#code-review--presentations-80-min)                              | [Arrays & Linked Lists](lessons/class04.md)         |
+| 5     | Monday, April 15    | [Arrays & Linked Lists Review](lessons/class04.md)                                                            | [Lists, Stacks & Queues](lessons/class05.md)        |
+| 6     | Wednesday, April 17 | [Lists, Stacks & Queues Review](lessons/class05.md#activity---stacks-and-queues-worksheet---overview--15-min) | [Maps & Hash Tables](lessons/class06.md)            |
+| 7     | Monday, April 22    | [Maps & Hash Tables Review](lessons/class06.md#activity---drawing-a-hashtable--35-min)                        | [Sets & Circular Buffers](lessons/class07.md)       |
+| 8     | Wednesday, April 24 | [Sets & Circular Buffers Review](lessons/class07.md)                                                          | Technical Article Peer Review                       |
+| 9     | Monday, April 29    | N/A                                                                                                           | [Trees & Binary Search Trees](lessons/class08.md)   |
+| 10    | Wednesday, May 1    | [Trees & Binary Search Trees Review](lessons/class08.md)                                                      | [Tree Traversals](lessons/class09.md)               |
+| 11    | Monday, May 6       | [Tree Traversals Review](lessons/class09.md#code-review-80-min)                                               | N/A                                                 |
+| 12    | Wednesday, May 8    | [Design Challenge](lessons/design-challenge.md)                                                               | [Call Routing Project](project/README.md)           |
+| 13    | Monday, May 13      | N/A                                                                                                           | Final Exam                                          |
+| 14    | Wednesday, May 15   | N/A                                                                                                           | Call Routing Project Presentations                  |
 
 
 ## Repository Setup Instructions
