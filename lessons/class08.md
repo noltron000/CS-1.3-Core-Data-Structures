@@ -104,15 +104,15 @@ By this end of this lesson, students should be able to...
     - only allocates memory as it's needed.  Doesn't have to reallocate memory
 
 - Note: When discussing time and space complexity of algorithms, `log n` usually means `log base 2 n` ( but the 2 is sometimes left off).
-    - Recall the binary logarithm formula is the power by which 2 must be raised by to obtain n. [See Slides](https://github.com/Make-School-Courses/CS-1.3-Core-Data-Structures/blob/dual-format/Lessons/slides/Trees.pdf)
+    - Recall the binary logarithm formula is the power by which 2 must be raised by to obtain n. [See Slides](https://github.com/Make-School-Courses/CS-1.3-Core-Data-Structures/blob/dual-format/lessons/slides/trees.pdf)
 
 
 - Why is `log n` really fast?
     - Imagine a BST with `2^32` nodes = (4.29 billion). This is a REALLY big number but can be represented by a tree that is only 32 levels deep.  So a search will only visit a maximum of 32 nodes to find the node containing the data we're looking for (assuming perfectly balanced).
 
-- Insertion [See Slides](https://github.com/Make-School-Courses/CS-1.3-Core-Data-Structures/blob/dual-format/Lessons/slides/Trees.pdf)
+- Insertion [See Slides](https://github.com/Make-School-Courses/CS-1.3-Core-Data-Structures/blob/dual-format/lessons/slides/trees.pdf)
 
-- Deletion [See Slides](https://github.com/Make-School-Courses/CS-1.3-Core-Data-Structures/blob/dual-format/Lessons/slides/Trees.pdf)
+- Deletion [See Slides](https://github.com/Make-School-Courses/CS-1.3-Core-Data-Structures/blob/dual-format/lessons/slides/trees.pdf)
 
 
 ## Update Tracker (5 min)
@@ -148,7 +148,7 @@ After the discussion, talk with your partner/group about what changes would you 
 
 ## TT - Search/Insertion/Deletion for Trees/Binary Search Trees (20 min)
 
-See [slides](https://github.com/Make-School-Courses/CS-1.3-Core-Data-Structures/blob/master/Lessons/slides/Trees.pdf) from `SEARCH` through `TWO CHILDREN`
+See [slides](lessons/slides/trees.pdf) from `SEARCH` through `TWO CHILDREN`
 
 **Note:** It is possible to have duplicates in a tree, but make sure to have conventions for it (i.e. equal values always go to the left side)
 
@@ -182,7 +182,7 @@ Insertion and deletion both require first searching through the tree to find whe
 [binary search tree]: https://en.wikipedia.org/wiki/Binary_search_tree
 [operations]: https://en.wikipedia.org/wiki/Binary_search_tree#Operations
 
-[trees slides]: slides/Trees.pdf
+[trees slides]: slides/trees.pdf
 [trees video lecture]: https://www.youtube.com/watch?v=Yr3y78d2KYI
 [HR trees video]: https://www.youtube.com/watch?v=oSWTXtMglKE
 [HR bst interview problem]: https://www.youtube.com/watch?v=i_Q0v_Ct5lY

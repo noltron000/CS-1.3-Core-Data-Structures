@@ -62,7 +62,7 @@ Fill out attendance, challenges completed, etc.
 
 There's a secret hexagram code known as [I Ching](https://en.wikipedia.org/wiki/I_Ching#Hexagrams). Here's an example of it:
 
-![i-ching-secret](assets/i-ching-secret-code.png)
+![i-ching-secret](/assets/i-ching-secret-code.png)
 
 **Find out what this secret code means**
 
@@ -238,7 +238,7 @@ Chosen students present their solutions for Iterative Binary Search
 
 ## TT - Algorithm Analysis (10 min)
 
-![linear vs binary search](assets/binary-and-linear-search-animations.gif)
+![linear vs binary search](/assets/binary-and-linear-search-animations.gif)
 
 Credit to [Mathwarehouse](https://www.mathwarehouse.com/programming/gifs/binary-vs-linear-search.php) for the animation!
 
@@ -275,7 +275,7 @@ Credit to [Mathwarehouse](https://www.mathwarehouse.com/programming/gifs/binary-
 
 See the graph below to compare exponent, linear, and log:
 
-![graph](assets/algorithm_graphs.jpg)
+![graph](/assets/algorithm-graphs.jpg)
 
 
 
@@ -287,8 +287,8 @@ See the graph below to compare exponent, linear, and log:
 [permutation]: https://en.wikipedia.org/wiki/Permutation
 [combination]: https://en.wikipedia.org/wiki/Combination
 
-[logarithms article]: slides/Logarithms.pdf
-[algorithm analysis slides]: slides/AlgorithmAnalysis.pdf
+[logarithms article]: slides/logarithms.pdf
+[algorithm analysis slides]: slides/algorithm-analysis.pdf
 [big O notation video]: https://www.youtube.com/watch?v=v4cd1O4zkGw
 [asymptotic notation video]: https://www.youtube.com/watch?v=iOq5kSKqeR4
 [computational complexity video]: https://www.youtube.com/watch?v=IM9sHGlYV5A

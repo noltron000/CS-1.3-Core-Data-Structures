@@ -57,7 +57,7 @@ By this end of this lesson, students should be able to...
 
 ## Abstract Types vs Concrete Data Structures (10 min)
 
-![abstract-vs-concrete](./assets/abstract_concrete_comparision.png)
+![abstract-vs-concrete](./assets/abstract-concrete-comparision.png)
 
 Make sure worksheet is filled out, with bad implementations crossed out
 
@@ -92,7 +92,7 @@ Make sure worksheet is filled out, with bad implementations crossed out
 
 #### Hashtable
 
-![hashtable-implementation](./assets/hashtable_implementation.png)
+![hashtable-implementation](./assets/hashtable-implementation.png)
 
 - A **Hashtable** is a concrete data structure used to implement a map/dictionary. Python uses this to implement its dictionaries.
 - Small Side Note: you could implement a map with an array or linked list, but it wouldn't be as efficient
@@ -196,7 +196,7 @@ Student presents their answer to the challenges
 [quadratic probing]: https://en.wikipedia.org/wiki/Quadratic_probing
 [double hashing]: https://en.wikipedia.org/wiki/Double_hashing
 
-[hash table slides]: slides/HashTables.pdf
+[hash table slides]: slides/hash-tables.pdf
 [hash table video lecture]: https://www.youtube.com/watch?v=nLWXJ6IDKmQ
 [hash table video]: https://www.youtube.com/watch?v=shs0KM3wKv8
 [old hash table video]: https://www.youtube.com/watch?v=h2d9b_nEzoA
