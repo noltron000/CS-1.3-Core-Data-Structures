@@ -57,7 +57,7 @@ By this end of this lesson, students should be able to...
 
 ## Abstract Types vs Concrete Data Structures (10 min)
 
-![abstract-vs-concrete](./assets/abstract_concrete_comparision.png)
+![abstract-vs-concrete](./assets/abstract-concrete-comparision.png)
 
 Make sure worksheet is filled out, with bad implementations crossed out
 
