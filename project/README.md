@@ -115,5 +115,5 @@ After finding the least cost route for each phone number, write the number and i
 
 Name these files "`route-costs-N.txt`" where `N` is the scenario number (see below).
 
-[call routing project]: CallRoutingProject.pdf
+[call routing project]: call-routing-project.pdf
 [data files]: http://make.sc/db-phone-call-routing

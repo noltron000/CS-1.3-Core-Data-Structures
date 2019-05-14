@@ -6,7 +6,7 @@ This is a design challenge that will involve both individual and partner work.
 
 Below is a word jumble from a newspaper:
 
-![jumble](./assets/Jumble 2014-11-22.png)
+![jumble](./assets/jumble-2014-11-22.png)
 
 **The challenge is to design a way to solve this word jumble with a computer!** Use what you've learned in class to make this!
 
@@ -32,7 +32,7 @@ Once you solve all 4 words, look at where the circles are. All of the letters wi
 
 ## Call Routing Project Overview
 
-Overview of the projet, going over the [spec](../project/ReadMe.md) as a class
+Overview of the projet, going over the [spec](../project/README.md) as a class
 
 For the rest of class, your goal is to accomplish the following:
 

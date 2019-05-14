@@ -275,7 +275,7 @@ Credit to [Mathwarehouse](https://www.mathwarehouse.com/programming/gifs/binary-
 
 See the graph below to compare exponent, linear, and log:
 
-![graph](assets/algorithm_graphs.jpg)
+![graph](assets/algorithm-graphs.jpg)
 
 
 
@@ -287,8 +287,8 @@ See the graph below to compare exponent, linear, and log:
 [permutation]: https://en.wikipedia.org/wiki/Permutation
 [combination]: https://en.wikipedia.org/wiki/Combination
 
-[logarithms article]: slides/Logarithms.pdf
-[algorithm analysis slides]: slides/AlgorithmAnalysis.pdf
+[logarithms article]: slides/logarithms.pdf
+[algorithm analysis slides]: slides/algorithm-analysis.pdf
 [big O notation video]: https://www.youtube.com/watch?v=v4cd1O4zkGw
 [asymptotic notation video]: https://www.youtube.com/watch?v=iOq5kSKqeR4
 [computational complexity video]: https://www.youtube.com/watch?v=IM9sHGlYV5A

@@ -57,7 +57,7 @@ By this end of this lesson, students should be able to...
 
 ![tree-traversals](./assets/tree-traversals.png)
 
-See [slides](https://github.com/Make-School-Courses/CS-1.3-Core-Data-Structures/blob/master/Lessons/slides/TreeTraversals.pdf)
+See [slides](lessons/slides/tree-traversals.pdf)
 
 - What if you wanted to have a tree give all of its elements, instead of just one in particular?
 - The goal of a traversal is to **visit** each node once and only once. Whatever action you do on a visit is arbitrary.
@@ -214,7 +214,7 @@ Finish all challenges before we kick off the Call Routing project next class!
 [map]: https://en.wikipedia.org/wiki/Associative_array
 [Python `dict` type]: https://docs.python.org/3/library/stdtypes.html#dict
 
-[tree traversal slides]: slides/TreeTraversals.pdf
+[tree traversal slides]: slides/tree-traversals.pdf
 [tree traversal video lecture]: https://www.youtube.com/watch?v=Qd8dKFaRu9I
 [HR trees video]: https://www.youtube.com/watch?v=oSWTXtMglKE
 [HR bst interview problem]: https://www.youtube.com/watch?v=i_Q0v_Ct5lY
