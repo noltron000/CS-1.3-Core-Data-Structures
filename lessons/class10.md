@@ -1,11 +1,33 @@
-## Class 11: Iterative Sorting Algorithms
+# Class 10: Iterative Sorting Algorithms
 
-### Topics
+## Minute-by-Minute [OPTIONAL]
+
+**NOTE: Fill in with the appropriate items**
+
+| **Elapsed** | **Time**  | **Activity**              |
+| ----------- | --------- | ------------------------- |
+| 0:00        | 0:05      | Objectives                |
+| 0:05        | 0:15      | Overview                  |
+| 0:20        | 0:45      | In Class Activity I       |
+| 1:05        | 0:10      | BREAK                     |
+| 1:15        | 0:45      | In Class Activity II      |
+| TOTAL       | 2:00      |                           |
+
+## Learning Objectives (5 min)
+
+**NOTE: Fill in with the appropriate items**
+
+By this end of this lesson, students should be able to...
+
+1. Implement an algorithm to check if items in a list are in sorted order
+1. Implement classic iterative sorting algorithms
+
+## Topics
 - Algorithm to check if items in a list are in sorted order
 - Counting how many [inversions] there are in a list
 - Classic iterative [sorting algorithms]: [bubble sort], [selection sort], [insertion sort]
 
-### Resources
+## Resources
 - Play with VisuAlgo's [interactive sorting visualizations][VisuAlgo sorting] including bubble, selection, and insertion sort
 - Play with USF's [interactive sorting animations][USF sorting] including bubble, selection, insertion, and Shell sort
 - Read Vaidehi Joshi's articles: [an overview of sorting][BaseCS sorting], [bubble sort][BaseCS bubble sort], [selection sort][BaseCS selection sort], and [insertion sort][BaseCS insertion sort] with beautiful drawings and excellent analysis
@@ -17,26 +39,26 @@
 - Watch videos to observe patterns: [9 sorting algorithms], [15 sorting algorithms], [23 sorting algorithms]
 - Read Interview Cake's [triangular series article] for more background on counting inversions and pairs
 
-### Challenges
+## Challenges
 - Implement these classic iterative sorting functions using [sorting starter code]:
-	- `is_sorted(items)` - return a boolean indicating whether all `items` are in ascending order
-	- `bubble_sort(items)` - swap adjacent items that are out of order, repeat until all `items` are sorted
-	- `selection_sort(items)` - find minimum item in unsorted `items`, swap it with first unsorted item, repeat until all `items` are sorted
-	- `insertion_sort(items)` - take first unsorted item, insert it in sorted order in front of `items`, repeat until all `items` are sorted
+    - `is_sorted(items)` - return a boolean indicating whether all `items` are in ascending order
+    - `bubble_sort(items)` - swap adjacent items that are out of order, repeat until all `items` are sorted
+    - `selection_sort(items)` - find minimum item in unsorted `items`, swap it with first unsorted item, repeat until all `items` are sorted
+    - `insertion_sort(items)` - take first unsorted item, insert it in sorted order in front of `items`, repeat until all `items` are sorted
 - Run `python sorting.py` to test sorting algorithms on a small random sample:
-	```
-	$ python sorting.py bubble_sort 10 20
-	Initial items: [3, 15, 4, 7, 20, 6, 18, 11, 9, 7]
-	Sorting items with bubble_sort(items)
-	Sorted items:  [3, 4, 6, 7, 7, 9, 11, 15, 18, 20]
-	```
+    ```
+    $ python sorting.py bubble_sort 10 20
+    Initial items: [3, 15, 4, 7, 20, 6, 18, 11, 9, 7]
+    Sorting items with bubble_sort(items)
+    Sorted items:  [3, 4, 6, 7, 7, 9, 11, 15, 18, 20]
+    ```
 - Annotate functions with complexity analysis of running time (operations) and space (memory usage)
 - Write a thorough suite of [sorting unit tests] to ensure your sorting algorithms are robust
-	- Write tests in a way that lets you add new sorting functions without needing to write more tests
-	- Include a variety of test cases that cover many different input types, orderings, distributions, and edge cases
+    - Write tests in a way that lets you add new sorting functions without needing to write more tests
+    - Include a variety of test cases that cover many different input types, orderings, distributions, and edge cases
 - Run `pytest sorting_test.py` to run the [sorting unit tests] and fix any failures
 
-### Stretch Challenges
+## Stretch Challenges
 - Extend sorting algorithms with an `order` parameter to specify ascending or descending order
 - Extend sorting algorithms with a `key` parameter to specify a function to call on each item when making comparisons (read about Python's [`sorted` function] and how to use [`key` functions] for more information)
 - Implement an [insertion sort] variation using [binary search] to find the position to insert each item

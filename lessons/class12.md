@@ -1,14 +1,37 @@
-## Class 14: Recursive Sorting Algorithms
+# Class 12: Recursive Sorting Algorithms
 
-### Topics
+## Minute-by-Minute [OPTIONAL]
+
+**NOTE: Fill in with the appropriate items**
+
+| **Elapsed** | **Time**  | **Activity**              |
+| ----------- | --------- | ------------------------- |
+| 0:00        | 0:05      | Objectives                |
+| 0:05        | 0:15      | Overview                  |
+| 0:20        | 0:45      | In Class Activity I       |
+| 1:05        | 0:10      | BREAK                     |
+| 1:15        | 0:45      | In Class Activity II      |
+| TOTAL       | 2:00      |                           |
+
+## Learning Objectives (5 min)
+
+**NOTE: Fill in with the appropriate items**
+
+By this end of this lesson, students should be able to...
+
+1. Analyze recursive algorithms as they relate to trees and tree sorting
+1. Practice implementing in-place algorithms
+1. Implement Quick Sort with a partition algorithm
+
+## Topics
 - [Tree sort] using [search tree] data structure
 - [Quick sort] and partition algorithm
-	- How to [choose a pivot]: first, last, middle, median-of-three, and random
-	- Partitioning schemes: [Lomuto], [Hoare], and [three-way]
+    - How to [choose a pivot]: first, last, middle, median-of-three, and random
+    - Partitioning schemes: [Lomuto], [Hoare], and [three-way]
 - [In-place] algorithms
 - [Recursive] algorithm analysis with tree diagrams, [recurrence relations], and [master theorem]
 
-### Resources
+## Resources
 - Play with VisuAlgo's [interactive sorting visualizations][VisuAlgo sorting] including quick sort
 - Play with USF's [interactive sorting animations][USF sorting] including quick sort
 - Read Vaidehi Joshi's articles on [quick sort, part 1: how it works][BaseCS quick sort 1] and [part 2: choosing a pivot and complexity analysis][BaseCS quick sort 2] with beautiful drawings and excellent analysis
@@ -24,30 +47,30 @@
 - Watch videos to observe patterns: [9 sorting algorithms], [15 sorting algorithms], [23 sorting algorithms]
 - Read XKCD's [ineffective sorts] comic and see where the attempt to implement quick sort went wrong
 
-### Challenges
+## Challenges
 - Implement quick sort algorithm and partition helper function using [sorting starter code]:
-	- Implement `partition(items, low, high)` that chooses a pivot and returns index `p` after [in-place] partitioning `items` in range `[low...high]` by moving items less than pivot into range `[low...p-1]`, items greater than pivot into range `[p+1...high]`, and pivot into index `p`
-		- [Choose a pivot] in any way: first, last, middle, median-of-three, or random
-		- Use any partitioning scheme: [Lomuto], [Hoare], or [three-way]
-	- Implement `quick_sort(items, low, high)` that sorts `items` [in-place] by using `partition` algorithm on `items` in range `[low...high]` and *recursively calls itself* on sublist ranges
-		- Use the [divide-and-conquer] problem-solving strategy:
-			1. Divide: split problem into subproblems (partition input list into sublist ranges)
-			2. Conquer: solve subproblems independently (sort sublist ranges recursively with quick sort)
-			3. Combine: combine subproblem solutions together (if partition is [in-place], list is already sorted, but if not then concatenate sorted sublists)
-		- Remember to add a base case to avoid infinite recursion loops (*hint:* very small list ranges are always sorted)
+    - Implement `partition(items, low, high)` that chooses a pivot and returns index `p` after [in-place] partitioning `items` in range `[low...high]` by moving items less than pivot into range `[low...p-1]`, items greater than pivot into range `[p+1...high]`, and pivot into index `p`
+        - [Choose a pivot] in any way: first, last, middle, median-of-three, or random
+        - Use any partitioning scheme: [Lomuto], [Hoare], or [three-way]
+    - Implement `quick_sort(items, low, high)` that sorts `items` [in-place] by using `partition` algorithm on `items` in range `[low...high]` and *recursively calls itself* on sublist ranges
+        - Use the [divide-and-conquer] problem-solving strategy:
+            1. Divide: split problem into subproblems (partition input list into sublist ranges)
+            2. Conquer: solve subproblems independently (sort sublist ranges recursively with quick sort)
+            3. Combine: combine subproblem solutions together (if partition is [in-place], list is already sorted, but if not then concatenate sorted sublists)
+        - Remember to add a base case to avoid infinite recursion loops (*hint:* very small list ranges are always sorted)
 - Annotate functions with complexity analysis of running time (operations) and space (memory usage)
 - Run `python sorting.py` to test quick sort algorithm on random samples of integers, for example:
-	```
-	$ python sorting.py quick_sort 10 20
-	Initial items: [3, 15, 4, 7, 20, 6, 18, 11, 9, 7]
-	Sorting items with quick_sort(items)
-	Sorted items:  [3, 4, 6, 7, 7, 9, 11, 15, 18, 20]
-	```
-	- Experiment with different list sizes to find when iterative sorting algorithms are slow and quick sort is fast
-	- Compare the runtime of quick sort to merge sort on large list sizes with a variety of integer distributions
+    ```
+    $ python sorting.py quick_sort 10 20
+    Initial items: [3, 15, 4, 7, 20, 6, 18, 11, 9, 7]
+    Sorting items with quick_sort(items)
+    Sorted items:  [3, 4, 6, 7, 7, 9, 11, 15, 18, 20]
+    ```
+    - Experiment with different list sizes to find when iterative sorting algorithms are slow and quick sort is fast
+    - Compare the runtime of quick sort to merge sort on large list sizes with a variety of integer distributions
 - Run `pytest sorting_test.py` to run the [sorting unit tests] and fix any failures
 
-### Stretch Challenges
+## Stretch Challenges
 - Try other techniques to [choose a pivot] and other partitioning schemes
 - Implement [sample sort] using a multi-way partition algorithm and compare it to quick sort
 - Implement [stable][stability] quick sort with a separate *stable* partition algorithm, then compare its time and space complexity (with algorithm analysis or performance benchmarking) to unstable quick sort
@@ -73,7 +96,7 @@
 [recurrence relations]: https://en.wikipedia.org/wiki/Recurrence_relation
 [master theorem]: https://en.wikipedia.org/wiki/Master_theorem
 
-[recursive algorithm analysis slides]: slides/AlgorithmAnalysisRecursive.pdf
+[recursive algorithm analysis slides]: slides/algorithm-analysis-recursive.pdf
 [VisuAlgo sorting]: https://visualgo.net/en/sorting
 [USF sorting]: https://www.cs.usfca.edu/~galles/visualization/ComparisonSort.html
 [sorting animations]: https://www.toptal.com/developers/sorting-algorithms/

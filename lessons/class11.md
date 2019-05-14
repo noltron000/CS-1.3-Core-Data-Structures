@@ -1,11 +1,33 @@
-## Class 13: Divide-and-Conquer Recursion
+# Class 11: Divide-and-Conquer Recursion
 
-### Topics
+## Minute-by-Minute [OPTIONAL]
+
+**NOTE: Fill in with the appropriate items**
+
+| **Elapsed** | **Time**  | **Activity**              |
+| ----------- | --------- | ------------------------- |
+| 0:00        | 0:05      | Objectives                |
+| 0:05        | 0:15      | Overview                  |
+| 0:20        | 0:45      | In Class Activity I       |
+| 1:05        | 0:10      | BREAK                     |
+| 1:15        | 0:45      | In Class Activity II      |
+| TOTAL       | 2:00      |                           |
+
+## Learning Objectives (5 min)
+
+**NOTE: Fill in with the appropriate items**
+
+By this end of this lesson, students should be able to...
+
+1. Explain in general how divide-and-conquer algorithms are structured
+1. Implement a popular divide-and-conquer algorithm such as merge sort
+
+## Topics
 - [Divide-and-conquer]&nbsp;[recursion]: divide, conquer, combine
 - Revisit [binary search] to see how it divides and conquers
 - [Merge sort] and [merge algorithm]
 
-### Resources
+## Resources
 - Play with VisuAlgo's [interactive sorting visualizations][VisuAlgo sorting] including merge sort
 - Play with USF's [interactive sorting animations][USF sorting] including merge sort
 - Read Vaidehi Joshi's articles on [merge sort, part 1: how it works][BaseCS merge sort 1] and [part 2: logarithms and complexity analysis][BaseCS merge sort 2] with beautiful drawings and excellent analysis
@@ -17,31 +39,31 @@
 - Watch videos to observe patterns: [9 sorting algorithms], [15 sorting algorithms], [23 sorting algorithms]
 - Review Make School's [algorithm analysis slides] for a running time comparison of merge sort and bubble sort
 
-### Challenges
+## Challenges
 - Implement merge sort algorithm and merge helper function using [sorting starter code]:
-	- Implement `merge(items1, items2)` that merges lists `items1` and `items2`, each assumed to already be in sorted order, and return a new list containing all items in sorted order
-	- Implement `split_sort_merge(items)` that uses any *other* sorting algorithm to sort sublists (*non-recursively*)
-		- Use the [divide-and-conquer] problem-solving strategy:
-			1. Divide: split problem (input list) into subproblems (two sublists each of half size)
-			2. Conquer: solve subproblems independently (sort sublists with any sorting algorithm)
-			3. Combine: combine subproblem solutions together (merge sorted sublists into one list)
-	- Implement `merge_sort(items)` that *recursively calls itself* to sort sublists during the conquer step
-		- Remember to add a base case to avoid infinite recursion loops (*hint:* very small lists are always sorted)
+    - Implement `merge(items1, items2)` that merges lists `items1` and `items2`, each assumed to already be in sorted order, and return a new list containing all items in sorted order
+    - Implement `split_sort_merge(items)` that uses any *other* sorting algorithm to sort sublists (*non-recursively*)
+        - Use the [divide-and-conquer] problem-solving strategy:
+            1. Divide: split problem (input list) into subproblems (two sublists each of half size)
+            2. Conquer: solve subproblems independently (sort sublists with any sorting algorithm)
+            3. Combine: combine subproblem solutions together (merge sorted sublists into one list)
+    - Implement `merge_sort(items)` that *recursively calls itself* to sort sublists during the conquer step
+        - Remember to add a base case to avoid infinite recursion loops (*hint:* very small lists are always sorted)
 - Run `python sorting.py` to test sorting algorithms on random samples of integers, for example:
-	```
-	$ python sorting.py merge_sort 10 20
-	Initial items: [3, 15, 4, 7, 20, 6, 18, 11, 9, 7]
-	Sorting items with merge_sort(items)
-	Sorted items:  [3, 4, 6, 7, 7, 9, 11, 15, 18, 20]
-	```
-	- Experiment with different *list sizes* to find when iterative sorting algorithms are slow and merge sort is fast
+    ```
+    $ python sorting.py merge_sort 10 20
+    Initial items: [3, 15, 4, 7, 20, 6, 18, 11, 9, 7]
+    Sorting items with merge_sort(items)
+    Sorted items:  [3, 4, 6, 7, 7, 9, 11, 15, 18, 20]
+    ```
+    - Experiment with different *list sizes* to find when iterative sorting algorithms are slow and merge sort is fast
 - Annotate functions with complexity analysis of running time (operations) and space (memory usage)
 - Expand the [sorting unit tests] to ensure your integer sorting algorithms are robust
-	- Write tests in a way that lets you add new sorting functions without needing to write more tests
-	- Include a variety of test cases that cover several integer distributions, orderings, and edge cases
+    - Write tests in a way that lets you add new sorting functions without needing to write more tests
+    - Include a variety of test cases that cover several integer distributions, orderings, and edge cases
 - Run `pytest sorting_test.py` to run the [sorting unit tests] and fix any failures
 
-### Stretch Challenges
+## Stretch Challenges
 - Reduce the space complexity (memory usage) of merge sort by avoiding some list copying
 - Implement [bucket sort] or [sample sort] for integers using divide-and-conquer recursion
 
@@ -54,7 +76,7 @@
 [bucket sort]: https://en.wikipedia.org/wiki/Bucket_sort
 [sample sort]: https://en.wikipedia.org/wiki/Samplesort
 
-[algorithm analysis slides]: slides/AlgorithmAnalysis.pdf
+[algorithm analysis slides]: slides/algorithm-analysis.pdf
 [VisuAlgo sorting]: https://visualgo.net/en/sorting
 [USF sorting]: https://www.cs.usfca.edu/~galles/visualization/ComparisonSort.html
 [sorting animations]: https://www.toptal.com/developers/sorting-algorithms/

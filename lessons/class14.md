@@ -1,10 +1,32 @@
-## Class 17: Sorting Algorithms Comparison
+# Class 14: Sorting Algorithms Comparison
 
-### Topics
+## Minute-by-Minute [OPTIONAL]
+
+**NOTE: Fill in with the appropriate items**
+
+| **Elapsed** | **Time**  | **Activity**              |
+| ----------- | --------- | ------------------------- |
+| 0:00        | 0:05      | Objectives                |
+| 0:05        | 0:15      | Overview                  |
+| 0:20        | 0:45      | In Class Activity I       |
+| 1:05        | 0:10      | BREAK                     |
+| 1:15        | 0:45      | In Class Activity II      |
+| TOTAL       | 2:00      |                           |
+
+## Learning Objectives (5 min)
+
+**NOTE: Fill in with the appropriate items**
+
+By this end of this lesson, students should be able to...
+
+1. Compare and contrast the algorithmic complexity of various sorting algorithms
+1. Analyze hybrid sorting algorithms and know when to use them
+
+## Topics
 - [Hybrid] sorting algorithms: [intro sort], [Tim sort]
 - Ideal sorting algorithm features: [stable], [in-place], [adaptive]
 
-#### [Comparison Sorting] Algorithm Complexity
+### [Comparison Sorting] Algorithm Complexity
 
 | Algorithm        | Best Time        | Average Time     | Worst Time       | Space    | Features                   |
 | ---------------- | ---------------- | ---------------- | ---------------- | -------- | -------------------------- |
@@ -18,7 +40,7 @@
 | [Intro sort]     | Ω(n×log n)       | Θ(n×log n)       | O(n×log n)       | O(log n) | in-place, hybrid           |
 | [Tim sort]       | Ω(n)             | Θ(n×log n)       | O(n×log n)       | O(n)     | stable, adaptive, hybrid   |
 
-#### [Integer Sorting] Algorithm Complexity
+### [Integer Sorting] Algorithm Complexity
 
 | Algorithm       | Best Time | Average Time | Worst Time       | Space  |
 | --------------- | --------- | ------------ | ---------------- | ------ |
@@ -26,7 +48,7 @@
 | [Bucket sort]   | Ω(n+k)    | Θ(n+k)       | O(n<sup>2</sup>) | O(n)   |
 | [Radix sort]    | Ω(n×k)    | Θ(n×k)       | O(n×k)           | O(n+k) |
 
-### Resources
+## Resources
 - Read BetterExplained's [sorting algorithms article] that discusses similarities, differences, and patterns
 - Play with VisuAlgo's [interactive sorting visualizations][VisuAlgo sorting] including bubble, selection, insertion, merge, quick, counting, and radix sort
 - Play with USF's [interactive sorting animations][USF sorting] including bubble, selection, insertion, merge, quick, Shell,  sort
@@ -34,7 +56,7 @@
 - Play with Carlo Zapponi's [sorting visualizations artwork] including three-way quick sort
 - Review Eric Rowell's [Big O cheat sheet] for a comparison of sorting algorithm time and space complexity
 - Watch Toptal's [sorting animations] to compare algorithms based on input conditions (order and distribution)
-	- Read the discussion section on properties of an ideal sorting algorithm and the conclusion stated
+    - Read the discussion section on properties of an ideal sorting algorithm and the conclusion stated
 - Watch Morolin's [sorting algorithms visualized] and compared with animated rainbow GIF loops
 - Play with Casper Beyer's [Tone of Sorting] sound auralizer and read his [article about how and why he built it][Tone of Sorting article]
 - Watch dancers perform [sorting algorithms with folk dances] including bubble sort, selection sort, insertion sort, Shell sort, merge sort, and quick sort
@@ -43,7 +65,8 @@
 - Download Timo Bingmann's [The Sound of Sorting] software to hear and visualize sorting algorithms
 - Read Tim Peters's (a Python core language developer) [proposal for a new sorting algorithm][Tim sort proposal] now known as *Tim sort* – he effectively argued its advantages over the existing sorting algorithm and compared performance with benchmarks
 
-### Project
+## Project
+**NOTE: Need to add project**
 - [Sorting algorithms project] with real-world data on Make School's Online Academy
 
 
