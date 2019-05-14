@@ -47,15 +47,17 @@ By this end of this lesson, students should be able to...
 - Annotate `enqueue` and `dequeue` methods with running time complexity analysis
 
 
-<!--## Minute-by-Minute
+<!--
+## Minute-by-Minute
 
-| **Elapsed** | **Time**  | **Activity**			  |
-| ----------- | --------- | ------------------------- |
-| 0:00		| 0:35	  | Activity - Drawing a Hashtable				|
-| 0:35		| 0:45	  | Code Review				  |
-| 1:20		| 0:10	  | Break	   |
-| 1:30		| 0:20	  | TT - Sets					 |
-| TOTAL	   | 1:50	  |						   |-->
+| **Elapsed** | **Time** | **Activity**                   |
+|-------------|----------|--------------------------------|
+| 0:00        | 0:35     | Activity - Drawing a Hashtable |
+| 0:35        | 0:45     | Code Review                    |
+| 1:20        | 0:10     | Break                          |
+| 1:30        | 0:20     | TT - Sets                      |
+| TOTAL       | 1:50     |                                |
+-->
 
 ## Break (10 min)
 

@@ -39,20 +39,22 @@ By the end of this lesson, students should be able to...
 - Make these functions efficient by avoiding repeated subproblems
 - Write your own unit tests to ensure your algorithms are robust
 
-<!--## Minute-by-Minute
+<!--
+## Minute-by-Minute
 
-| **Elapsed** | **Time**  | **Activity**			  |
-| ----------- | --------- | ------------------------- |
-| 0:00		| 0:05	  | Progress Tracker				|
-| 0:05		| 0:10	  | Factoid of the Day				  |
-| 0:15		| 0:25	  | Code Review in Pairs	   |
-| 0:40		| 0:30	  | Code Review Presentation	   |
-| 1:10		| 0:05	  | BREAK	   |
-| 1:20		| 0:25	  | Card Sorting Activity	   |
-| 1:45		| 0:10	  | TT - Recursion	   |
-| 1:55		| 0:04	  | Recursive Binary Search Card Activity	   |
-| 1:59		| 0:01	  | Wrap up	   |
-| TOTAL	   | 2:00	  |						   |-->
+| **Elapsed** | **Time** | **Activity**                          |
+|-------------|----------|---------------------------------------|
+| 0:00        | 0:05     | Progress Tracker                      |
+| 0:05        | 0:10     | Factoid of the Day                    |
+| 0:15        | 0:25     | Code Review in Pairs                  |
+| 0:40        | 0:30     | Code Review Presentation              |
+| 1:10        | 0:05     | BREAK                                 |
+| 1:20        | 0:25     | Card Sorting Activity                 |
+| 1:45        | 0:10     | TT - Recursion                        |
+| 1:55        | 0:04     | Recursive Binary Search Card Activity |
+| 1:59        | 0:01     | Wrap up                               |
+| TOTAL       | 2:00     |                                       |
+-->
 
 ## Progress Tracker (5 min)
 

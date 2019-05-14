@@ -12,15 +12,16 @@ By this end of this lesson, students should be able to...
 1. Practice more advanced techniques with lists and arrays
 1. Implement list manipulation methods such as insert and replace
 
-<!--## Minute-by-Minute
+<!--
+## Minute-by-Minute
 
-| **Elapsed** | **Time**  | **Activity**			  |
-| ----------- | --------- | ------------------------- |
-| 0:00		| 0:15	  | Discuss Palindrome Notes				|
-| 0:05		| 1:20	  | Code Review + Presentations	   |
-| 1:35		| 0:10	  | Break	  |
-| 1:45		| 0:05	  | Wrap up	  |
-| TOTAL	   | 1:50	  |						   |
+| **Elapsed** | **Time** | **Activity**                |
+|-------------|----------|-----------------------------|
+| 0:00        | 0:15     | Discuss Palindrome Notes    |
+| 0:05        | 1:20     | Code Review + Presentations |
+| 1:35        | 0:10     | Break                       |
+| 1:45        | 0:05     | Wrap up                     |
+| TOTAL       | 1:50     |                             |
 -->
 
 ## Resources

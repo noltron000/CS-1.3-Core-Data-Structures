@@ -56,17 +56,19 @@ By this end of this lesson, students should be able to...
 - Implement anagram generating functions (try both iterative and recursive versions)
 	- *Hint:* Use the Unix dictionary words list located at: `/usr/share/dict/words`
 
-<!--## Minute-by-Minute
+<!--
+## Minute-by-Minute
 
-| **Elapsed** | **Time**  | **Activity**			  |
-| ----------- | --------- | ------------------------- |
-| 0:00		| 0:03	  | Progress Tracker				|
-| 0:03		| 0:02	  | Factoid of the Day				  |
-| 0:05		| 1:20	  | Code Review + Presentations	   |
-| 1:25		| 0:10	  | TT - Algorithm Analysis					 |
-| 1:35		| 0:10	  | Break	  |
-| 1:45		| 0:05	  | Wrap up	  |
-| TOTAL	   | 1:50	  |						   |-->
+| **Elapsed** | **Time** | **Activity**                |
+|-------------|----------|-----------------------------|
+| 0:00        | 0:03     | Progress Tracker            |
+| 0:03        | 0:02     | Factoid of the Day          |
+| 0:05        | 1:20     | Code Review + Presentations |
+| 1:25        | 0:10     | TT - Algorithm Analysis     |
+| 1:35        | 0:10     | Break                       |
+| 1:45        | 0:05     | Wrap up                     |
+| TOTAL       | 1:50     |                             |
+-->
 
 ## Progress Tracker (3 min)
 

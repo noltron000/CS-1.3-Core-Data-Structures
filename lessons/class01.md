@@ -31,20 +31,22 @@
 - Implement base conversion for fractional numbers using a [radix point] (try playing with the [base conversion calculator] to see how this works)
 - Implement base conversion for negative binary numbers (using [two's complement])
 
-<!--## Minute-by-Minute
+<!--
+## Minute-by-Minute
 
-| **Elapsed** | **Time**  | **Activity**              |
-| ----------- | --------- | ------------------------- |
-| 0:00        | 0:05      | Factoid of the day                |
-| 0:05        | 0:15      | Learning Outcomes/Course Overview                  |
-| 0:20        | 0:10      | Flippy Do Worksheet       |
-| 0:30        | 0:25      | TT: Base Ten vs Base Two                      |
-| 0:55        | 0:15      | Integers and Bases Worksheet      |
-| 1:10        | 0:25      | TT: Base 16                      |
-| 1:35        | 0:15      | Integers and Bases Worksheet Pt 2      |
-| 1:50        | 0:05      | Negative Numbers      |
-| 1:55        | 0:05      | Wrap up      |
-| TOTAL       | 2:00      |                           |-->
+| **Elapsed** | **Time** | **Activity**                      |
+|-------------|----------|-----------------------------------|
+| 0:00        | 0:05     | Factoid of the day                |
+| 0:05        | 0:15     | Learning Outcomes/Course Overview |
+| 0:20        | 0:10     | Flippy Do Worksheet               |
+| 0:30        | 0:25     | TT: Base Ten vs Base Two          |
+| 0:55        | 0:15     | Integers and Bases Worksheet      |
+| 1:10        | 0:25     | TT: Base 16                       |
+| 1:35        | 0:15     | Integers and Bases Worksheet Pt 2 |
+| 1:50        | 0:05     | Negative Numbers                  |
+| 1:55        | 0:05     | Wrap up                           |
+| TOTAL       | 2:00     |                                   |
+-->
 
 ## Factoid of the day (5 min)
 
