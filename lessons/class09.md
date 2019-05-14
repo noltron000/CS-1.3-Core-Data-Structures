@@ -214,7 +214,7 @@ Finish all challenges before we kick off the Call Routing project next class!
 [map]: https://en.wikipedia.org/wiki/Associative_array
 [Python `dict` type]: https://docs.python.org/3/library/stdtypes.html#dict
 
-[tree traversal slides]: slides/tree-traversals.pdf
+[tree traversal slides]: /slides/tree-traversals.pdf
 [tree traversal video lecture]: https://www.youtube.com/watch?v=Qd8dKFaRu9I
 [HR trees video]: https://www.youtube.com/watch?v=oSWTXtMglKE
 [HR bst interview problem]: https://www.youtube.com/watch?v=i_Q0v_Ct5lY
@@ -228,5 +228,5 @@ Finish all challenges before we kick off the Call Routing project next class!
 [BaseCS BFS]: https://medium.com/basecs/breaking-down-breadth-first-search-cebe696709d9
 [visualgo bst]: https://visualgo.net/bst
 
-[binary tree starter code]: source/binarytree.py
-[binary tree unit tests]: source/binarytree_test.py
+[binary tree starter code]: /source/binarytree.py
+[binary tree unit tests]: /source/binarytree_test.py

@@ -94,7 +94,7 @@ By this end of this lesson, students should be able to...
 [recurrence relations]: https://en.wikipedia.org/wiki/Recurrence_relation
 [master theorem]: https://en.wikipedia.org/wiki/Master_theorem
 
-[recursive algorithm analysis slides]: slides/algorithm-analysis-recursive.pdf
+[recursive algorithm analysis slides]: /slides/algorithm-analysis-recursive.pdf
 [VisuAlgo sorting]: https://visualgo.net/en/sorting
 [USF sorting]: https://www.cs.usfca.edu/~galles/visualization/ComparisonSort.html
 [sorting animations]: https://www.toptal.com/developers/sorting-algorithms/
@@ -116,5 +116,5 @@ By this end of this lesson, students should be able to...
 [quick sort with Hungarian folk dance]: https://www.youtube.com/watch?v=3San3uKKHgg
 [ineffective sorts]: https://xkcd.com/1185/
 
-[sorting starter code]: source/sorting.py
-[sorting unit tests]: source/sorting_test.py
+[sorting starter code]: /source/sorting.py
+[sorting unit tests]: /source/sorting_test.py

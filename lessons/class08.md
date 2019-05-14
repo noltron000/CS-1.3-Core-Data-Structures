@@ -182,7 +182,7 @@ Insertion and deletion both require first searching through the tree to find whe
 [binary search tree]: https://en.wikipedia.org/wiki/Binary_search_tree
 [operations]: https://en.wikipedia.org/wiki/Binary_search_tree#Operations
 
-[trees slides]: slides/trees.pdf
+[trees slides]: /slides/trees.pdf
 [trees video lecture]: https://www.youtube.com/watch?v=Yr3y78d2KYI
 [HR trees video]: https://www.youtube.com/watch?v=oSWTXtMglKE
 [HR bst interview problem]: https://www.youtube.com/watch?v=i_Q0v_Ct5lY
@@ -196,5 +196,5 @@ Insertion and deletion both require first searching through the tree to find whe
 [Leandro TK trees]: https://medium.freecodecamp.org/all-you-need-to-know-about-tree-data-structures-bceacb85490c
 [visualgo bst]: https://visualgo.net/bst
 
-[binary tree starter code]: source/binarytree.py
-[binary tree unit tests]: source/binarytree_test.py
+[binary tree starter code]: /source/binarytree.py
+[binary tree unit tests]: /source/binarytree_test.py

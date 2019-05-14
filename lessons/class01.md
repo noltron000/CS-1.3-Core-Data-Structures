@@ -173,7 +173,7 @@ Give brief history of how base 64 is used for the web, commonly used to pass inf
 
 ## Integers and Bases Worksheet Pt 2 (15 min)
 
-Each person should fill out the hex section of the [previous worksheet](/slides/number-basesWorksheet.pdf)
+Each person should fill out the hex section of the [previous worksheet](/slides/number-bases-worksheet.pdf)
 
 - Can work with a partner, but you'll need to understand this on your own to do the homework!
 - Tip: write out some basic hex/binary conversions to use for help
@@ -227,8 +227,8 @@ There are a few different ways to represent negative numbers:
 [two's complement]: https://en.wikipedia.org/wiki/Two%27s_complement
 [radix point]: https://en.wikipedia.org/wiki/Radix_point
 
-[number bases slides]: slides/number-bases.pdf
-[number bases worksheet]: slides/number-bases-worksheet.pdf
+[number bases slides]: /slides/number-bases.pdf
+[number bases worksheet]: /slides/number-bases-worksheet.pdf
 [number bases article]: https://betterexplained.com/articles/numbers-and-bases/
 [BaseCS binary]: https://medium.com/basecs/bits-bytes-building-with-binary-13cb4289aafa
 [BaseCS hexadecimal]: https://medium.com/basecs/hexs-and-other-magical-numbers-9785bc26b7ee
@@ -240,5 +240,5 @@ There are a few different ways to represent negative numbers:
 [understanding bases video]: https://www.youtube.com/watch?v=ZL-LhaaMTTE
 [numbers and base systems video]: https://www.youtube.com/watch?v=LpuPe81bc2w
 
-[starter code]: source/bases.py
-[unit tests]: source/bases_test.py
+[starter code]: /source/bases.py
+[unit tests]: /source/bases_test.py

@@ -74,7 +74,7 @@ Implement methods on linked list class so interface is the same as an array. [On
 [dynamic array]: https://en.wikipedia.org/wiki/Dynamic_array
 [linked list]: https://en.wikipedia.org/wiki/Linked_list
 
-[array and linked list slides]: slides/arrays-linked-lists.pdf
+[array and linked list slides]: /slides/arrays-linked-lists.pdf
 [array and linked list video lecture]: https://www.youtube.com/watch?v=3WWuf4H61Nk
 [linked list video]: https://www.youtube.com/watch?v=njTh_OwMljA
 [array video]: https://www.youtube.com/watch?v=7EdaoE46BTI
@@ -85,5 +85,5 @@ Implement methods on linked list class so interface is the same as an array. [On
 [BaseCS linked list 2]: https://medium.com/basecs/whats-a-linked-list-anyway-part-2-131d96f71996
 [visualgo list]: https://visualgo.net/list
 
-[linked list starter code]: source/linkedlist.py
-[linked list unit tests]: source/linkedlist_test.py
+[linked list starter code]: /source/linkedlist.py
+[linked list unit tests]: /source/linkedlist_test.py

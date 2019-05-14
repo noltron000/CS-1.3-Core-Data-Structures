@@ -217,7 +217,7 @@ Once you're done, switch the "front" and "back" labels. The "front" of queue sho
 [dynamic array]: https://en.wikipedia.org/wiki/Dynamic_array
 [linked list]: https://en.wikipedia.org/wiki/Linked_list
 
-[stack and queue slides]: slides/stacks-queues.pdf
+[stack and queue slides]: /slides/stacks-queues.pdf
 [stack and queue video lecture]: https://www.youtube.com/watch?v=AXWnk4gege4
 [stack and queue video]: https://www.youtube.com/watch?v=wjI1WNcIntg
 [stack video]: https://www.youtube.com/watch?v=9Tp8wHD66lw
@@ -227,7 +227,7 @@ Once you're done, switch the "front" and "back" labels. The "front" of queue sho
 [BaseCS queue]: https://medium.com/basecs/to-queue-or-not-to-queue-2653bcde5b04
 [visualgo list]: https://visualgo.net/list
 
-[stack starter code]: source/stack.py
-[stack unit tests]: source/stack_test.py
-[queue starter code]: source/queue.py
-[queue unit tests]: source/queue_test.py
+[stack starter code]: /source/stack.py
+[stack unit tests]: /source/stack_test.py
+[queue starter code]: /source/queue.py
+[queue unit tests]: /source/queue_test.py

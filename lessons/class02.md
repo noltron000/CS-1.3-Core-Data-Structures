@@ -289,8 +289,8 @@ See the graph below to compare exponent, linear, and log:
 [permutation]: https://en.wikipedia.org/wiki/Permutation
 [combination]: https://en.wikipedia.org/wiki/Combination
 
-[logarithms article]: slides/logarithms.pdf
-[algorithm analysis slides]: slides/algorithm-analysis.pdf
+[logarithms article]: /slides/logarithms.pdf
+[algorithm analysis slides]: /slides/algorithm-analysis.pdf
 [big O notation video]: https://www.youtube.com/watch?v=v4cd1O4zkGw
 [asymptotic notation video]: https://www.youtube.com/watch?v=iOq5kSKqeR4
 [computational complexity video]: https://www.youtube.com/watch?v=IM9sHGlYV5A
@@ -310,7 +310,7 @@ See the graph below to compare exponent, linear, and log:
 [SO big O]: https://stackoverflow.com/questions/487258/what-is-a-plain-english-explanation-of-big-o-notation
 [JA big O]: https://justin.abrah.ms/computer-science/big-o-notation-explained.html
 
-[recursion starter code]: source/recursion.py
-[recursion unit tests]: source/recursion_test.py
-[search starter code]: source/search.py
-[search unit tests]: source/search_test.py
+[recursion starter code]: /source/recursion.py
+[recursion unit tests]: /source/recursion_test.py
+[search starter code]: /source/search.py
+[search unit tests]: /source/search_test.py

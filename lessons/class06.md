@@ -197,7 +197,7 @@ Student presents their answer to the challenges
 [quadratic probing]: https://en.wikipedia.org/wiki/Quadratic_probing
 [double hashing]: https://en.wikipedia.org/wiki/Double_hashing
 
-[hash table slides]: slides/hash-tables.pdf
+[hash table slides]: /slides/hash-tables.pdf
 [hash table video lecture]: https://www.youtube.com/watch?v=nLWXJ6IDKmQ
 [hash table video]: https://www.youtube.com/watch?v=shs0KM3wKv8
 [old hash table video]: https://www.youtube.com/watch?v=h2d9b_nEzoA
@@ -207,5 +207,5 @@ Student presents their answer to the challenges
 [BaseCS hash functions]: https://medium.com/basecs/hashing-out-hash-functions-ea5dd8beb4dd
 [visualgo hash table]: https://visualgo.net/hashtable
 
-[hash table starter code]: source/hashtable.py
-[hash table unit tests]: source/hashtable_test.py
+[hash table starter code]: /source/hashtable.py
+[hash table unit tests]: /source/hashtable_test.py

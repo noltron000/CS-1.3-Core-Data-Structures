@@ -74,7 +74,7 @@ By this end of this lesson, students should be able to...
 [bucket sort]: https://en.wikipedia.org/wiki/Bucket_sort
 [sample sort]: https://en.wikipedia.org/wiki/Samplesort
 
-[algorithm analysis slides]: slides/algorithm-analysis.pdf
+[algorithm analysis slides]: /slides/algorithm-analysis.pdf
 [VisuAlgo sorting]: https://visualgo.net/en/sorting
 [USF sorting]: https://www.cs.usfca.edu/~galles/visualization/ComparisonSort.html
 [sorting animations]: https://www.toptal.com/developers/sorting-algorithms/
@@ -91,5 +91,5 @@ By this end of this lesson, students should be able to...
 [23 sorting algorithms]: https://www.youtube.com/watch?v=rqI6KT6cOas
 [merge sort with German folk dance]: https://www.youtube.com/watch?v=dENca26N6V4
 
-[sorting starter code]: source/sorting.py
-[sorting unit tests]: source/sorting_test.py
+[sorting starter code]: /source/sorting.py
+[sorting unit tests]: /source/sorting_test.py
