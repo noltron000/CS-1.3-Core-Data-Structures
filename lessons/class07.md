@@ -69,13 +69,13 @@ A **Set** is an abstract data type. It is an unordered collection (just like a m
 
 But what if we want to know if a student is in two classes? We can use a set operation called **intersection**. Think of an intersection as like using an `and` operator. The below **Venn Diagram** illustrates this intersection:
 
-![venn-intersect](assets/venn-intersect.png)
+![venn-intersect](/assets/venn-intersect.png)
 
 [Venn diagrams](https://en.wikipedia.org/wiki/Venn_diagram) are going to be super helpful for understanding sets.
 
 ### Set Operations
 
-![venn-operations](assets/venn-operations.png)
+![venn-operations](/assets/venn-operations.png)
 
 There are other operations we can use to compare multiple sets:
 

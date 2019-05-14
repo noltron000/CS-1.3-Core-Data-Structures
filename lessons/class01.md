@@ -119,7 +119,7 @@ Both base ten and two always start with base^0, which is why they're always equa
 ## Integers and Bases Worksheet (15 min)
 
 ### Individual Work (10 min)
-Each person should fill out the _first two sections_ of [integers and bases worksheet](slides/number-bases-worksheet.pdf)
+Each person should fill out the _first two sections_ of [integers and bases worksheet](/slides/number-bases-worksheet.pdf)
 
 - Note that students should have 8 bits in your answer
 - Use subscripts to notate what base a number is in
@@ -171,7 +171,7 @@ Give brief history of how base 64 is used for the web, commonly used to pass inf
 
 ## Integers and Bases Worksheet Pt 2 (15 min)
 
-Each person should fill out the hex section of the [previous worksheet](slides/number-basesWorksheet.pdf)
+Each person should fill out the hex section of the [previous worksheet](/slides/number-basesWorksheet.pdf)
 
 - Can work with a partner, but you'll need to understand this on your own to do the homework!
 - Tip: write out some basic hex/binary conversions to use for help
